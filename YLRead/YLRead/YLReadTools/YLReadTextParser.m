@@ -56,7 +56,6 @@
         if (content.length < 1) {
             return nil;
         }
-                
         // 解析内容并获得章节列表
         NSMutableArray<YLReadChapterListModel *> *chapterListModels = [self parserWithBookID:bookID content:content];
         
