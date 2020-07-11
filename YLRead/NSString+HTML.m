@@ -11,12 +11,42 @@
 
 @implementation NSString (HTML)
 
++ (void)getBeisong{
+    NSString *htmlString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://m.lingdiankanshu.co/410820/all.html"] encoding:NSUTF8StringEncoding error:nil];
+    NSString *path = [NSString stringWithFormat:@"%@/Documents/beiSong_Catalogue",NSHomeDirectory()];
+    NSMutableArray<NSMutableDictionary *> *beiSong_Catalogue = [htmlString beiSong_Catalogue];
+    [beiSong_Catalogue writeToFile:path atomically:YES];
+    NSLog(@"path ====== %@",path);
+    [beiSong_Catalogue enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull dictionary, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *sectionLink = [NSString stringWithFormat:@"https://m.lingdiankanshu.co/410820/%@",dictionary[@"sectionLink"]];
+        dictionary[@"sectionContent"] = [NSString beiSong_sectionLink:sectionLink];
+        [beiSong_Catalogue writeToFile:path atomically:YES];
+    }];
+    
+    NSLog(@"beiSong_Catalogue ========= %@",beiSong_Catalogue);
+}
+
++ (void)writeBeisong{
+    NSMutableString *allString = [[NSMutableString alloc] init];
+    
+    NSString *path = [NSBundle.mainBundle pathForResource:@"beiSong" ofType:@""];
+    NSMutableArray<NSMutableDictionary *> *beiSong_Catalogue = [NSMutableArray arrayWithContentsOfFile:path];
+    [beiSong_Catalogue enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *content = [NSString stringWithFormat:@"\n %@ \n\n %@",dict[@"sectionName"],dict[@"sectionContent"]];
+        [allString appendString:content];
+    }];
+    
+    NSString *filepath = [NSString stringWithFormat:@"%@/Documents/beiSong_allString",NSHomeDirectory()];
+    [allString writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"filepath ===== %@",filepath);
+}
+
 
 /** <p><a style="" href="2152124.html">第0167章 平叛</a></p>
  * regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";
  * @{@"sectionName":sectionName,@"sectionLink":sectionLink}
  */
-- (NSMutableArray<NSDictionary *> *)beiSong_Catalogue{
+- (NSMutableArray<NSMutableDictionary *> *)beiSong_Catalogue{
     NSString *string = [self copy];
 
     NSMutableArray<NSDictionary *> *catalogueArray = [NSMutableArray array];
@@ -36,7 +66,7 @@
                 NSArray<NSString *> *array = [matchString componentsSeparatedByString:@"\">"];
                 NSString *sectionName = array.lastObject;
                 NSString *sectionLink = array.firstObject;
-                [catalogueArray addObject:@{@"sectionName":sectionName,@"sectionLink":sectionLink}];
+                [catalogueArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":@""}]];
             }
         }];
     }
@@ -50,12 +80,12 @@
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";
 
     NSString *sectionHTMLString;
+    NSString *ling = [sectionLink copy];;
     int page = 1;
     do {
-        sectionLink = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
-        NSLog(@"sectionLink ===== %@",sectionLink);
-        sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:sectionLink] encoding:NSUTF8StringEncoding error:nil];
-        NSLog(@"sectionHTMLString ===== %@",sectionHTMLString);
+        ling = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
+        NSLog(@"ling ===== %@",ling);
+        sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:ling] encoding:NSUTF8StringEncoding error:nil];
         NSError *error;
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
         NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:sectionHTMLString options:0 range:NSMakeRange(0, [sectionHTMLString length])];
@@ -69,16 +99,11 @@
         }else{
             NSLog(@"sectionHTMLString === %@",sectionHTMLString);
         }
-        
         page++;
     } while ([sectionHTMLString containsString:@"下一页"]);
-    
-
-
-    
-
-    NSLog(@"sectionContent === %@",sectionContent);
-    return sectionContent;
+    NSString *result = [sectionContent stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    NSLog(@"sectionContent === %@",result);
+    return result;
 }
 
 @end

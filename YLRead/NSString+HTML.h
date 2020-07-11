@@ -12,11 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (HTML)
 
++ (void)getBeisong;
+
++ (void)writeBeisong;
+
 /** <p><a style="" href="2152124.html">第0167章 平叛</a></p>
  * regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";
- * @{@"sectionName":sectionName,@"sectionLink":sectionLink}
+ * @{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":@""
 */
-- (NSMutableArray<NSDictionary *> *)beiSong_Catalogue;
+- (NSMutableArray<NSMutableDictionary *> *)beiSong_Catalogue;
 
 + (NSString *)beiSong_sectionLink:(NSString *)sectionLink;
 
@@ -24,3 +28,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

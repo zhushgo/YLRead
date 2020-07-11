@@ -57,6 +57,12 @@
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
 		1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */ = {isa = PBXBuildFile; fileRef = 1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */; };
 		1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC14AF324B9513C00F43B9A /* NSString+HTML.m */; };
+		22B8D18524B9D5D2008134F6 /* beiSong in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18424B9D5D2008134F6 /* beiSong */; };
+		22B8D18724B9D7D2008134F6 /* 求魔_1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */; };
+		22B8D18924B9DA27008134F6 /* 北颂.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18824B9DA27008134F6 /* 北颂.txt */; };
+		22B8D18D24B9DB91008134F6 /* 北颂_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18A24B9DB91008134F6 /* 北颂_1.txt */; };
+		22B8D18E24B9DB91008134F6 /* 北颂_2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18B24B9DB91008134F6 /* 北颂_2.txt */; };
+		22B8D18F24B9DB91008134F6 /* 求魔_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18C24B9DB91008134F6 /* 求魔_1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +163,12 @@
 		1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeiSong_Catalogue; sourceTree = "<group>"; };
 		1AC14AF224B9513C00F43B9A /* NSString+HTML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		1AC14AF324B9513C00F43B9A /* NSString+HTML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		22B8D18424B9D5D2008134F6 /* beiSong */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = beiSong; sourceTree = "<group>"; };
+		22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "求魔_1.rtf"; sourceTree = "<group>"; };
+		22B8D18824B9DA27008134F6 /* 北颂.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂.txt"; sourceTree = "<group>"; };
+		22B8D18A24B9DB91008134F6 /* 北颂_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂_1.txt"; sourceTree = "<group>"; };
+		22B8D18B24B9DB91008134F6 /* 北颂_2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂_2.txt"; sourceTree = "<group>"; };
+		22B8D18C24B9DB91008134F6 /* 求魔_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔_1.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +207,7 @@
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
 				1AC14AF224B9513C00F43B9A /* NSString+HTML.h */,
 				1AC14AF324B9513C00F43B9A /* NSString+HTML.m */,
+				22B8D18424B9D5D2008134F6 /* beiSong */,
 				1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
@@ -234,7 +247,12 @@
 		1A6E7E6524B8649100F42EA4 /* YLReadTools */ = {
 			isa = PBXGroup;
 			children = (
+				22B8D18824B9DA27008134F6 /* 北颂.txt */,
+				22B8D18A24B9DB91008134F6 /* 北颂_1.txt */,
+				22B8D18B24B9DB91008134F6 /* 北颂_2.txt */,
+				22B8D18C24B9DB91008134F6 /* 求魔_1.txt */,
 				1A6E7E7724B8649100F42EA4 /* 求魔.txt */,
+				22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */,
 				1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */,
 				1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */,
 				1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */,
@@ -378,10 +396,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B8D18F24B9DB91008134F6 /* 求魔_1.txt in Resources */,
+				22B8D18E24B9DB91008134F6 /* 北颂_2.txt in Resources */,
+				22B8D18524B9D5D2008134F6 /* beiSong in Resources */,
 				1A6E7EC624B8649100F42EA4 /* 求魔.txt in Resources */,
+				22B8D18924B9DA27008134F6 /* 北颂.txt in Resources */,
+				22B8D18724B9D7D2008134F6 /* 求魔_1.rtf in Resources */,
 				1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
+				22B8D18D24B9DB91008134F6 /* 北颂_1.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
