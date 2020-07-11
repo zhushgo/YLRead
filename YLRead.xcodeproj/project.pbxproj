@@ -55,6 +55,8 @@
 		1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */; };
 		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
+		1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */ = {isa = PBXBuildFile; fileRef = 1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */; };
+		1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC14AF324B9513C00F43B9A /* NSString+HTML.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +154,9 @@
 		1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
 		1A6E7EBB24B8649100F42EA4 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
+		1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeiSong_Catalogue; sourceTree = "<group>"; };
+		1AC14AF224B9513C00F43B9A /* NSString+HTML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		1AC14AF324B9513C00F43B9A /* NSString+HTML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +193,9 @@
 				1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */,
 				1A6E7E5124B863F900F42EA4 /* ViewController.h */,
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
+				1AC14AF224B9513C00F43B9A /* NSString+HTML.h */,
+				1AC14AF324B9513C00F43B9A /* NSString+HTML.m */,
+				1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
@@ -200,6 +208,9 @@
 		1A6E7E6424B8649100F42EA4 /* YLRead */ = {
 			isa = PBXGroup;
 			children = (
+				1A6E7E9224B8649100F42EA4 /* YLReadViewGroup */,
+				1A6E7E6524B8649100F42EA4 /* YLReadTools */,
+				1A6E7E8124B8649100F42EA4 /* YLReadModelGroup */,
 				1A6E7E7F24B8649100F42EA4 /* UIPageViewController+Extend.h */,
 				1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */,
 				1A6E7E9124B8649100F42EA4 /* YLReadController.h */,
@@ -208,15 +219,12 @@
 				1A6E7EB724B8649100F42EA4 /* YLReadCoverController.m */,
 				1A6E7E7C24B8649100F42EA4 /* YLReadLongPressViewController.h */,
 				1A6E7EB624B8649100F42EA4 /* YLReadLongPressViewController.m */,
-				1A6E7E8124B8649100F42EA4 /* YLReadModelGroup */,
 				1A6E7EB524B8649100F42EA4 /* YLReadPageViewController.h */,
 				1A6E7E7D24B8649100F42EA4 /* YLReadPageViewController.m */,
-				1A6E7E6524B8649100F42EA4 /* YLReadTools */,
 				1A6E7E7E24B8649100F42EA4 /* YLReadViewBGController.h */,
 				1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */,
 				1A6E7EB824B8649100F42EA4 /* YLReadViewController.h */,
 				1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */,
-				1A6E7E9224B8649100F42EA4 /* YLReadViewGroup */,
 				1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */,
 				1A6E7E9024B8649100F42EA4 /* YLReadViewScrollController.m */,
 			);
@@ -226,27 +234,27 @@
 		1A6E7E6524B8649100F42EA4 /* YLReadTools */ = {
 			isa = PBXGroup;
 			children = (
-				1A6E7E6624B8649100F42EA4 /* YLReadTextFastParser.m */,
-				1A6E7E6724B8649100F42EA4 /* YLKeyedArchiver.m */,
-				1A6E7E6824B8649100F42EA4 /* YLReadUserDefaults.h */,
-				1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */,
-				1A6E7E6A24B8649100F42EA4 /* YLCoreText.m */,
-				1A6E7E6B24B8649100F42EA4 /* YLReadConfigure.h */,
-				1A6E7E6C24B8649100F42EA4 /* YLGlobalTools.m */,
-				1A6E7E6D24B8649100F42EA4 /* YLReadParser.m */,
-				1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */,
-				1A6E7E6F24B8649100F42EA4 /* YLReadTextParser.h */,
-				1A6E7E7024B8649100F42EA4 /* YLKeyedArchiver.h */,
-				1A6E7E7124B8649100F42EA4 /* YLReadTextFastParser.h */,
-				1A6E7E7224B8649100F42EA4 /* YLReadConfigure.m */,
-				1A6E7E7324B8649100F42EA4 /* YLCoreText.h */,
-				1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */,
-				1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */,
-				1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */,
 				1A6E7E7724B8649100F42EA4 /* 求魔.txt */,
+				1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */,
+				1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */,
+				1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */,
+				1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */,
+				1A6E7E7324B8649100F42EA4 /* YLCoreText.h */,
+				1A6E7E6A24B8649100F42EA4 /* YLCoreText.m */,
 				1A6E7E7824B8649100F42EA4 /* YLGlobalTools.h */,
+				1A6E7E6C24B8649100F42EA4 /* YLGlobalTools.m */,
+				1A6E7E7024B8649100F42EA4 /* YLKeyedArchiver.h */,
+				1A6E7E6724B8649100F42EA4 /* YLKeyedArchiver.m */,
+				1A6E7E6B24B8649100F42EA4 /* YLReadConfigure.h */,
+				1A6E7E7224B8649100F42EA4 /* YLReadConfigure.m */,
 				1A6E7E7924B8649100F42EA4 /* YLReadParser.h */,
+				1A6E7E6D24B8649100F42EA4 /* YLReadParser.m */,
+				1A6E7E7124B8649100F42EA4 /* YLReadTextFastParser.h */,
+				1A6E7E6624B8649100F42EA4 /* YLReadTextFastParser.m */,
+				1A6E7E6F24B8649100F42EA4 /* YLReadTextParser.h */,
 				1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */,
+				1A6E7E6824B8649100F42EA4 /* YLReadUserDefaults.h */,
+				1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */,
 			);
 			path = YLReadTools;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6E7EC624B8649100F42EA4 /* 求魔.txt in Resources */,
+				1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +418,7 @@
 				1A6E7EBD24B8649100F42EA4 /* YLReadTextFastParser.m in Sources */,
 				1A6E7EE124B8649100F42EA4 /* YLReadBaseView.m in Sources */,
 				1A6E7EBF24B8649100F42EA4 /* YLCoreText.m in Sources */,
+				1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */,
 				1A6E7EC824B8649100F42EA4 /* YLReadPageViewController.m in Sources */,
 				1A6E7EC024B8649100F42EA4 /* YLGlobalTools.m in Sources */,
 				1A6E7ED624B8649100F42EA4 /* YLReadView.m in Sources */,
