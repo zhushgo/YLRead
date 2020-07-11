@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [NSString getMUSehnJi];
+    
     NSURL *url = [NSBundle.mainBundle URLForResource:@"北颂_2" withExtension:@"txt"];
     [YLReadTextParser parserWithURL:url completion:^(YLReadModel * _Nonnull readModel) {
         if (readModel) {

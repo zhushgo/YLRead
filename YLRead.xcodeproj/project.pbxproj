@@ -55,13 +55,13 @@
 		1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */; };
 		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
-		1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */ = {isa = PBXBuildFile; fileRef = 1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */; };
 		1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC14AF324B9513C00F43B9A /* NSString+HTML.m */; };
+		227A57CE24BA1E9400B3195C /* 牧神记.txt in Resources */ = {isa = PBXBuildFile; fileRef = 227A57CC24BA1E9400B3195C /* 牧神记.txt */; };
+		227A57CF24BA1E9400B3195C /* 牧神记_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 227A57CD24BA1E9400B3195C /* 牧神记_1.txt */; };
+		227A57D324BA1F1200B3195C /* MUSehnJi.xml in Resources */ = {isa = PBXBuildFile; fileRef = 227A57D224BA1F1200B3195C /* MUSehnJi.xml */; };
 		22B8D18524B9D5D2008134F6 /* beiSong in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18424B9D5D2008134F6 /* beiSong */; };
 		22B8D18724B9D7D2008134F6 /* 求魔_1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */; };
 		22B8D18924B9DA27008134F6 /* 北颂.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18824B9DA27008134F6 /* 北颂.txt */; };
-		22B8D18D24B9DB91008134F6 /* 北颂_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18A24B9DB91008134F6 /* 北颂_1.txt */; };
-		22B8D18E24B9DB91008134F6 /* 北颂_2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18B24B9DB91008134F6 /* 北颂_2.txt */; };
 		22B8D18F24B9DB91008134F6 /* 求魔_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22B8D18C24B9DB91008134F6 /* 求魔_1.txt */; };
 /* End PBXBuildFile section */
 
@@ -160,14 +160,14 @@
 		1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
 		1A6E7EBB24B8649100F42EA4 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
-		1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeiSong_Catalogue; sourceTree = "<group>"; };
 		1AC14AF224B9513C00F43B9A /* NSString+HTML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		1AC14AF324B9513C00F43B9A /* NSString+HTML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		227A57CC24BA1E9400B3195C /* 牧神记.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "牧神记.txt"; sourceTree = "<group>"; };
+		227A57CD24BA1E9400B3195C /* 牧神记_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "牧神记_1.txt"; sourceTree = "<group>"; };
+		227A57D224BA1F1200B3195C /* MUSehnJi.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MUSehnJi.xml; sourceTree = "<group>"; };
 		22B8D18424B9D5D2008134F6 /* beiSong */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = beiSong; sourceTree = "<group>"; };
 		22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "求魔_1.rtf"; sourceTree = "<group>"; };
 		22B8D18824B9DA27008134F6 /* 北颂.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂.txt"; sourceTree = "<group>"; };
-		22B8D18A24B9DB91008134F6 /* 北颂_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂_1.txt"; sourceTree = "<group>"; };
-		22B8D18B24B9DB91008134F6 /* 北颂_2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北颂_2.txt"; sourceTree = "<group>"; };
 		22B8D18C24B9DB91008134F6 /* 求魔_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔_1.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,7 +208,7 @@
 				1AC14AF224B9513C00F43B9A /* NSString+HTML.h */,
 				1AC14AF324B9513C00F43B9A /* NSString+HTML.m */,
 				22B8D18424B9D5D2008134F6 /* beiSong */,
-				1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */,
+				227A57D224BA1F1200B3195C /* MUSehnJi.xml */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
@@ -248,8 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				22B8D18824B9DA27008134F6 /* 北颂.txt */,
-				22B8D18A24B9DB91008134F6 /* 北颂_1.txt */,
-				22B8D18B24B9DB91008134F6 /* 北颂_2.txt */,
+				227A57CD24BA1E9400B3195C /* 牧神记_1.txt */,
+				227A57CC24BA1E9400B3195C /* 牧神记.txt */,
 				22B8D18C24B9DB91008134F6 /* 求魔_1.txt */,
 				1A6E7E7724B8649100F42EA4 /* 求魔.txt */,
 				22B8D18624B9D7D2008134F6 /* 求魔_1.rtf */,
@@ -396,16 +396,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227A57D324BA1F1200B3195C /* MUSehnJi.xml in Resources */,
 				22B8D18F24B9DB91008134F6 /* 求魔_1.txt in Resources */,
-				22B8D18E24B9DB91008134F6 /* 北颂_2.txt in Resources */,
 				22B8D18524B9D5D2008134F6 /* beiSong in Resources */,
 				1A6E7EC624B8649100F42EA4 /* 求魔.txt in Resources */,
+				227A57CE24BA1E9400B3195C /* 牧神记.txt in Resources */,
 				22B8D18924B9DA27008134F6 /* 北颂.txt in Resources */,
 				22B8D18724B9D7D2008134F6 /* 求魔_1.rtf in Resources */,
-				1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */,
+				227A57CF24BA1E9400B3195C /* 牧神记_1.txt in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
-				22B8D18D24B9DB91008134F6 /* 北颂_1.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,13 +594,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				DEVELOPMENT_TEAM = QNDCLQW767;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.YLRead";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YLRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -611,13 +611,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				DEVELOPMENT_TEAM = QNDCLQW767;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.YLRead";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YLRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

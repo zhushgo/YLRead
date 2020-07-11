@@ -27,5 +27,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface NSString (MUSehnJi)
+
++ (void)getMUSehnJi;
+
++ (void)writeMUSehnJi;
+
+/** <p><a style="" href="2152124.html">第0167章 平叛</a></p>
+ * regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";
+ * @{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":@""
+*/
+- (NSMutableArray<NSMutableDictionary *> *)MUSehnJi_Catalogue;
+
++ (NSString *)MUSehnJi_sectionLink:(NSString *)sectionLink;
+
+
+@end
+
 NS_ASSUME_NONNULL_END
 
