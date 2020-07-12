@@ -6,15 +6,21 @@
 //  Copyright © 2020 苏沫离. All rights reserved.
 //
 
-#define SLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
 
 
 
 #import "ViewController.h"
 #import "YLReadTextParser.h"
 #import "YLReadController.h"
-#import "NSString+HTML.h"
+#import "LingDianParser.h"
 
+NSBundle *bookBundle(void){
+    return [NSBundle bundleWithPath:[NSBundle.mainBundle pathForResource:@"BookResources" ofType:@"bundle"]];
+}
+
+NSURL *bookURL(NSString *name,NSString *extension){
+    return [bookBundle() URLForResource:name withExtension:extension];
+}
 
 @interface ViewController ()
 
@@ -23,18 +29,18 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];    
+    [LingDianParser getBookAllStringByBookID:@"343014"];
     
-//    [NSString getMUSehnJi];
-    
-    NSURL *url = [NSBundle.mainBundle URLForResource:@"北颂_2" withExtension:@"txt"];
-    [YLReadTextParser parserWithURL:url completion:^(YLReadModel * _Nonnull readModel) {
-        if (readModel) {
-            YLReadController *readVC = [[YLReadController alloc] init];
-            readVC.readModel = readModel;
-            [self.navigationController pushViewController:readVC animated:YES];
-        }
-    }];
+    NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
+        
+//    [YLReadTextParser parserWithURL:bookURL(@"万族之劫", @"txt") completion:^(YLReadModel * _Nonnull readModel) {
+//        if (readModel) {
+//            YLReadController *readVC = [[YLReadController alloc] init];
+//            readVC.readModel = readModel;
+//            [self.navigationController pushViewController:readVC animated:YES];
+//        }
+//    }];
 
 }
 
