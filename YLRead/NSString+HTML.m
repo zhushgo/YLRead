@@ -49,13 +49,13 @@
 
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";
 
-    NSString *sectionHTMLString;
+    NSString *sectionHTMLString = @"";
+    NSString *link = [sectionLink copy];
     int page = 1;
     do {
-        sectionLink = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
-        NSLog(@"sectionLink ===== %@",sectionLink);
-        sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:sectionLink] encoding:NSUTF8StringEncoding error:nil];
-        NSLog(@"sectionHTMLString ===== %@",sectionHTMLString);
+        link = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
+        NSLog(@"link ===== %@",link);
+        sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:link] encoding:NSUTF8StringEncoding error:nil];
         NSError *error;
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
         NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:sectionHTMLString options:0 range:NSMakeRange(0, [sectionHTMLString length])];
@@ -73,10 +73,6 @@
         page++;
     } while ([sectionHTMLString containsString:@"下一页"]);
     
-
-
-    
-
     NSLog(@"sectionContent === %@",sectionContent);
     return sectionContent;
 }
