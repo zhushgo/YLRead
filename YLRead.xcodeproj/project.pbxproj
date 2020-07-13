@@ -21,7 +21,6 @@
 		1A6E7EC324B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		1A6E7EC424B8649100F42EA4 /* YLReadUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */; };
 		1A6E7EC524B8649100F42EA4 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */; };
-		1A6E7EC624B8649100F42EA4 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7724B8649100F42EA4 /* 求魔.txt */; };
 		1A6E7EC724B8649100F42EA4 /* YLReadTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */; };
 		1A6E7EC824B8649100F42EA4 /* YLReadPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7D24B8649100F42EA4 /* YLReadPageViewController.m */; };
 		1A6E7EC924B8649100F42EA4 /* YLReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */; };
@@ -55,8 +54,8 @@
 		1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */; };
 		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
-		1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */ = {isa = PBXBuildFile; fileRef = 1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */; };
-		1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC14AF324B9513C00F43B9A /* NSString+HTML.m */; };
+		2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204D81924BAA4F900C28A43 /* LingDianParser.m */; };
+		2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2204D81B24BAACEA00C28A43 /* BookResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +85,6 @@
 		1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadUserDefaults.m; sourceTree = "<group>"; };
 		1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
-		1A6E7E7724B8649100F42EA4 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
 		1A6E7E7824B8649100F42EA4 /* YLGlobalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGlobalTools.h; sourceTree = "<group>"; };
 		1A6E7E7924B8649100F42EA4 /* YLReadParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadParser.h; sourceTree = "<group>"; };
 		1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTextParser.m; sourceTree = "<group>"; };
@@ -154,9 +152,9 @@
 		1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
 		1A6E7EBB24B8649100F42EA4 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
-		1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeiSong_Catalogue; sourceTree = "<group>"; };
-		1AC14AF224B9513C00F43B9A /* NSString+HTML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
-		1AC14AF324B9513C00F43B9A /* NSString+HTML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		2204D81824BAA4F900C28A43 /* LingDianParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LingDianParser.h; sourceTree = "<group>"; };
+		2204D81924BAA4F900C28A43 /* LingDianParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LingDianParser.m; sourceTree = "<group>"; };
+		2204D81B24BAACEA00C28A43 /* BookResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BookResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +191,9 @@
 				1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */,
 				1A6E7E5124B863F900F42EA4 /* ViewController.h */,
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
-				1AC14AF224B9513C00F43B9A /* NSString+HTML.h */,
-				1AC14AF324B9513C00F43B9A /* NSString+HTML.m */,
-				1AC14AF024B94E9000F43B9A /* BeiSong_Catalogue */,
+				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
+				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
+				2204D81B24BAACEA00C28A43 /* BookResources.bundle */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
@@ -234,7 +232,6 @@
 		1A6E7E6524B8649100F42EA4 /* YLReadTools */ = {
 			isa = PBXGroup;
 			children = (
-				1A6E7E7724B8649100F42EA4 /* 求魔.txt */,
 				1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */,
 				1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */,
 				1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */,
@@ -262,20 +259,20 @@
 		1A6E7E8124B8649100F42EA4 /* YLReadModelGroup */ = {
 			isa = PBXGroup;
 			children = (
-				1A6E7E8224B8649100F42EA4 /* YLReadMenu.h */,
-				1A6E7E8324B8649100F42EA4 /* YLReadMarkModel.h */,
-				1A6E7E8424B8649100F42EA4 /* YLReadModel.h */,
-				1A6E7E8524B8649100F42EA4 /* YLReadPageModel.m */,
-				1A6E7E8624B8649100F42EA4 /* YLReadChapterListModel.m */,
-				1A6E7E8724B8649100F42EA4 /* YLReadRecordModel.m */,
-				1A6E7E8824B8649100F42EA4 /* YLReadChapterModel.m */,
-				1A6E7E8924B8649100F42EA4 /* YLReadMarkModel.m */,
-				1A6E7E8A24B8649100F42EA4 /* YLReadMenu.m */,
-				1A6E7E8B24B8649100F42EA4 /* YLReadModel.m */,
 				1A6E7E8C24B8649100F42EA4 /* YLReadChapterListModel.h */,
-				1A6E7E8D24B8649100F42EA4 /* YLReadPageModel.h */,
+				1A6E7E8624B8649100F42EA4 /* YLReadChapterListModel.m */,
 				1A6E7E8E24B8649100F42EA4 /* YLReadChapterModel.h */,
+				1A6E7E8824B8649100F42EA4 /* YLReadChapterModel.m */,
+				1A6E7E8324B8649100F42EA4 /* YLReadMarkModel.h */,
+				1A6E7E8924B8649100F42EA4 /* YLReadMarkModel.m */,
+				1A6E7E8224B8649100F42EA4 /* YLReadMenu.h */,
+				1A6E7E8A24B8649100F42EA4 /* YLReadMenu.m */,
+				1A6E7E8424B8649100F42EA4 /* YLReadModel.h */,
+				1A6E7E8B24B8649100F42EA4 /* YLReadModel.m */,
+				1A6E7E8D24B8649100F42EA4 /* YLReadPageModel.h */,
+				1A6E7E8524B8649100F42EA4 /* YLReadPageModel.m */,
 				1A6E7E8F24B8649100F42EA4 /* YLReadRecordModel.h */,
+				1A6E7E8724B8649100F42EA4 /* YLReadRecordModel.m */,
 			);
 			path = YLReadModelGroup;
 			sourceTree = "<group>";
@@ -283,40 +280,40 @@
 		1A6E7E9224B8649100F42EA4 /* YLReadViewGroup */ = {
 			isa = PBXGroup;
 			children = (
-				1A6E7E9324B8649100F42EA4 /* YLReadHomeView.m */,
-				1A6E7E9424B8649100F42EA4 /* YLReadLeftView.h */,
-				1A6E7E9524B8649100F42EA4 /* YLReadTopView.m */,
-				1A6E7E9624B8649100F42EA4 /* YLReadContentView.h */,
-				1A6E7E9724B8649100F42EA4 /* YLReadCatalogView.h */,
-				1A6E7E9824B8649100F42EA4 /* YLReadViewStatusBottomView.h */,
-				1A6E7E9924B8649100F42EA4 /* YLReadLongPressCursorView.m */,
-				1A6E7E9A24B8649100F42EA4 /* YLReadSettingView.m */,
-				1A6E7E9B24B8649100F42EA4 /* YLReadView.m */,
-				1A6E7E9C24B8649100F42EA4 /* YLReadTrackingSlider.m */,
-				1A6E7E9D24B8649100F42EA4 /* YLReadViewCell.m */,
 				1A6E7E9E24B8649100F42EA4 /* YLReadBaseView.h */,
-				1A6E7E9F24B8649100F42EA4 /* YLReadBottomView.m */,
-				1A6E7EA024B8649100F42EA4 /* YLReadLongPressView.m */,
-				1A6E7EA124B8649100F42EA4 /* YLReadHomeViewCell.m */,
-				1A6E7EA224B8649100F42EA4 /* YLReadViewStatusTopView.h */,
-				1A6E7EA324B8649100F42EA4 /* YLReadMarkView.m */,
-				1A6E7EA424B8649100F42EA4 /* YLReadTopView.h */,
-				1A6E7EA524B8649100F42EA4 /* YLReadLeftView.m */,
-				1A6E7EA624B8649100F42EA4 /* YLReadHomeView.h */,
-				1A6E7EA724B8649100F42EA4 /* YLReadSettingView.h */,
-				1A6E7EA824B8649100F42EA4 /* YLReadLongPressCursorView.h */,
-				1A6E7EA924B8649100F42EA4 /* YLReadViewStatusBottomView.m */,
-				1A6E7EAA24B8649100F42EA4 /* YLReadCatalogView.m */,
-				1A6E7EAB24B8649100F42EA4 /* YLReadContentView.m */,
-				1A6E7EAC24B8649100F42EA4 /* YLReadLongPressView.h */,
-				1A6E7EAD24B8649100F42EA4 /* YLReadBottomView.h */,
 				1A6E7EAE24B8649100F42EA4 /* YLReadBaseView.m */,
-				1A6E7EAF24B8649100F42EA4 /* YLReadViewCell.h */,
-				1A6E7EB024B8649100F42EA4 /* YLReadTrackingSlider.h */,
-				1A6E7EB124B8649100F42EA4 /* YLReadView.h */,
-				1A6E7EB224B8649100F42EA4 /* YLReadMarkView.h */,
-				1A6E7EB324B8649100F42EA4 /* YLReadViewStatusTopView.m */,
+				1A6E7EAD24B8649100F42EA4 /* YLReadBottomView.h */,
+				1A6E7E9F24B8649100F42EA4 /* YLReadBottomView.m */,
+				1A6E7E9724B8649100F42EA4 /* YLReadCatalogView.h */,
+				1A6E7EAA24B8649100F42EA4 /* YLReadCatalogView.m */,
+				1A6E7E9624B8649100F42EA4 /* YLReadContentView.h */,
+				1A6E7EAB24B8649100F42EA4 /* YLReadContentView.m */,
+				1A6E7EA624B8649100F42EA4 /* YLReadHomeView.h */,
+				1A6E7E9324B8649100F42EA4 /* YLReadHomeView.m */,
 				1A6E7EB424B8649100F42EA4 /* YLReadHomeViewCell.h */,
+				1A6E7EA124B8649100F42EA4 /* YLReadHomeViewCell.m */,
+				1A6E7E9424B8649100F42EA4 /* YLReadLeftView.h */,
+				1A6E7EA524B8649100F42EA4 /* YLReadLeftView.m */,
+				1A6E7EA824B8649100F42EA4 /* YLReadLongPressCursorView.h */,
+				1A6E7E9924B8649100F42EA4 /* YLReadLongPressCursorView.m */,
+				1A6E7EAC24B8649100F42EA4 /* YLReadLongPressView.h */,
+				1A6E7EA024B8649100F42EA4 /* YLReadLongPressView.m */,
+				1A6E7EB224B8649100F42EA4 /* YLReadMarkView.h */,
+				1A6E7EA324B8649100F42EA4 /* YLReadMarkView.m */,
+				1A6E7EA724B8649100F42EA4 /* YLReadSettingView.h */,
+				1A6E7E9A24B8649100F42EA4 /* YLReadSettingView.m */,
+				1A6E7EA424B8649100F42EA4 /* YLReadTopView.h */,
+				1A6E7E9524B8649100F42EA4 /* YLReadTopView.m */,
+				1A6E7EB024B8649100F42EA4 /* YLReadTrackingSlider.h */,
+				1A6E7E9C24B8649100F42EA4 /* YLReadTrackingSlider.m */,
+				1A6E7EB124B8649100F42EA4 /* YLReadView.h */,
+				1A6E7E9B24B8649100F42EA4 /* YLReadView.m */,
+				1A6E7EAF24B8649100F42EA4 /* YLReadViewCell.h */,
+				1A6E7E9D24B8649100F42EA4 /* YLReadViewCell.m */,
+				1A6E7E9824B8649100F42EA4 /* YLReadViewStatusBottomView.h */,
+				1A6E7EA924B8649100F42EA4 /* YLReadViewStatusBottomView.m */,
+				1A6E7EA224B8649100F42EA4 /* YLReadViewStatusTopView.h */,
+				1A6E7EB324B8649100F42EA4 /* YLReadViewStatusTopView.m */,
 			);
 			path = YLReadViewGroup;
 			sourceTree = "<group>";
@@ -378,8 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6E7EC624B8649100F42EA4 /* 求魔.txt in Resources */,
-				1AC14AF124B94E9000F43B9A /* BeiSong_Catalogue in Resources */,
+				2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
 			);
@@ -411,6 +407,7 @@
 				1A6E7ED924B8649100F42EA4 /* YLReadBottomView.m in Sources */,
 				1A6E7EBE24B8649100F42EA4 /* YLKeyedArchiver.m in Sources */,
 				1A6E7EDB24B8649100F42EA4 /* YLReadHomeViewCell.m in Sources */,
+				2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */,
 				1A6E7ED124B8649100F42EA4 /* YLReadViewScrollController.m in Sources */,
 				1A6E7EC724B8649100F42EA4 /* YLReadTextParser.m in Sources */,
 				1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */,
@@ -418,7 +415,6 @@
 				1A6E7EBD24B8649100F42EA4 /* YLReadTextFastParser.m in Sources */,
 				1A6E7EE124B8649100F42EA4 /* YLReadBaseView.m in Sources */,
 				1A6E7EBF24B8649100F42EA4 /* YLCoreText.m in Sources */,
-				1AC14AF424B9513C00F43B9A /* NSString+HTML.m in Sources */,
 				1A6E7EC824B8649100F42EA4 /* YLReadPageViewController.m in Sources */,
 				1A6E7EC024B8649100F42EA4 /* YLGlobalTools.m in Sources */,
 				1A6E7ED624B8649100F42EA4 /* YLReadView.m in Sources */,
@@ -570,13 +566,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				DEVELOPMENT_TEAM = QNDCLQW767;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.YLRead";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YLRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,13 +583,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				DEVELOPMENT_TEAM = QNDCLQW767;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.YLRead";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YLRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

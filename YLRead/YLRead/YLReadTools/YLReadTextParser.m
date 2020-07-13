@@ -47,7 +47,6 @@
         return nil;
     }
     
-    
     if (![YLReadModel isExistWithBookID:bookID]) {// 不存在
         // 解析数据
         NSString *content = [YLReadParser encodeWithURL:url];
@@ -113,7 +112,7 @@
             // 章节数量分析:
             // count + 1  = 匹配到的章节数量 + 最后一个章节
             // 1 + count + 1  = 第一章前面的前言内容 + 匹配到的章节数量 + 最后一个章节
-            NSLog(@"章节总数: \(%ld + 1)  当前正在解析: \(%d + 1)",count,i);
+            //NSLog(@"章节总数: \(%ld + 1)  当前正在解析: \(%d + 1)",count,i);
             NSRange range = NSMakeRange(0, 0);
             NSUInteger location = 0;
             if (i < count) {
