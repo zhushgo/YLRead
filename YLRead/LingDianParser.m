@@ -10,6 +10,7 @@
 
 
 #import "LingDianParser.h"
+#import "YLReadParser.h"
 
 @implementation LingDianParser
 
@@ -69,7 +70,6 @@
         }];
     }
     SLog(@"catalogueArray === %@",catalogueArray);
-
     return catalogueArray;
 }
 
@@ -102,7 +102,7 @@
         }
         page++;
     } while ([sectionHTMLString containsString:@"下一页"]);
-    NSString *result = [sectionContent stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    NSString *result = [YLReadParser contentTypesettingWithContent:sectionContent];
     SLog(@"sectionContent === %@",result);
     return result;
 }

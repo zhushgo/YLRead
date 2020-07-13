@@ -12,7 +12,6 @@
 
 /// 正则替换字符
 - (NSString *)replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template{
-    
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
     return [regularExpression stringByReplacingMatchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length) withTemplate:template];        
 }
