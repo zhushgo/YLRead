@@ -54,7 +54,7 @@ NSString *const kYLReadChapterModelName = @"name";
     
     if (![self.attributes isEqualToDictionary:tempAttributes]) {
         self.attributes = [tempAttributes copy];
-        self.fullContent = [self fullContentAttrString];
+        self.fullContent = [self fullContentAttrString];        
         self.pageModels = [YLReadParser pageingWithAttrString:self.fullContent rect:CGRectMake(0, 0, getReadViewRect().size.width, getReadViewRect().size.height) isFirstChapter:self.isFirstChapter];
         self.pageCount = self.pageModels.count;
         [self save];

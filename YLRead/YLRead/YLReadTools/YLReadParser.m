@@ -91,19 +91,22 @@
 /// - Returns: 整理好的内容
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     // 替换单换行
-    content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
     content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    content = [content stringByReplacingOccurrencesOfString:@"&nbsp" withString:@" "];
-    content = [content stringByReplacingOccurrencesOfString:@"&amp" withString:@"&"];
-    content = [content stringByReplacingOccurrencesOfString:@"&lt" withString:@"<"];
-    content = [content stringByReplacingOccurrencesOfString:@"&gt" withString:@">"];
-    content = [content stringByReplacingOccurrencesOfString:@"&quot" withString:@"\""];
-    content = [content stringByReplacingOccurrencesOfString:@"&qpos" withString:@"'"];
+    
+//    content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+//    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\r"];
+//    content = [content stringByReplacingOccurrencesOfString:@"\r\t" withString:@"\r"];
+//    content = [content stringByReplacingOccurrencesOfString:@"&nbsp" withString:@" "];
+//    content = [content stringByReplacingOccurrencesOfString:@"&amp" withString:@"&"];
+//    content = [content stringByReplacingOccurrencesOfString:@"&lt" withString:@"<"];
+//    content = [content stringByReplacingOccurrencesOfString:@"&gt" withString:@">"];
+//    content = [content stringByReplacingOccurrencesOfString:@"&quot" withString:@"\""];
+//    content = [content stringByReplacingOccurrencesOfString:@"&qpos" withString:@"'"];
     
     // 替换换行 以及 多个换行 为 换行加空格
     [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n　　"];
     
-    content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@"    "];
+    content = [content stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
     // 返回
     return content;
 }

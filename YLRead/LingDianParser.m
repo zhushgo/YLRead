@@ -10,7 +10,6 @@
 
 
 #import "LingDianParser.h"
-#import "YLReadParser.h"
 
 @implementation LingDianParser
 
@@ -102,10 +101,27 @@
         }
         page++;
     } while ([sectionHTMLString containsString:@"下一页"]);
-    NSString *result = [YLReadParser contentTypesettingWithContent:sectionContent];
+    NSString *result = [LingDianParser contentTypesettingWithContent:sectionContent];
     SLog(@"sectionContent === %@",result);
     return result;
 }
 
+/// 内容排版整理
+///
+/// - Parameter content: 内容
+/// - Returns: 整理好的内容
++ (NSString *)contentTypesettingWithContent:(NSString *)content{
+    content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\r"];
+    content = [content stringByReplacingOccurrencesOfString:@"\r\t" withString:@"\r"];
+    content = [content stringByReplacingOccurrencesOfString:@"&nbsp" withString:@" "];
+    content = [content stringByReplacingOccurrencesOfString:@"&amp" withString:@"&"];
+    content = [content stringByReplacingOccurrencesOfString:@"&lt" withString:@"<"];
+    content = [content stringByReplacingOccurrencesOfString:@"&gt" withString:@">"];
+    content = [content stringByReplacingOccurrencesOfString:@"&quot" withString:@"\""];
+    content = [content stringByReplacingOccurrencesOfString:@"&qpos" withString:@"'"];
+    // 返回
+    return content;
+}
 
 @end

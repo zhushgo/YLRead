@@ -40,20 +40,11 @@ BOOL isIPhoneNotchScreen(void){
                 break;
         }
         return bottomSpace > 0 ? YES : NO;
-        
     } else {
         return NO;
     }
 }
 
-//是否是 4 寸屏幕
-BOOL isSmallScreen(void){
-    if (CGRectGetWidth(UIScreen.mainScreen.bounds) < 330) {
-        return YES;
-    }else{
-        return NO;
-    }
-}
 
 CGFloat getStatusBarHeight(void){
     if (@available(iOS 11.0, *)) {

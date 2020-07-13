@@ -232,7 +232,7 @@
 + (YLReadChapterModel *)parserWithReadModel:(YLReadModel *)readModel chapterID:(NSInteger)chapterID isUpdateFont:(BOOL)isUpdateFont{
     // 获得[章节优先级:章节内容Range]
     NSDictionary<NSString *,NSValue *> *rangeDict = readModel.ranges[[NSString stringWithFormat:@"%ld",chapterID]];
-         
+    
     // 没有了
     if (rangeDict) {
          // 当前优先级
@@ -256,7 +256,7 @@
         // 下一个章节ID
         NSInteger nextChapterID  = isLastChapter ? -1 : readModel.chapterListModels[priority + 1].id;
             
-            // 章节内容
+        // 章节内容
         YLReadChapterModel *chapterModel = [[YLReadChapterModel alloc] init];
         // 书ID
         chapterModel.bookID = chapterListModel.bookID;

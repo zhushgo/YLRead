@@ -22,10 +22,10 @@
     return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
 }
 
+/// 去除所有换行
 - (NSString *)removeEnterAll{
-    return [[self stringByReplacingOccurrencesOfString:@"\r" withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return [[[self stringByReplacingOccurrencesOfString:@"\r" withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@"\t" withString:@""];;
 }
-
 
 /// 正则搜索相关字符位置
 - (NSArray<NSTextCheckingResult *> *)matchesWithPattern:(NSString *)pattern{

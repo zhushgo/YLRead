@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 屏幕适配
 
 FOUNDATION_EXPORT BOOL isIPhoneNotchScreen(void);//是否是刘海屏
-FOUNDATION_EXPORT BOOL isSmallScreen(void);//是否是4寸屏
 FOUNDATION_EXPORT CGFloat getStatusBarHeight(void);
 FOUNDATION_EXPORT CGFloat getNavigationBarHeight(void);
 FOUNDATION_EXPORT CGFloat getTabBarHeight(void);

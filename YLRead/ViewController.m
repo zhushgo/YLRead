@@ -111,13 +111,18 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *path = self.pathArray[indexPath.row];
-    [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path] completion:^(YLReadModel * _Nonnull readModel) {
-        if (readModel) {
-            YLReadController *readVC = [[YLReadController alloc] init];
-            readVC.readModel = readModel;
-            [self.navigationController pushViewController:readVC animated:YES];
-        }
-    }];
+    
+    NSLog(@"-------- readModel -----------");
+    YLReadController *readVC = [[YLReadController alloc] init];
+    readVC.readModel = [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path]];
+    [self.navigationController pushViewController:readVC animated:YES];
+    
+//    [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path] completion:^(YLReadModel * _Nonnull readModel) {
+//        NSLog(@"-------- readModel -----------");
+//        if (readModel) {
+//
+//        }
+//    }];
 }
 
 #pragma mark - getter and setter
@@ -136,7 +141,6 @@ UICollectionViewDelegateFlowLayout>
         collectionView.showsVerticalScrollIndicator = NO;
         collectionView.showsHorizontalScrollIndicator = NO;
         collectionView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
-        collectionView.bounces = NO;
         [collectionView registerClass:YLReadCollectionViewCell.class forCellWithReuseIdentifier:CellIdentifer];
         _collectionView = collectionView;
     }
