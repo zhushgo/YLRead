@@ -1,6 +1,6 @@
 //
 //  YLReadUserDefaults.h
-//  FM
+//  YLRead
 //
 //  Created by 苏沫离 on 2020/7/7.
 //  Copyright © 2020 苏沫离. All rights reserved.
@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Key - 配置
 FOUNDATION_EXPORT NSString *const kYLRead_Save_Configure;
-
 /// Key - 日夜间模式 NO:日间 YES:夜间
 FOUNDATION_EXPORT NSString *const kYLRead_Save_Day_Night;
 
@@ -22,7 +21,6 @@ FOUNDATION_EXPORT NSString *const kYLRead_Save_Day_Night;
 
 /// 清空
 + (void)clear;
-
 /// 删除
 + (void)removeWithKey:(NSString *)key;
 
@@ -58,7 +56,6 @@ FOUNDATION_EXPORT NSString *const kYLRead_Save_Day_Night;
 /// 存储url
 + (void)setObjectWithKey:(NSString *)key url:(NSURL *)url;
 + (NSURL *)getURLWithKey:(NSString *)key;
-
 
 @end
 

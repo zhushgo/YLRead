@@ -1,6 +1,6 @@
 //
 //  YLReadConfigure.h
-//  FM
+//  YLRead
 //
 //  Created by 苏沫离 on 2020/6/24.
 //  Copyright © 2020 苏沫离. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// 主题颜色
@@ -18,11 +19,8 @@ FOUNDATION_EXPORT UIColor *kYLRead_Color_Menu(void);
 FOUNDATION_EXPORT UIColor *kYLRead_Color_MenuBG(void);
 /// 阅读背景颜色列表
 FOUNDATION_EXPORT NSArray<UIColor *> *kYLRead_Color_BG(void);
-
 /// 阅读背景颜色支持 - 牛皮黄
 FOUNDATION_EXPORT UIColor *kYLRead_Color_BG_0(void);
-
-
 
 
 /// 阅读最小阅读字体大小
@@ -91,12 +89,10 @@ typedef NS_ENUM(NSUInteger,YLSpacingType) {
 @property (nonatomic ,assign) CGFloat lineSpacing;
 /// 段间距(请设置整数,因为需要比较是否需要重新分页,小数点没法判断相等)
 @property (nonatomic ,assign) CGFloat paragraphSpacing;
-
 ///字体颜色
 @property (nonatomic ,strong) UIColor *textColor;
 /// 状态栏字体颜色
 @property (nonatomic ,strong) UIColor *statusTextColor;
-    
 /// 背景颜色索引
 @property (nonatomic ,assign) NSInteger bgColorIndex;
 /// 背景颜色
@@ -109,6 +105,8 @@ typedef NS_ENUM(NSUInteger,YLSpacingType) {
 - (NSDictionary<NSAttributedStringKey,id> *)attributesWithIsTitle:(BOOL)isTitle;
 - (NSDictionary<NSAttributedStringKey,id> *)attributesWithIsTitle:(BOOL)isTitle isPageing:(BOOL)isPageing;
 
+/** 全局配置单例
+ */
 + (instancetype)shareConfigure;
 
 @end

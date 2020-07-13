@@ -1,6 +1,6 @@
 //
 //  YLReadTrackingSlider.m
-//  FM
+//  YLRead
 //
 //  Created by 苏沫离 on 2020/7/10.
 //  Copyright © 2020 苏沫离. All rights reserved.
@@ -463,8 +463,7 @@ static UIColor* opaqueUIColorFromCGColor(CGColorRef col)
     }
 }
 
-- (void)setPopUpViewAnimatedColors:(NSArray *)colors
-{
+- (void)setPopUpViewAnimatedColors:(NSArray *)colors{
     [self setPopUpViewAnimatedColors:colors withPositions:nil];
 }
 

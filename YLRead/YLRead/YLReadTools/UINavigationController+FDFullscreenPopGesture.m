@@ -111,7 +111,7 @@ typedef void (^_FDViewControllerWillAppearInjectBlock)(UIViewController *viewCon
 
 - (void)fd_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([self isKindOfClass:NSClassFromString(@"MFMessageComposeViewController")]) {
+    if ([self isKindOfClass:NSClassFromString(@"MYLReadessageComposeViewController")]) {
         [self fd_pushViewController:viewController animated:animated];
         return;
     }

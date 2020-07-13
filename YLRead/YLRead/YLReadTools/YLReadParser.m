@@ -1,6 +1,6 @@
 //
 //  YLReadParser.m
-//  FM
+//  YLRead
 //
 //  Created by 苏沫离 on 2020/7/7.
 //  Copyright © 2020 苏沫离. All rights reserved.
@@ -106,14 +106,11 @@
 /// - Returns: 内容
 + (NSString *)encodeWithURL:(NSURL *)url{
     NSString *content = @"";
-    
     if (url.absoluteString.length < 1) {
         return content;
     }
-    
     // utf8
     content = [self encodeWithURL:url encoding:NSUTF8StringEncoding];
-    
     // 进制编码
     if (content.length < 1) {
         content = [self encodeWithURL:url encoding:0x80000632];
@@ -121,7 +118,6 @@
     if (content.length < 1) {
         content = [self encodeWithURL:url encoding:0x80000631];
     }
-
     if (content.length < 1) {
         content = @"";
     }
