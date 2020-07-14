@@ -32,52 +32,40 @@ NSString *const kYLReadMarkModelLocation = @"location";
 @synthesize location = _location;
 
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
-{
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict{
     return [[self alloc] initWithDictionary:dict];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithDictionary:(NSDictionary *)dict{
     self = [super init];
-    
-    // This check serves to make sure that a non-NSDictionary object
-    // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.bookID = [self objectOrNilForKey:kYLReadMarkModelBookID fromDictionary:dict];
-            self.chapterID = [[self objectOrNilForKey:kYLReadMarkModelChapterID fromDictionary:dict] doubleValue];
-            self.content = [self objectOrNilForKey:kYLReadMarkModelContent fromDictionary:dict];
-            self.name = [self objectOrNilForKey:kYLReadMarkModelName fromDictionary:dict];
-            self.time = [[self objectOrNilForKey:kYLReadMarkModelTime fromDictionary:dict] doubleValue];
-            self.location = [[self objectOrNilForKey:kYLReadMarkModelLocation fromDictionary:dict] doubleValue];
-
+        self.bookID = [self objectOrNilForKey:kYLReadMarkModelBookID fromDictionary:dict];
+        self.chapterID = [[self objectOrNilForKey:kYLReadMarkModelChapterID fromDictionary:dict] integerValue];
+        self.content = [self objectOrNilForKey:kYLReadMarkModelContent fromDictionary:dict];
+        self.name = [self objectOrNilForKey:kYLReadMarkModelName fromDictionary:dict];
+        self.time = [[self objectOrNilForKey:kYLReadMarkModelTime fromDictionary:dict] integerValue];
+        self.location = [[self objectOrNilForKey:kYLReadMarkModelLocation fromDictionary:dict] integerValue];
     }
-    
     return self;
-    
 }
 
-- (NSDictionary *)dictionaryRepresentation
-{
+- (NSDictionary *)dictionaryRepresentation{
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.bookID forKey:kYLReadMarkModelBookID];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.chapterID] forKey:kYLReadMarkModelChapterID];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.chapterID] forKey:kYLReadMarkModelChapterID];
     [mutableDict setValue:self.content forKey:kYLReadMarkModelContent];
     [mutableDict setValue:self.name forKey:kYLReadMarkModelName];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.time] forKey:kYLReadMarkModelTime];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.location] forKey:kYLReadMarkModelLocation];
-
+    [mutableDict setValue:[NSNumber numberWithInteger:self.time] forKey:kYLReadMarkModelTime];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.location] forKey:kYLReadMarkModelLocation];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
-- (NSString *)description
-{
+- (NSString *)description{
     return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
 }
 
 #pragma mark - Helper Method
-- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
-{
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict{
     id object = [dict objectForKey:aKey];
     return [object isEqual:[NSNull null]] ? nil : object;
 }
@@ -85,36 +73,29 @@ NSString *const kYLReadMarkModelLocation = @"location";
 
 #pragma mark - NSCoding Methods
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
-
     self.bookID = [aDecoder decodeObjectForKey:kYLReadMarkModelBookID];
-    self.chapterID = [aDecoder decodeDoubleForKey:kYLReadMarkModelChapterID];
+    self.chapterID = [aDecoder decodeIntegerForKey:kYLReadMarkModelChapterID];
     self.content = [aDecoder decodeObjectForKey:kYLReadMarkModelContent];
     self.name = [aDecoder decodeObjectForKey:kYLReadMarkModelName];
-    self.time = [aDecoder decodeDoubleForKey:kYLReadMarkModelTime];
-    self.location = [aDecoder decodeDoubleForKey:kYLReadMarkModelLocation];
+    self.time = [aDecoder decodeIntegerForKey:kYLReadMarkModelTime];
+    self.location = [aDecoder decodeIntegerForKey:kYLReadMarkModelLocation];
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
-
+- (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:_bookID forKey:kYLReadMarkModelBookID];
-    [aCoder encodeDouble:_chapterID forKey:kYLReadMarkModelChapterID];
+    [aCoder encodeInteger:_chapterID forKey:kYLReadMarkModelChapterID];
     [aCoder encodeObject:_content forKey:kYLReadMarkModelContent];
     [aCoder encodeObject:_name forKey:kYLReadMarkModelName];
-    [aCoder encodeDouble:_time forKey:kYLReadMarkModelTime];
-    [aCoder encodeDouble:_location forKey:kYLReadMarkModelLocation];
+    [aCoder encodeInteger:_time forKey:kYLReadMarkModelTime];
+    [aCoder encodeInteger:_location forKey:kYLReadMarkModelLocation];
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone{
     YLReadMarkModel *copy = [[YLReadMarkModel alloc] init];
-    
     if (copy) {
-
         copy.bookID = [self.bookID copyWithZone:zone];
         copy.chapterID = self.chapterID;
         copy.content = [self.content copyWithZone:zone];
@@ -122,9 +103,7 @@ NSString *const kYLReadMarkModelLocation = @"location";
         copy.time = self.time;
         copy.location = self.location;
     }
-    
     return copy;
 }
-
 
 @end

@@ -31,7 +31,6 @@
         [self addSubview:self.rightButton];
         [self addSubview:self.fontSize];
         [self addSubview:self.displayProgress];
-
         [self updateDisplayProgressButton];
     }
     return self;

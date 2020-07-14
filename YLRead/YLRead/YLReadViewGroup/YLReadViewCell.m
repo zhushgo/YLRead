@@ -29,15 +29,15 @@
     // 分页顶部高度
     CGFloat y = self.pageModel.headTypeHeight;
     // 内容高度
-    CGFloat h = self.pageModel.contentSize.height;
+    CGFloat h = MAX(self.pageModel.contentSize.height, 0.01);
     self.readView.frame = CGRectMake(0, y, getReadViewRect().size.width, h);
 }
 
 - (void)setPageModel:(YLReadPageModel *)pageModel{
     _pageModel = pageModel;
+    self.readView.pageModel = pageModel;
     [self layoutIfNeeded];
 }
-
 
 @end
 

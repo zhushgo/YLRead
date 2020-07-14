@@ -44,7 +44,6 @@
 /// 当前页模型(使用contentSize绘制)
 - (void)setPageModel:(YLReadPageModel *)pageModel{
     _pageModel = pageModel;
-    
     self.frameRef = getFrameRefByAttrString(pageModel.showContent, CGRectMake(0, 0, pageModel.contentSize.width, pageModel.contentSize.height));
 }
 
@@ -52,7 +51,6 @@
 - (void)setContent:(NSAttributedString *)content{
     _content = content;
     self.frameRef = getFrameRefByAttrString(content, CGRectMake(0, 0,getReadViewRect().size.width, getReadViewRect().size.height));
-
 }
 
 - (void)setFrameRef:(CTFrameRef)frameRef{

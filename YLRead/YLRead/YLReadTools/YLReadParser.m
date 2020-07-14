@@ -31,9 +31,7 @@
 }
 
 + (NSMutableArray<YLReadPageModel *> *)pageingWithAttrString:(NSAttributedString *)attrString rect:(CGRect)rect isFirstChapter:(BOOL)isFirstChapter{
-    
     NSMutableArray<YLReadPageModel *> *pageModels = [NSMutableArray array];
-    
     if (isFirstChapter) { // 第一页为书籍页面
         YLReadPageModel *pageModel = [[YLReadPageModel alloc]init];
         pageModel.range = NSMakeRange(-1, 1);
@@ -52,16 +50,10 @@
             pageModel.content = content;
             pageModel.page = idx;
             
-            
             // --- (滚动模式 || 长按菜单) 使用 ---
-            
-            // 注意: 为什么这些数据会放到这里赋值，而不是封装起来， 原因是 contentSize 计算封装在 pageModel内部计算出现宽高为0的情况，所以放出来到这里计算，原因还未找到，但是放到这里计算就没有问题。封装起来则会出现宽高度不计算的情况。
-            
             // 内容Size (滚动模式 || 长按菜单)
             CGFloat maxW = getReadViewRect().size.width;
-            pageModel.contentSize = CGSizeMake(maxW, getAttrStringHeight(attrString, maxW));
-            
-            
+            pageModel.contentSize = CGSizeMake(maxW, getAttrStringHeight(content, maxW));
             // 当前页面开头是什么数据开头 (滚动模式)
             if (idx == 0) {
                 pageModel.headType = YLPageHeadTypeChapterName;
@@ -72,10 +64,8 @@
             }else{
                 pageModel.headType = YLPageHeadTypeLine;
                 pageModel.headTypeHeight = YLReadConfigure.shareConfigure.lineSpacing;
-
             }
             // --- (滚动模式 || 长按菜单) 使用 ---
-
             [pageModels addObject:pageModel];
         }];
     }
@@ -92,21 +82,11 @@
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     // 替换单换行
     content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    
-//    content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
-//    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\r"];
-//    content = [content stringByReplacingOccurrencesOfString:@"\r\t" withString:@"\r"];
-//    content = [content stringByReplacingOccurrencesOfString:@"&nbsp" withString:@" "];
-//    content = [content stringByReplacingOccurrencesOfString:@"&amp" withString:@"&"];
-//    content = [content stringByReplacingOccurrencesOfString:@"&lt" withString:@"<"];
-//    content = [content stringByReplacingOccurrencesOfString:@"&gt" withString:@">"];
-//    content = [content stringByReplacingOccurrencesOfString:@"&quot" withString:@"\""];
-//    content = [content stringByReplacingOccurrencesOfString:@"&qpos" withString:@"'"];
-    
+    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\r"];
+
     // 替换换行 以及 多个换行 为 换行加空格
     [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n　　"];
     
-    content = [content stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
     // 返回
     return content;
 }

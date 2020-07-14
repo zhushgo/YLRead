@@ -216,6 +216,7 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
     }
     // 清空坐标
     kYLReadRecordCurrentChapterLocation = -1;
+
     // 返回
     [self.navigationController popViewControllerAnimated:YES];
 }

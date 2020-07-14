@@ -12,11 +12,12 @@
 #import "YLKeyedArchiver.h"
 
 
+NSUInteger kYLReadRecordCurrentChapterLocation;
+
 
 NSString *const kYLReadRecordModelBookID = @"bookID";
 NSString *const kYLReadRecordModelChapterModel = @"chapterModel";
 NSString *const kYLReadRecordModelPage = @"page";
-
 
 @interface YLReadRecordModel ()
 
@@ -94,6 +95,7 @@ NSString *const kYLReadRecordModelPage = @"page";
 - (void)modifyWithChapterModel:(YLReadChapterModel *)chapterModel page:(NSInteger)page{
     [self modifyWithChapterModel:chapterModel page:page isSave:YES];
 }
+
 - (void)modifyWithChapterModel:(YLReadChapterModel *)chapterModel page:(NSInteger)page isSave:(BOOL)isSave{
     self.chapterModel = chapterModel;
     self.page = page;
@@ -145,7 +147,7 @@ NSString *const kYLReadRecordModelPage = @"page";
     [self updateFontWithIsSave:YES];
 }
 - (void)updateFontWithIsSave:(BOOL)isSave{
-    if (self.chapterModel) {
+    if (_chapterModel) {
         [self.chapterModel updateFont];
         self.page = [self.chapterModel page:kYLReadRecordCurrentChapterLocation];
         if (isSave) {
@@ -163,7 +165,6 @@ NSString *const kYLReadRecordModelPage = @"page";
     return model;
 }
 
-
 /// 保存记录
 - (void)save{
     [YLKeyedArchiver archiverWithFolderName:self.bookID fileName:kYLReadRecordKey object:self];
@@ -173,7 +174,6 @@ NSString *const kYLReadRecordModelPage = @"page";
 + (BOOL)isExistWithBookID:(NSString *)bookID{
     return [YLKeyedArchiver isExistWithFolderName:bookID fileName:kYLReadRecordKey];
 }
-
 
 /// 获取阅读记录对象,如果则创建对象返回
 + (YLReadRecordModel *)modelWithBookID:(NSString *)bookID{
@@ -187,8 +187,7 @@ NSString *const kYLReadRecordModelPage = @"page";
 }
 
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
-{
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict{
     return [[self alloc] initWithDictionary:dict];
 }
 
@@ -200,27 +199,22 @@ NSString *const kYLReadRecordModelPage = @"page";
         self.page = [[self objectOrNilForKey:kYLReadRecordModelPage fromDictionary:dict] integerValue];
     }
     return self;
-    
 }
 
-- (NSDictionary *)dictionaryRepresentation
-{
+- (NSDictionary *)dictionaryRepresentation{
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.bookID forKey:kYLReadRecordModelBookID];
     [mutableDict setValue:self.chapterModel forKey:kYLReadRecordModelChapterModel];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.page] forKey:kYLReadRecordModelPage];
-
+    [mutableDict setValue:[NSNumber numberWithInteger:self.page] forKey:kYLReadRecordModelPage];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
-- (NSString *)description
-{
+- (NSString *)description{
     return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
 }
 
 #pragma mark - Helper Method
-- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
-{
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict{
     id object = [dict objectForKey:aKey];
     return [object isEqual:[NSNull null]] ? nil : object;
 }
@@ -228,37 +222,28 @@ NSString *const kYLReadRecordModelPage = @"page";
 
 #pragma mark - NSCoding Methods
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
-
     self.bookID = [aDecoder decodeObjectForKey:kYLReadRecordModelBookID];
     self.chapterModel = [aDecoder decodeObjectForKey:kYLReadRecordModelChapterModel];
     self.page = [aDecoder decodeDoubleForKey:kYLReadRecordModelPage];
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
-
+- (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:_bookID forKey:kYLReadRecordModelBookID];
     [aCoder encodeObject:_chapterModel forKey:kYLReadRecordModelChapterModel];
     [aCoder encodeDouble:_page forKey:kYLReadRecordModelPage];
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone{
     YLReadRecordModel *copy = [[YLReadRecordModel alloc] init];
-    
     if (copy) {
-
         copy.bookID = [self.bookID copyWithZone:zone];
         copy.chapterModel = [self.chapterModel copyWithZone:zone];
         copy.page = self.page;
     }
-    
     return copy;
 }
-
 
 @end

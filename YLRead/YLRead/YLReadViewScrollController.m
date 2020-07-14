@@ -27,7 +27,6 @@
 @interface YLReadViewScrollController ()
 <UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
-
 /// 顶部状态栏
 @property (nonatomic ,strong) YLReadViewStatusTopView *topView;
 /// 底部状态栏
@@ -41,7 +40,6 @@
 /// 当前阅读的章节列表,通过已有的章节ID列表,来获取章节模型。
 @property (nonatomic ,strong) NSMutableDictionary<NSString * , YLReadChapterModel *> *chapterModels;
 
-
 /// 记录滚动坐标
 @property (nonatomic ,assign) CGPoint scrollPoint;
 /// 是否为向上滚动
@@ -51,13 +49,8 @@
 
 @implementation YLReadViewScrollController
 
-- (void)setReadVC:(UIViewController *)readVC{
-    _vc = readVC;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     _isScrollUp = YES;
     self.view.backgroundColor = YLReadConfigure.shareConfigure.bgColor;
     self.extendedLayoutIncludesOpaqueBars = YES;
@@ -90,11 +83,11 @@
         float progress = getReadToalProgress(self.vc.readModel, self.vc.readModel.recordModel);
         // 显示进度
         self.bottomView.progress.text = getReadToalProgressString(progress);
-        
     }else{ // 分页进度
         // 显示进度
         self.bottomView.progress.text = [NSString stringWithFormat:@"%ld",(self.vc.readModel.recordModel.page + 1) / self.vc.readModel.recordModel.chapterModel.pageCount];
     }
+    [self.tableView reloadData];
 }
 
 /// 获取章节内容模型
@@ -250,8 +243,7 @@
                   
             YLReadChapterModel *chapterModel = [self getChapterModelWithChapterID:chapterID];
             [self.vc.readModel.recordModel modifyWithChapterModel:chapterModel page:indexPath.row];
-            kYLReadRecordCurrentChapterLocation = self.vc.readModel.recordModel.locationFirst;
-                      
+            kYLReadRecordCurrentChapterLocation = self.vc.readModel.recordModel.locationFirst;            
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.topView.chapterName.text = chapterModel.name;
                 [self reloadProgress];
@@ -334,7 +326,6 @@
         YLReadHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeCellIdentifer forIndexPath:indexPath];
         cell.homeView.readModel = self.vc.readModel;
         return cell;
-        
     }else{
         YLReadViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ReadCellIdentifer forIndexPath:indexPath];
         cell.pageModel = pageModel;

@@ -200,7 +200,6 @@
         tableView.dataSource = self;
         tableView.rowHeight = 100;
         [tableView registerClass:YLReadMarkCell.class forCellReuseIdentifier:CellIdentifer];
-
         tableView.backgroundColor = UIColor.clearColor;
         tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         if (@available(iOS 11.0, *)) {

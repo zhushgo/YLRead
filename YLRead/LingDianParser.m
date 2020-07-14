@@ -112,6 +112,7 @@
 /// - Returns: 整理好的内容
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\r"];
     content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\r"];
     content = [content stringByReplacingOccurrencesOfString:@"\r\t" withString:@"\r"];
     content = [content stringByReplacingOccurrencesOfString:@"&nbsp" withString:@" "];

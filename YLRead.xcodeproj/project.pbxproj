@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */; };
+		1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */; };
+		1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */; };
+		1A64DA5D24BD54C0009AFB82 /* HTTPResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */; };
+		1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5F24BD5B59009AFB82 /* MBProgressHUD.m */; };
 		1A6E7E4D24B863F900F42EA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */; };
 		1A6E7E5324B863F900F42EA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5224B863F900F42EA4 /* ViewController.m */; };
 		1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */; };
@@ -59,6 +64,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		1A64DA5524BD4D03009AFB82 /* HTTPRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestSerializer.h; sourceTree = "<group>"; };
+		1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestSerializer.m; sourceTree = "<group>"; };
+		1A64DA5824BD51CE009AFB82 /* HTTPSessionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPSessionDelegate.h; sourceTree = "<group>"; };
+		1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPSessionDelegate.m; sourceTree = "<group>"; };
+		1A64DA5B24BD54C0009AFB82 /* HTTPResponseSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPResponseSerialization.h; sourceTree = "<group>"; };
+		1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseSerialization.m; sourceTree = "<group>"; };
+		1A64DA5F24BD5B59009AFB82 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1A64DA6024BD5B59009AFB82 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		1A6E7E4824B863F900F42EA4 /* YLRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6E7E4B24B863F900F42EA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -168,6 +183,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A64DA4D24BD4CB5009AFB82 /* HttpGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */,
+				1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */,
+				1A64DA5824BD51CE009AFB82 /* HTTPSessionDelegate.h */,
+				1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */,
+				1A64DA5524BD4D03009AFB82 /* HTTPRequestSerializer.h */,
+				1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */,
+				1A64DA5B24BD54C0009AFB82 /* HTTPResponseSerialization.h */,
+				1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */,
+			);
+			path = HttpGroup;
+			sourceTree = "<group>";
+		};
+		1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1A64DA5F24BD5B59009AFB82 /* MBProgressHUD.m */,
+				1A64DA6024BD5B59009AFB82 /* MBProgressHUD.h */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		1A6E7E3F24B863F900F42EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +232,8 @@
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
 				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
 				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
+				1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */,
+				1A64DA4D24BD4CB5009AFB82 /* HttpGroup */,
 				2204D81B24BAACEA00C28A43 /* BookResources.bundle */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
@@ -388,11 +429,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */,
 				1A6E7EC424B8649100F42EA4 /* YLReadUserDefaults.m in Sources */,
 				1A6E7EC924B8649100F42EA4 /* YLReadViewController.m in Sources */,
 				1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */,
+				1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */,
 				1A6E7EE224B8649100F42EA4 /* YLReadViewStatusTopView.m in Sources */,
 				1A6E7ED024B8649100F42EA4 /* YLReadModel.m in Sources */,
+				1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */,
+				1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */,
 				1A6E7EC324B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				1A6E7E5324B863F900F42EA4 /* ViewController.m in Sources */,
 				1A6E7ED524B8649100F42EA4 /* YLReadSettingView.m in Sources */,
@@ -430,6 +475,7 @@
 				1A6E7ED824B8649100F42EA4 /* YLReadViewCell.m in Sources */,
 				1A6E7EC124B8649100F42EA4 /* YLReadParser.m in Sources */,
 				1A6E7EDC24B8649100F42EA4 /* YLReadMarkView.m in Sources */,
+				1A64DA5D24BD54C0009AFB82 /* HTTPResponseSerialization.m in Sources */,
 				1A6E7EE424B8649100F42EA4 /* YLReadCoverController.m in Sources */,
 				1A6E7EE324B8649100F42EA4 /* YLReadLongPressViewController.m in Sources */,
 				1A6E7EC524B8649100F42EA4 /* NSString+Extend.m in Sources */,

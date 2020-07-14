@@ -13,6 +13,8 @@
 #import "YLReadTextParser.h"
 #import "YLReadController.h"
 #import "LingDianParser.h"
+#import "HTTPManager.h"
+#import "MBProgressHUD.h"
 
 NSBundle *bookBundle(void){
     return [NSBundle bundleWithPath:[NSBundle.mainBundle pathForResource:@"BookResources" ofType:@"bundle"]];
@@ -83,7 +85,6 @@ UICollectionViewDelegateFlowLayout>
     });
     
     
-    
 //    [LingDianParser getBookAllStringByBookID:@"333717"];
     
 
@@ -111,18 +112,15 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *path = self.pathArray[indexPath.row];
+    NSLog(@"path ------------------- %@",path);
     
-    NSLog(@"-------- readModel -----------");
+    [MBProgressHUD showHUDAddedTo:UIApplication.sharedApplication.delegate.window animated:YES];
+    YLReadModel *readModel = [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path]];
+    [MBProgressHUD hideHUDForView:UIApplication.sharedApplication.delegate.window animated:YES];
+    
     YLReadController *readVC = [[YLReadController alloc] init];
-    readVC.readModel = [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path]];
+    readVC.readModel = readModel;
     [self.navigationController pushViewController:readVC animated:YES];
-    
-//    [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path] completion:^(YLReadModel * _Nonnull readModel) {
-//        NSLog(@"-------- readModel -----------");
-//        if (readModel) {
-//
-//        }
-//    }];
 }
 
 #pragma mark - getter and setter

@@ -33,29 +33,21 @@ NSString *const kYLReadPageModelPage = @"page";
 @synthesize page = _page;
 
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
-{
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict{
     return [[self alloc] initWithDictionary:dict];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithDictionary:(NSDictionary *)dict{
     self = [super init];
-    
-    // This check serves to make sure that a non-NSDictionary object
-    // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-//            self.headTypeHeight = [[self objectOrNilForKey:kYLReadPageModelHeadTypeHeight fromDictionary:dict] doubleValue];
-//            self.range = [self objectOrNilForKey:kYLReadPageModelRange fromDictionary:dict];
-//            self.content = [self objectOrNilForKey:kYLReadPageModelContent fromDictionary:dict];
-//            self.contentSize = [[self objectOrNilForKey:kYLReadPageModelContentSize fromDictionary:dict] doubleValue];
-//            self.headType = [[self objectOrNilForKey:kYLReadPageModelHeadType fromDictionary:dict] doubleValue];
-//            self.page = [[self objectOrNilForKey:kYLReadPageModelPage fromDictionary:dict] doubleValue];
-
+        self.headTypeHeight = [[self objectOrNilForKey:kYLReadPageModelHeadTypeHeight fromDictionary:dict] doubleValue];
+        self.range = [[self objectOrNilForKey:kYLReadPageModelRange fromDictionary:dict] rangeValue];
+        self.content = [self objectOrNilForKey:kYLReadPageModelContent fromDictionary:dict];
+        self.contentSize = [[self objectOrNilForKey:kYLReadPageModelContentSize fromDictionary:dict] CGSizeValue];
+        self.headType = [[self objectOrNilForKey:kYLReadPageModelHeadType fromDictionary:dict] doubleValue];
+        self.page = [[self objectOrNilForKey:kYLReadPageModelPage fromDictionary:dict] doubleValue];
     }
-    
     return self;
-    
 }
 
 - (instancetype)init{
@@ -63,32 +55,27 @@ NSString *const kYLReadPageModelPage = @"page";
     if (self) {
         _headTypeHeight = 0;
         _contentSize = CGSizeZero;
-        _headTypeHeight = 0;
     }
     return self;
 }
 
-- (NSDictionary *)dictionaryRepresentation
-{
+- (NSDictionary *)dictionaryRepresentation{
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-//    [mutableDict setValue:[NSNumber numberWithDouble:self.headTypeHeight] forKey:kYLReadPageModelHeadTypeHeight];
-//    [mutableDict setValue:self.range forKey:kYLReadPageModelRange];
-//    [mutableDict setValue:self.content forKey:kYLReadPageModelContent];
-//    [mutableDict setValue:[NSNumber numberWithDouble:self.contentSize] forKey:kYLReadPageModelContentSize];
-//    [mutableDict setValue:[NSNumber numberWithDouble:self.headTypeIndex] forKey:kYLReadPageModelHeadTypeIndex];
-//    [mutableDict setValue:[NSNumber numberWithDouble:self.page] forKey:kYLReadPageModelPage];
-
+    [mutableDict setValue:[NSNumber numberWithDouble:self.headTypeHeight] forKey:kYLReadPageModelHeadTypeHeight];
+    [mutableDict setValue:[NSValue valueWithRange:self.range] forKey:kYLReadPageModelRange];
+    [mutableDict setValue:self.content forKey:kYLReadPageModelContent];
+    [mutableDict setValue:[NSValue valueWithCGSize:self.contentSize] forKey:kYLReadPageModelContentSize];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.headType] forKey:kYLReadPageModelHeadType];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.page] forKey:kYLReadPageModelPage];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
-- (NSString *)description
-{
+- (NSString *)description{
     return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
 }
 
 #pragma mark - Helper Method
-- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
-{
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict{
     id object = [dict objectForKey:aKey];
     return [object isEqual:[NSNull null]] ? nil : object;
 }

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 记录当前章节阅读到的坐标
-static NSUInteger kYLReadRecordCurrentChapterLocation;
+extern NSUInteger kYLReadRecordCurrentChapterLocation;
 
 @class YLReadChapterModel,YLReadPageModel;
 @interface YLReadRecordModel : NSObject <NSCoding, NSCopying>

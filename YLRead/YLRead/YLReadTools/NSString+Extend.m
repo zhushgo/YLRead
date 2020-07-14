@@ -19,7 +19,7 @@
 
 /// 去除首尾空格和换行
 - (NSString *)removeSEHeadAndTail{
-    return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+    return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
 }
 
 /// 去除所有换行
