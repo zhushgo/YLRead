@@ -10,20 +10,22 @@
 #import "NSString+Extend.h"
 
 
-
 @implementation YLCoreText
 
 
 /// 获得 CTFrame
 ///
 /// - Parameters:
-///   - attrString: 内容
-///   - rect: 显示范围
+///   - attrString: 绘制内容
+///   - rect: 绘制区域
 /// - Returns: CTFrame
 
 CTFrameRef getFrameRefByAttrString(NSAttributedString *attrString, CGRect rect){
-    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString);
+    ///绘制局域
     CGPathRef path = CGPathCreateWithRect(rect, nil);
+
+    //设置绘制内容
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString);
     CTFrameRef frameRef = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
     return frameRef;
 }

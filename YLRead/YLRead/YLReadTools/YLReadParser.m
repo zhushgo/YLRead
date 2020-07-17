@@ -82,7 +82,8 @@
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     // 替换单换行
     content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\r"];
+    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\n"];
+    content = [content stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"];
 
     // 替换换行 以及 多个换行 为 换行加空格
     [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n　　"];

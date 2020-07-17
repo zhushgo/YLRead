@@ -83,10 +83,27 @@ UICollectionViewDelegateFlowLayout>
             [self.collectionView reloadData];
         });
     });
+    [LingDianParser getBookAllStringByBookID:@"333717"];
     
     
-//    [LingDianParser getBookAllStringByBookID:@"333717"];
-    
+//    NSString *path = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:nil];
+//
+//    NSString *string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//
+//    NSLog(@"string == %@",string);
+//
+//    NSString *regula = @"(?<=</div>\n</div>\n</div>).*?(?=</div>)";//根据正则表达式，取出指定文本
+//    regula = @"(?<=</div>\n</div>\n</div>)[\\s\\S]*?</div>";
+//    NSError *error;
+//    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
+//    NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+//    [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"range == %@",[NSValue valueWithRange:obj.range]);
+//
+//           NSString *matchString = [string substringWithRange:obj.range];
+//           NSLog(@"matchString == %@",matchString);
+//       }];
+//
 
     NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
 }
@@ -114,10 +131,11 @@ UICollectionViewDelegateFlowLayout>
     NSString *path = self.pathArray[indexPath.row];
     NSLog(@"path ------------------- %@",path);
     
-    [MBProgressHUD showHUDAddedTo:UIApplication.sharedApplication.delegate.window animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = @"正在解析...";
     YLReadModel *readModel = [YLReadTextParser parserWithURL:[NSURL fileURLWithPath:path]];
-    [MBProgressHUD hideHUDForView:UIApplication.sharedApplication.delegate.window animated:YES];
-    
+    [hud hideAnimated:YES];
+
     YLReadController *readVC = [[YLReadController alloc] init];
     readVC.readModel = readModel;
     [self.navigationController pushViewController:readVC animated:YES];

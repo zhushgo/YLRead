@@ -17,8 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获得 CTFrameRef
 ///
 /// - Parameters:
-///   - attrString: 内容
-///   - rect: 显示范围
+///   - attrString: 绘制内容
+///   - rect: 绘制区域
 /// - Returns: CTFrameRef
 
 CTFrameRef getFrameRefByAttrString(NSAttributedString *attrString, CGRect rect);

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4848CE24C1455C009FB307 /* DemoText in Resources */ = {isa = PBXBuildFile; fileRef = 1A4848CD24C1455C009FB307 /* DemoText */; };
 		1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */; };
 		1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */; };
 		1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4848CD24C1455C009FB307 /* DemoText */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoText; sourceTree = "<group>"; };
 		1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		1A64DA5524BD4D03009AFB82 /* HTTPRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestSerializer.h; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
 				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
 				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
+				1A4848CD24C1455C009FB307 /* DemoText */,
 				1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */,
 				1A64DA4D24BD4CB5009AFB82 /* HttpGroup */,
 				2204D81B24BAACEA00C28A43 /* BookResources.bundle */,
@@ -419,6 +422,7 @@
 				2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
+				1A4848CE24C1455C009FB307 /* DemoText in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QNDCLQW767;
+				DEVELOPMENT_TEAM = M2NC8A2MPU;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QNDCLQW767;
+				DEVELOPMENT_TEAM = M2NC8A2MPU;
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

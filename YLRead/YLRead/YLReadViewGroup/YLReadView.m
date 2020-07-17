@@ -34,11 +34,21 @@
     if (_frameRef == nil) {
         return;
     }
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
-    CGContextTranslateCTM(ctx, 0, CGRectGetHeight(rect));
-    CGContextScaleCTM(ctx, 1.0, -1.0);
-    CTFrameDraw(_frameRef, ctx);
+     //1.获取当前绘图上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //2.旋转坐坐标系(默认和UIKit坐标是相反的)
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    CGContextTranslateCTM(context, 0, CGRectGetHeight(rect));
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    //5.开始绘制
+    CTFrameDraw(_frameRef, context);
+    
+    //释放资源
+    //CFRelease(frame);
+    //CFRelease(path);
+    //CFRelease(framesetter);
 }
 
 /// 当前页模型(使用contentSize绘制)
