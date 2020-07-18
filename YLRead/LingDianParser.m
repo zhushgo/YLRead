@@ -89,6 +89,9 @@
     NSMutableString *sectionContent = [[NSMutableString alloc] init];
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";//根据正则表达式，取出指定文本
     regula = @"(?<=</div>\n</div>\n</div>)[\\s\\S]*?</div>";
+    regula = @"(?<=[</div>\n\\s*</div>\n\\s*</div>])[\\s\\S]*?</div>";
+    regula = @"[?<=(</div>\n\\s*</div>\n\\s*</div>)][\\s\\S]*?</div>";
+
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;
     int page = 1;
@@ -123,10 +126,11 @@
 /// - Parameter content: 内容
 /// - Returns: 整理好的内容
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
+    //
     content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
     content = [content stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
-    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\n"];
+    content = [content stringByReplacingOccurrencesOfString:@"\\s*\\n+\\s*" withString:@"\n"];
     content = [content stringByReplacingOccurrencesOfString:@"; ; ; ;" withString:@"  "];
     content = [content stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"];
     content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\r"];

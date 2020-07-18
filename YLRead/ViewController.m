@@ -74,6 +74,8 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
+
     self.navigationItem.title = @"书架";
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.collectionView];
@@ -83,7 +85,7 @@ UICollectionViewDelegateFlowLayout>
             [self.collectionView reloadData];
         });
     });
-    [LingDianParser getBookAllStringByBookID:@"333717"];
+    [LingDianParser getBookAllStringByBookID:@"774"];
     
     
 //    NSString *path = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:nil];
