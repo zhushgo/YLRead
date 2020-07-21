@@ -15,6 +15,7 @@
 #import "LingDianParser.h"
 #import "HTTPManager.h"
 #import "MBProgressHUD.h"
+#import "BiQuGeParser.h"
 
 NSBundle *bookBundle(void){
     return [NSBundle bundleWithPath:[NSBundle.mainBundle pathForResource:@"BookResources" ofType:@"bundle"]];
@@ -85,6 +86,8 @@ UICollectionViewDelegateFlowLayout>
             [self.collectionView reloadData];
         });
     });
+    
+//    [BiQuGeParser getSectionContentByLink:@"http://www.biquge.info/73_73460/19792602.html"];
 //    [LingDianParser getBookAllStringByBookID:@"410820"];
 //    [LingDianParser textRegula];
     NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);

@@ -60,6 +60,7 @@
 		1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */; };
 		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
+		1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */; };
 		2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204D81924BAA4F900C28A43 /* LingDianParser.m */; };
 		2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2204D81B24BAACEA00C28A43 /* BookResources.bundle */; };
 /* End PBXBuildFile section */
@@ -169,6 +170,8 @@
 		1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
 		1A6E7EBB24B8649100F42EA4 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
+		1AA8A20324C6E82F00839A83 /* BiQuGeParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiQuGeParser.h; sourceTree = "<group>"; };
+		1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiQuGeParser.m; sourceTree = "<group>"; };
 		2204D81824BAA4F900C28A43 /* LingDianParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LingDianParser.h; sourceTree = "<group>"; };
 		2204D81924BAA4F900C28A43 /* LingDianParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LingDianParser.m; sourceTree = "<group>"; };
 		2204D81B24BAACEA00C28A43 /* BookResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BookResources.bundle; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */,
 				1A6E7E5124B863F900F42EA4 /* ViewController.h */,
 				1A6E7E5224B863F900F42EA4 /* ViewController.m */,
+				1AA8A20324C6E82F00839A83 /* BiQuGeParser.h */,
+				1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */,
 				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
 				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
 				1A59909924C549E10014D809 /* DemoText.html */,
@@ -456,6 +461,7 @@
 				1A6E7ED924B8649100F42EA4 /* YLReadBottomView.m in Sources */,
 				1A6E7EBE24B8649100F42EA4 /* YLKeyedArchiver.m in Sources */,
 				1A6E7EDB24B8649100F42EA4 /* YLReadHomeViewCell.m in Sources */,
+				1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */,
 				2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */,
 				1A6E7ED124B8649100F42EA4 /* YLReadViewScrollController.m in Sources */,
 				1A6E7EC724B8649100F42EA4 /* YLReadTextParser.m in Sources */,
