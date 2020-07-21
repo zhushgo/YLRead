@@ -87,7 +87,8 @@
 
     // 替换换行 以及 多个换行 为 换行加空格
     [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n　　"];
-    
+    [content replacingCharactersWithPattern:@"\\s{4,1000}" template:@"    "];//正则替换多个空格
+
     // 返回
     return content;
 }

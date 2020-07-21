@@ -53,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getSectionContentByLink:(NSString *)sectionLink;
 
++ (void)textRegula;
+
 @end
 
 NS_ASSUME_NONNULL_END
