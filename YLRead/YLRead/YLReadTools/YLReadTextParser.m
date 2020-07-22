@@ -152,7 +152,7 @@
             }
             
             // 章节开头双空格 + 章节纯内容
-            chapterModel.content = [NSString stringWithFormat:@"　　%@",chapterModel.content.removeSEHeadAndTail];
+            chapterModel.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,chapterModel.content.removeSEHeadAndTail];
             // 设置上一个章节ID
             chapterModel.previousChapterID = lastChapterModel.id;
             
@@ -186,7 +186,7 @@
         // 优先级
         chapterModel.priority = 0;
         // 内容
-        chapterModel.content = [NSString stringWithFormat:@"  %@",content.removeSEHeadAndTail];
+        chapterModel.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,content.removeSEHeadAndTail];
         // 保存
         [chapterModel save];
         // 添加章节列表模型

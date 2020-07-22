@@ -8,6 +8,10 @@
 
 #import "NSString+Extend.h"
 
+/// 段落头部双圆角空格
+NSString *const kYLReadParagraphSpace = @"　　";
+
+
 @implementation NSString (Extend)
 
 /// 正则替换字符

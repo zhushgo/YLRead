@@ -135,7 +135,6 @@
             // 章节数量分析:
             // count + 1  = 匹配到的章节数量 + 最后一个章节
             // 1 + count + 1  = 第一章前面的前言内容 + 匹配到的章节数量 + 最后一个章节
-            
             NSRange range = NSMakeRange(0, 0);
             NSUInteger location = 0;
             if (i < count) {
@@ -271,7 +270,7 @@
         // 下一个章节ID
         chapterModel.nextChapterID = nextChapterID;
         // 章节内容
-        chapterModel.content = [NSString stringWithFormat:@"　　%@",[readModel.fullText substringWithRange:range].removeSEHeadAndTail];
+        chapterModel.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,[readModel.fullText substringWithRange:range].removeSEHeadAndTail];
         // 保存
         if (isUpdateFont) {
             [chapterModel updateFont];

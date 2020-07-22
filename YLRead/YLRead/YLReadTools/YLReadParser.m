@@ -58,7 +58,7 @@
             if (idx == 0) {
                 pageModel.headType = YLPageHeadTypeChapterName;
                 pageModel.headTypeHeight = 0;
-            }else if ([content.string hasPrefix:@"　　"]) {
+            }else if ([content.string hasPrefix:kYLReadParagraphSpace]) {
                 pageModel.headType = YLPageHeadTypeParagraph;
                 pageModel.headTypeHeight = YLReadConfigure.shareConfigure.paragraphSpacing;
             }else{
@@ -81,16 +81,12 @@
 /// - Returns: 整理好的内容
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     // 替换单换行
+
     content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    content = [content stringByReplacingOccurrencesOfString:@"\n　　\n" withString:@"\n"];
-    content = [content stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"];
-
+    
     // 替换换行 以及 多个换行 为 换行加空格
-    [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n　　"];
-    [content replacingCharactersWithPattern:@"\\s{4,1000}" template:@"    "];//正则替换多个空格
-
-    // 返回
-    return content;
+    // \s* 任意个空格   \n+ 任意个换行符
+    return [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n%@",kYLReadParagraphSpace]];
 }
 
 // MARK: -- 解码URL

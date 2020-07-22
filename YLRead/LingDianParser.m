@@ -10,6 +10,7 @@
 
 
 #import "LingDianParser.h"
+#import "NSString+Extend.h"
 
 @implementation LingDianParser
 
@@ -30,6 +31,10 @@
         NSString *content = [NSString stringWithFormat:@"\n %@ \n\n %@",dict[@"sectionName"],dict[@"sectionContent"]];
         [allString appendString:content];
     }];
+    
+    allString = [allString stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    allString = [allString replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n%@",kYLReadParagraphSpace]];
+    
     NSString *filepath = [LingDianParser saveFileStringByBookID:bookID];
     [allString writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     SLog(@"allString === %@",allString);

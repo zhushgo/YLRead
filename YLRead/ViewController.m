@@ -87,8 +87,11 @@ UICollectionViewDelegateFlowLayout>
         });
     });
     
-//    [BiQuGeParser getSectionContentByLink:@"http://www.biquge.info/73_73460/19792602.html"];
-//    [LingDianParser getBookAllStringByBookID:@"410820"];
+    
+    
+    
+//    [BiQuGeParser getBookAllStringByBookID:@"1959"];
+//    [LingDianParser getBookAllStringByBookID:@"5910"];
 //    [LingDianParser textRegula];
     NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
 }

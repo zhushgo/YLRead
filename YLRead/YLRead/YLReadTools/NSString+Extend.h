@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/// 段落头部双圆角空格
+FOUNDATION_EXPORT NSString *const kYLReadParagraphSpace;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Extend)

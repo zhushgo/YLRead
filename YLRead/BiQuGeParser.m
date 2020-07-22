@@ -37,13 +37,13 @@
 
 
 /** 获取小说的章节与内容
- *
- * <p><a style="" href="2152124.html">第0167章 平叛</a></p>
+ * //1959
+ *     <dd><a href="1071039.html">第七章</a></dd>
  * regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";
  * @{@"sectionName":sectionName,@"sectionLink":sectionLink}
  */
 + (NSMutableArray<NSMutableDictionary *> *)getCatalogueByBookID:(NSString *)bookID{
-    NSString *catalogueLink = [NSString stringWithFormat:@"http://www.biquge.info/%@/",bookID];
+    NSString *catalogueLink = [NSString stringWithFormat:@"http://www.shuquge.com/txt/%@/index.html",bookID];
     NSString *htmlString = [NSString stringWithContentsOfURL:[NSURL URLWithString:catalogueLink] encoding:NSUTF8StringEncoding error:nil];
     NSString *path = [BiQuGeParser saveFileDictByBookID:bookID];
     NSMutableArray<NSMutableDictionary *> *catalogueArray = [NSMutableArray arrayWithContentsOfFile:path] ? : [NSMutableArray array];
@@ -51,7 +51,7 @@
         [catalogueArray removeLastObject];
     }
     
-    NSString *regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";//根据正则表达式，取出章节标题、链接
+    NSString *regula = @"(?<=\\<dd><a href=\").*?(?=\\</a></dd>)";//根据正则表达式，取出章节标题、链接
     NSError *error;
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
     NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:htmlString options:0 range:NSMakeRange(0, [htmlString length])];
@@ -67,7 +67,7 @@
                     NSArray<NSString *> *array = [matchString componentsSeparatedByString:@"\">"];
                     NSString *sectionName = array.lastObject;
                     NSString *sectionLink = array.firstObject;
-                    NSString *sectionContent = [BiQuGeParser getSectionContentByLink:[NSString stringWithFormat:@"http://www.biquge.info/%@/%@",bookID,sectionLink]];
+                    NSString *sectionContent = [BiQuGeParser getSectionContentByLink:[NSString stringWithFormat:@"http://www.shuquge.com/txt/%@/%@",bookID,sectionLink]];
                     [catalogueArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":sectionContent}]];
                     [catalogueArray writeToFile:path atomically:YES];
                 }
@@ -87,7 +87,7 @@
 + (NSString *)getSectionContentByLink:(NSString *)sectionLink{
     NSMutableString *sectionContent = [[NSMutableString alloc] init];
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";//根据正则表达式，取出指定文本
-    regula = @"(?<=<div id=\"content\"><!--go-->)[\\s\\S]*?</div>";
+    regula = @"(?<=<div id=\"content\" class=\"showtxt\">)[\\s\\S]*?</div>";
 
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;
@@ -118,7 +118,7 @@
 /// - Returns: 整理好的内容
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     //
-    content = [content stringByReplacingOccurrencesOfString:@"<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;" withString:@"\n    "];
+    content = [content stringByReplacingOccurrencesOfString:@"<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;" withString:@"\n"];
     
 //    content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
 //    content = [content stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
