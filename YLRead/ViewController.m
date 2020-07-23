@@ -87,11 +87,9 @@ UICollectionViewDelegateFlowLayout>
         });
     });
     
-    
-    
-    
+        
 //    [BiQuGeParser getBookAllStringByBookID:@"1959"];
-//    [LingDianParser getBookAllStringByBookID:@"5910"];
+//    [LingDianParser getBookAllStringByBookID:@"4626"];
 //    [LingDianParser textRegula];
     NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
 }

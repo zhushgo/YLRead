@@ -90,7 +90,7 @@
     // 章节列表
     NSMutableArray<YLReadChapterListModel *> *chapterListModels = [NSMutableArray array];
     // 正则
-    NSString *parten = @"第[0-9一二三四五六七八九十百千]*[章回].*";
+    NSString *parten = @"第[0-9一二三四五六七八九十零百千]*[章回].*";
     // 排版
     NSString *content = [YLReadParser contentTypesettingWithContent:contentString];
     // 开始匹配
