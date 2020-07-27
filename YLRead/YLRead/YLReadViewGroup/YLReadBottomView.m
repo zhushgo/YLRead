@@ -325,7 +325,7 @@ CGFloat getYLReadFuncViewHeight(void){
 
 
 CGFloat getYLReadBottomViewHeight(void){
-    return getYLReadProgressViewHeight() + getTabBarHeight();
+    return getYLReadProgressViewHeight() + ylReadGetTabBarHeight();
 }
 
 @implementation YLReadBottomView

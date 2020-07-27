@@ -11,7 +11,7 @@
 #pragma mark - 屏幕适配
 
 //判断是否是刘海屏
-BOOL isIPhoneNotchScreen(void){
+BOOL ylReadIsIPhoneNotchScreen(void){
     /* iPhone8 Plus  UIEdgeInsets: {20, 0, 0, 0}
      * iPhone8       UIEdgeInsets: {20, 0, 0, 0}
      * iPhone XR     UIEdgeInsets: {44, 0, 34, 0}
@@ -46,7 +46,7 @@ BOOL isIPhoneNotchScreen(void){
 }
 
 
-CGFloat getStatusBarHeight(void){
+CGFloat ylReadGetStatusBarHeight(void){
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.windows.firstObject.safeAreaInsets;
         CGFloat topSpace = 0;
@@ -79,7 +79,7 @@ CGFloat getStatusBarHeight(void){
 
 
 //获取导航栏高度
-CGFloat getNavigationBarHeight(void){
+CGFloat ylReadGetNavigationBarHeight(void){
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.windows.firstObject.safeAreaInsets;
         CGFloat topSpace = 0;
@@ -111,7 +111,7 @@ CGFloat getNavigationBarHeight(void){
 }
 
 //获取tabBar高度
-CGFloat getTabBarHeight(void){
+CGFloat ylReadGetTabBarHeight(void){
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.windows.firstObject.safeAreaInsets;
         CGFloat bottomSpace = 0;
@@ -137,7 +137,7 @@ CGFloat getTabBarHeight(void){
         return 49.0;
     }
 }
-CGFloat getPageSafeAreaHeight(BOOL isShowNavBar){
+CGFloat ylReadGetPageSafeAreaHeight(BOOL isShowNavBar){
     
     CGFloat screenHeight = CGRectGetHeight(UIScreen.mainScreen.bounds);
     
@@ -206,7 +206,7 @@ NSDate *getDateByStamp(NSTimeInterval timeStamp){
 
 }
 
-NSString *transformTimeToMMSS(NSTimeInterval timeStamp){
+NSString *ylReadTransformTimeToMMSS(NSTimeInterval timeStamp){
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -234,9 +234,9 @@ NSString *const kYLReadObjectKey = @"kYLReadObjectKey";
 /// 阅读范围(阅读顶部状态栏 + 阅读View + 阅读底部状态栏)
 CGRect getReadRect(void){
     // 适配 X 顶部
-    CGFloat top = isIPhoneNotchScreen() ? (getStatusBarHeight() - 15) : 0;
+    CGFloat top = ylReadIsIPhoneNotchScreen() ? (ylReadGetStatusBarHeight() - 15) : 0;
     // 适配 X 底部
-    CGFloat bottom = isIPhoneNotchScreen() ? 30 : 0;
+    CGFloat bottom = ylReadIsIPhoneNotchScreen() ? 30 : 0;
     return CGRectMake(15, top, CGRectGetWidth(UIScreen.mainScreen.bounds) - 15 * 2.0, CGRectGetHeight(UIScreen.mainScreen.bounds) - top - bottom);
 }
 

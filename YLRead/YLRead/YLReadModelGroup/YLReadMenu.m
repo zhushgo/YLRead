@@ -112,7 +112,7 @@
     }
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-        CGFloat y = isShow ? 0 : -getNavigationBarHeight();
+        CGFloat y = isShow ? 0 : -ylReadGetNavigationBarHeight();
         CGRect topFrame = self.topView.frame;
         topFrame.origin = CGPointMake(0, y);
         self.topView.frame = topFrame;
@@ -231,7 +231,7 @@
     if (_topView == nil) {
         _topView = [[YLReadTopView alloc] initWithReadMenu:self];
         _topView.hidden = !self.isMenuShow;
-        _topView.frame = CGRectMake(0, self.isMenuShow ? 0 : -getNavigationBarHeight(), CGRectGetWidth(UIScreen.mainScreen.bounds), getNavigationBarHeight());
+        _topView.frame = CGRectMake(0, self.isMenuShow ? 0 : -ylReadGetNavigationBarHeight(), CGRectGetWidth(UIScreen.mainScreen.bounds), ylReadGetNavigationBarHeight());
     }
     return _topView;
 }

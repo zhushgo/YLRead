@@ -652,7 +652,7 @@ CGFloat getYLReadMenuSettingContentHeight(void){
 
 /// settingView 总高度(内容高度 + iphoneX情况下底部间距)
 CGFloat getYLReadSettingViewHeight(void){
-    return isIPhoneNotchScreen() ? (getYLReadMenuSettingContentHeight() + 20 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0)) : getYLReadMenuSettingContentHeight();
+    return ylReadIsIPhoneNotchScreen() ? (getYLReadMenuSettingContentHeight() + 20 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0)) : getYLReadMenuSettingContentHeight();
 }
 
 @implementation YLReadSettingView

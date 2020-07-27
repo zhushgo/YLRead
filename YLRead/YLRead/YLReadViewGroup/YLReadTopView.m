@@ -25,8 +25,8 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
         
-    CGFloat y = getStatusBarHeight();
-    CGFloat wh = getNavigationBarHeight() - y;
+    CGFloat y = ylReadGetStatusBarHeight();
+    CGFloat wh = ylReadGetNavigationBarHeight() - y;
     
     self.back.frame = CGRectMake(0, y, wh, wh);
     self.mark.frame = CGRectMake(CGRectGetWidth(self.frame) - wh, y, wh, wh);

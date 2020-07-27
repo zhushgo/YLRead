@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 屏幕适配
 
-FOUNDATION_EXPORT BOOL isIPhoneNotchScreen(void);//是否是刘海屏
-FOUNDATION_EXPORT CGFloat getStatusBarHeight(void);
-FOUNDATION_EXPORT CGFloat getNavigationBarHeight(void);
-FOUNDATION_EXPORT CGFloat getTabBarHeight(void);
-FOUNDATION_EXPORT CGFloat getPageSafeAreaHeight(BOOL isShowNavBar);
+FOUNDATION_EXPORT BOOL ylReadIsIPhoneNotchScreen(void);//是否是刘海屏
+FOUNDATION_EXPORT CGFloat ylReadGetStatusBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetNavigationBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetTabBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetPageSafeAreaHeight(BOOL isShowNavBar);
 
 #pragma mark -
 
@@ -28,7 +28,7 @@ FOUNDATION_EXPORT NSAttributedString *textLineSpacing_2(NSString *string ,CGFloa
 
 
 FOUNDATION_EXPORT NSDate *getDateByStamp(NSTimeInterval timeStamp);
-FOUNDATION_EXPORT NSString *transformTimeToMMSS(NSTimeInterval timeStamp);
+FOUNDATION_EXPORT NSString *ylReadTransformTimeToMMSS(NSTimeInterval timeStamp);
 
 
 

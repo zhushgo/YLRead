@@ -237,7 +237,7 @@ CGFloat const kYLReadLeft_Header_Height = 50;
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.segmentedControl.frame = CGRectMake(0,isIPhoneNotchScreen() ? getStatusBarHeight() : 0 , CGRectGetWidth(self.bounds), kYLReadLeft_Header_Height);
+    self.segmentedControl.frame = CGRectMake(0,ylReadIsIPhoneNotchScreen() ? ylReadGetStatusBarHeight() : 0 , CGRectGetWidth(self.bounds), kYLReadLeft_Header_Height);
     self.spaceLine.frame = CGRectMake(0, CGRectGetMaxY(self.segmentedControl.frame), CGRectGetWidth(self.bounds),0.5);
     self.catalogView.frame = CGRectMake(0, CGRectGetMaxY(self.spaceLine.frame), CGRectGetWidth(self.bounds),CGRectGetHeight(UIScreen.mainScreen.bounds) - CGRectGetMaxY(self.spaceLine.frame));
     self.markView.frame = self.catalogView.frame;

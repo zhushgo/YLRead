@@ -63,7 +63,7 @@
     _markModel = markModel;
     
     self.title.text = markModel.name;
-    self.time.text = transformTimeToMMSS(markModel.time);
+    self.time.text = ylReadTransformTimeToMMSS(markModel.time);
     self.content.attributedText = textLineSpacing_1(markModel.content, 5);
 }
 
