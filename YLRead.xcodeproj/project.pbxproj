@@ -61,8 +61,10 @@
 		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
 		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
 		1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */; };
+		1ACA605024CEA49B00EC22B0 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA604F24CEA49B00EC22B0 /* BookModel.m */; };
+		1ACA605324CEA4E400EC22B0 /* BookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA605224CEA4E400EC22B0 /* BookTableCell.m */; };
+		1ACA605524CEA8BD00EC22B0 /* BookResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA605424CEA8BD00EC22B0 /* BookResources.bundle */; };
 		2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2204D81924BAA4F900C28A43 /* LingDianParser.m */; };
-		2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2204D81B24BAACEA00C28A43 /* BookResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,9 +174,13 @@
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
 		1AA8A20324C6E82F00839A83 /* BiQuGeParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiQuGeParser.h; sourceTree = "<group>"; };
 		1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiQuGeParser.m; sourceTree = "<group>"; };
+		1ACA604E24CEA49B00EC22B0 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		1ACA604F24CEA49B00EC22B0 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		1ACA605124CEA4E400EC22B0 /* BookTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableCell.h; sourceTree = "<group>"; };
+		1ACA605224CEA4E400EC22B0 /* BookTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableCell.m; sourceTree = "<group>"; };
+		1ACA605424CEA8BD00EC22B0 /* BookResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BookResources.bundle; sourceTree = "<group>"; };
 		2204D81824BAA4F900C28A43 /* LingDianParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LingDianParser.h; sourceTree = "<group>"; };
 		2204D81924BAA4F900C28A43 /* LingDianParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LingDianParser.m; sourceTree = "<group>"; };
-		2204D81B24BAACEA00C28A43 /* BookResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BookResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +245,10 @@
 				1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */,
 				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
 				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
+				1ACA604D24CEA49B00EC22B0 /* BookList */,
 				1A59909924C549E10014D809 /* DemoText.html */,
 				1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */,
 				1A64DA4D24BD4CB5009AFB82 /* HttpGroup */,
-				2204D81B24BAACEA00C28A43 /* BookResources.bundle */,
 				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
@@ -367,6 +373,18 @@
 			path = YLReadViewGroup;
 			sourceTree = "<group>";
 		};
+		1ACA604D24CEA49B00EC22B0 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA605424CEA8BD00EC22B0 /* BookResources.bundle */,
+				1ACA604E24CEA49B00EC22B0 /* BookModel.h */,
+				1ACA604F24CEA49B00EC22B0 /* BookModel.m */,
+				1ACA605124CEA4E400EC22B0 /* BookTableCell.h */,
+				1ACA605224CEA4E400EC22B0 /* BookTableCell.m */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,9 +442,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2204D81C24BAACEA00C28A43 /* BookResources.bundle in Resources */,
 				1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */,
 				1A59909A24C549E20014D809 /* DemoText.html in Resources */,
+				1ACA605524CEA8BD00EC22B0 /* BookResources.bundle in Resources */,
 				1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +466,7 @@
 				1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */,
 				1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */,
 				1A6E7EC324B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				1ACA605024CEA49B00EC22B0 /* BookModel.m in Sources */,
 				1A6E7E5324B863F900F42EA4 /* ViewController.m in Sources */,
 				1A6E7ED524B8649100F42EA4 /* YLReadSettingView.m in Sources */,
 				1A6E7ECB24B8649100F42EA4 /* YLReadChapterListModel.m in Sources */,
@@ -458,6 +477,7 @@
 				1A6E7ED224B8649100F42EA4 /* YLReadHomeView.m in Sources */,
 				1A6E7E4D24B863F900F42EA4 /* AppDelegate.m in Sources */,
 				1A6E7EE024B8649100F42EA4 /* YLReadContentView.m in Sources */,
+				1ACA605324CEA4E400EC22B0 /* BookTableCell.m in Sources */,
 				1A6E7ED924B8649100F42EA4 /* YLReadBottomView.m in Sources */,
 				1A6E7EBE24B8649100F42EA4 /* YLKeyedArchiver.m in Sources */,
 				1A6E7EDB24B8649100F42EA4 /* YLReadHomeViewCell.m in Sources */,
