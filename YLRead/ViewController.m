@@ -43,11 +43,17 @@
         [self.tableView reloadData];
     }];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//         [LingDianParser getBookAllStringByBookID:@"22829"];
         
+        NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
+    });
+    
+    
 //    [BiQuGeParser getBookAllStringByBookID:@"1959"];
-//    [LingDianParser getBookAllStringByBookID:@"4626"];
+   
 //    [LingDianParser textRegula];
-    NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
+    
 }
 
 - (void)viewWillLayoutSubviews{
