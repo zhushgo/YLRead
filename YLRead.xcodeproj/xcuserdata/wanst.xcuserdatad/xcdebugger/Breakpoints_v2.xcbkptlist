@@ -46,8 +46,8 @@
             filePath = "YLRead/LingDianParser.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "+getSectionContentByLink:"
             landmarkType = "7">
          </BreakpointContent>

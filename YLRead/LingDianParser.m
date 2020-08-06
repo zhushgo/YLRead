@@ -51,6 +51,10 @@
 + (NSMutableArray<NSMutableDictionary *> *)getCatalogueByBookID:(NSString *)bookID{
     NSString *catalogueLink = [NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/all.html",bookID];
     NSString *htmlString = [NSString stringWithContentsOfURL:[NSURL URLWithString:catalogueLink] encoding:NSUTF8StringEncoding error:nil];
+
+//    NSString *demoPath = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:@"html"];
+//    htmlString = [NSString stringWithContentsOfFile:demoPath encoding:NSUTF8StringEncoding error:nil];
+    
     NSString *path = [LingDianParser saveFileDictByBookID:bookID];
     NSMutableArray<NSMutableDictionary *> *catalogueArray = [NSMutableArray arrayWithContentsOfFile:path] ? : [NSMutableArray array];
     if (catalogueArray.count > 0) {
