@@ -15,6 +15,9 @@
 #import "YLReadTextParser.h"
 #import "YLReadController.h"
 #import "LingDianParser.h"
+#import "YLKeyedArchiver.h"
+#import "YLGlobalTools.h"
+
 #import "HTTPManager.h"
 #import "MBProgressHUD.h"
 
@@ -75,15 +78,36 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     BookModel *book = self.booksArray[indexPath.row];
     NSLog(@"path ------------------- %@",book.filePath);
-    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.text = @"正在解析...";
-    YLReadModel *readModel = [YLReadTextParser parserWithURL:book.fileUrl];
-    [hud hideAnimated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        YLReadModel *readModel = [YLReadTextParser parserWithURL:book.fileUrl];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+            YLReadController *readVC = [[YLReadController alloc] init];
+            readVC.readModel = readModel;
+            [self.navigationController pushViewController:readVC animated:YES];
+        });
+    });
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"清除缓存";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    YLReadController *readVC = [[YLReadController alloc] init];
-    readVC.readModel = readModel;
-    [self.navigationController pushViewController:readVC animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = @"正在清理...";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        BookModel *book = self.booksArray[indexPath.row];
+        NSLog(@"bookName ===== %@",book.bookName);
+        BOOL result = [YLKeyedArchiver removeWithFolderName:book.bookName fileName:nil];
+        NSLog(@"result ===== %d",result);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
+    });
 }
 
 #pragma mark - getter and setter
