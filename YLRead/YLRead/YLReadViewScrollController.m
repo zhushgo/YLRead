@@ -85,7 +85,7 @@
         self.bottomView.progress.text = getReadToalProgressString(progress);
     }else{ // 分页进度
         // 显示进度
-        self.bottomView.progress.text = [NSString stringWithFormat:@"%ld",(self.vc.readModel.recordModel.page + 1) / self.vc.readModel.recordModel.chapterModel.pageCount];
+        self.bottomView.progress.text = [NSString stringWithFormat:@"%ld/%ld",(self.vc.readModel.recordModel.page + 1), self.vc.readModel.recordModel.chapterModel.pageCount];
     }
     [self.tableView reloadData];
 }

@@ -47,7 +47,7 @@
     }];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//         [LingDianParser getBookAllStringByBookID:@"445252"];
+         [LingDianParser getBookAllStringByBookID:@"445252"];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
     });
     

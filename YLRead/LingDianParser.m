@@ -52,8 +52,8 @@
     NSString *catalogueLink = [NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/all.html",bookID];
     NSString *htmlString = [NSString stringWithContentsOfURL:[NSURL URLWithString:catalogueLink] encoding:NSUTF8StringEncoding error:nil];
 
-//    NSString *demoPath = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:@"html"];
-//    htmlString = [NSString stringWithContentsOfFile:demoPath encoding:NSUTF8StringEncoding error:nil];
+    NSString *demoPath = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:@"html"];
+    htmlString = [NSString stringWithContentsOfFile:demoPath encoding:NSUTF8StringEncoding error:nil];
     
     NSString *path = [LingDianParser saveFileDictByBookID:bookID];
     NSMutableArray<NSMutableDictionary *> *catalogueArray = [NSMutableArray arrayWithContentsOfFile:path] ? : [NSMutableArray array];
@@ -70,19 +70,15 @@
     }else{
         NSLog(@"count === %ld",matches.count);
         [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (idx >= catalogueArray.count) {
-                NSString *matchString = [htmlString substringWithRange:obj.range];
-                if ([matchString containsString:@"第"] &&
-                    [matchString containsString:@"章"]) {
-                    NSArray<NSString *> *array = [matchString componentsSeparatedByString:@"\">"];
-                    NSString *sectionName = array.lastObject;
-                    NSString *sectionLink = array.firstObject;
-                    NSString *sectionContent = [LingDianParser getSectionContentByLink:[NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%@",bookID,sectionLink]];
-                    [catalogueArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":sectionContent}]];
-                    [catalogueArray writeToFile:path atomically:YES];
-                }
-            }else{
-                SLog(@"idx %ld=== count %ld",idx,catalogueArray.count);
+            NSString *matchString = [htmlString substringWithRange:obj.range];
+            if ([matchString containsString:@"第"] &&
+                [matchString containsString:@"章"]) {
+                NSArray<NSString *> *array = [matchString componentsSeparatedByString:@"\">"];
+                NSString *sectionName = array.lastObject;
+                NSString *sectionLink = array.firstObject;
+                NSString *sectionContent = [LingDianParser getSectionContentByLink:[NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%@",bookID,sectionLink]];
+                [catalogueArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":sectionContent}]];
+                [catalogueArray writeToFile:path atomically:YES];
             }
         }];
     }
