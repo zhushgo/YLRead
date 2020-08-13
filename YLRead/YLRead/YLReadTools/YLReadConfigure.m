@@ -21,10 +21,11 @@ UIColor *kYLRead_Color_MenuBG(void){
     return [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.95];
 }
 
+//read_bg_0_icon
+//read_bg_0
 UIColor *kYLRead_Color_BG_0(void){
     return [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]];;
 }
-//let DZM_COLOR_BG_0:UIColor = UIColor(patternImage: UIImage(named: "read_bg_0_icon")!)
 
 
 NSArray<UIColor *> *kYLRead_Color_BG(void){

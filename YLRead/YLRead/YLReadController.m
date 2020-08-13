@@ -56,7 +56,6 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
 
 - (void)dealloc{
     [NSNotificationCenter.defaultCenter removeObserver:self];
-    
     // 清理阅读控制器
     [self clearPageController];
 }

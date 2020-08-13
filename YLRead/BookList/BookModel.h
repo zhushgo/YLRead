@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
 @interface BookModel : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *author;

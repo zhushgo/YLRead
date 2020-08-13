@@ -32,8 +32,47 @@
 ///
 /// - Parameter url: 本地文件地址
 /// - Returns: 阅读对象
++ (YLReadModel *)parserForceWithURL:(NSURL *)url{
+    // 链接不为空且是本地文件路径
+    if (url == nil || url.absoluteString.length < 1 || !url.isFileURL) {
+        return nil;
+    }
+    // 获取文件后缀名作为 bookName
+    NSString *bookName = [url.absoluteString stringByRemovingPercentEncoding].lastPathComponent.stringByDeletingPathExtension ? : @"";
+    // bookName 作为 bookID
+    NSString *bookID = bookName;
+    if (bookID.length < 1) {// bookID 为空
+        return nil;
+    }
+    // 解析数据
+    NSString *content = [YLReadParser encodeWithURL:url];
+    // 解析失败
+    if (content.length < 1) {
+        return nil;
+    }
+    // 解析内容并获得章节列表
+    NSMutableArray<YLReadChapterListModel *> *chapterListModels = [self parserWithBookID:bookID content:content];
+    // 解析内容失败
+    if (chapterListModels.count < 1) {
+        return nil;
+    }
+    // 阅读模型
+    YLReadModel *readModel = [YLReadModel modelWithBookID:bookID];
+    // 书籍类型
+    readModel.bookSourceType = YLBookSourceTypeLocal;
+    // 小说名称
+    readModel.bookName = bookName;
+    // 记录章节列表
+    readModel.chapterListModels = chapterListModels;
+    // 设置第一个章节为阅读记录
+    [readModel.recordModel modifyWithChapterID:readModel.chapterListModels.firstObject.id toPage:0 isSave:NO];
+    // 保存
+    [readModel save];
+    // 返回
+    return readModel;
+}
+
 + (YLReadModel *)parserWithURL:(NSURL *)url{
-    
     // 链接不为空且是本地文件路径
     if (url == nil || url.absoluteString.length < 1 || !url.isFileURL) {
         return nil;
@@ -46,34 +85,8 @@
     if (bookID.length < 1) {// bookID 为空
         return nil;
     }
-    
     if (![YLReadModel isExistWithBookID:bookID]) {// 不存在
-        // 解析数据
-        NSString *content = [YLReadParser encodeWithURL:url];
-        // 解析失败
-        if (content.length < 1) {
-            return nil;
-        }
-        // 解析内容并获得章节列表
-        NSMutableArray<YLReadChapterListModel *> *chapterListModels = [self parserWithBookID:bookID content:content];
-        // 解析内容失败
-        if (chapterListModels.count < 1) {
-            return nil;
-        }
-        // 阅读模型
-        YLReadModel *readModel = [YLReadModel modelWithBookID:bookID];
-        // 书籍类型
-        readModel.bookSourceType = YLBookSourceTypeLocal;
-        // 小说名称
-        readModel.bookName = bookName;
-        // 记录章节列表
-        readModel.chapterListModels = chapterListModels;
-        // 设置第一个章节为阅读记录
-        [readModel.recordModel modifyWithChapterID:readModel.chapterListModels.firstObject.id toPage:0 isSave:NO];
-        // 保存
-        [readModel save];
-        // 返回
-        return readModel;
+        return [YLReadTextParser parserForceWithURL:url];
     }else{ // 存在
         // 返回
         return [YLReadModel modelWithBookID:bookID];

@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter url: 本地文件地址
 /// - Returns: 阅读对象
 + (YLReadModel *)parserWithURL:(NSURL *)url;
-
++ (YLReadModel *)parserForceWithURL:(NSURL *)url;///强制解析
 /// 解析整本小说
 ///
 /// - Parameters:

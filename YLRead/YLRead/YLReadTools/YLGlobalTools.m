@@ -226,9 +226,9 @@ NSString *const kYLReadLongPressViewKey = @"kYLReadLongPressViewKey";
 NSString *const kYLReadLongPressViewNotification = @"kYLReadLongPressViewNotification";
 
 /// Key - 阅读记录
-NSString *const kYLReadRecordKey = @"kYLReadRecordKey";
+NSString *const kYLReadRecordKey = @"ReadRecord";
 /// Key - 阅读对象
-NSString *const kYLReadObjectKey = @"kYLReadObjectKey";
+NSString *const kYLReadObjectKey = @"ReadObject";
 
 
 /// 阅读范围(阅读顶部状态栏 + 阅读View + 阅读底部状态栏)

@@ -276,7 +276,6 @@ CGFloat const kYLReadLeft_Header_Height = 50;
                 self.markView.alpha = 1;
                 self.catalogView.alpha = 0;
         }
-        
     } completion:^(BOOL finished) {
         
     }];

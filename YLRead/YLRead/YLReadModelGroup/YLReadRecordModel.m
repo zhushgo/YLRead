@@ -167,12 +167,12 @@ NSString *const kYLReadRecordModelPage = @"page";
 
 /// 保存记录
 - (void)save{
-    [YLKeyedArchiver archiverWithFolderName:self.bookID fileName:kYLReadRecordKey object:self];
+    [YLKeyedArchiver archiverWithFolderName:kYLReadRecordKey fileName:self.bookID object:self];
 }
 
 /// 是否存在阅读记录
 + (BOOL)isExistWithBookID:(NSString *)bookID{
-    return [YLKeyedArchiver isExistWithFolderName:bookID fileName:kYLReadRecordKey];
+    return [YLKeyedArchiver isExistWithFolderName:kYLReadRecordKey fileName:bookID];
 }
 
 /// 获取阅读记录对象,如果则创建对象返回
@@ -180,7 +180,7 @@ NSString *const kYLReadRecordModelPage = @"page";
     YLReadRecordModel *model = [[YLReadRecordModel alloc] init];
     model.bookID = bookID;
     if ([YLReadRecordModel isExistWithBookID:bookID]) {
-        model = [YLKeyedArchiver unarchiverWithFolderName:bookID fileName:kYLReadRecordKey];
+        model = [YLKeyedArchiver unarchiverWithFolderName:kYLReadRecordKey fileName:bookID];
         [model.chapterModel updateFont];
     }
     return model;

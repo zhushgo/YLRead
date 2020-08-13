@@ -32,7 +32,6 @@ typedef NS_ENUM(NSUInteger,YLBookSourceType) {
 @property (nonatomic, strong) YLReadRecordModel *recordModel;
 
 /// 章节列表(如果是网络小说可以不需要放在这里记录,直接在目录视图里面加载接口或者读取本地数据库就好了。)
-
 @property (nonatomic, strong) NSArray<YLReadChapterListModel *> *chapterListModels;
 
 /// 书签列表

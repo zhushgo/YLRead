@@ -47,7 +47,7 @@
     }];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-         [LingDianParser getBookAllStringByBookID:@"445252"];
+//         [LingDianParser getBookAllStringByBookID:@"445252"];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
     });
     
@@ -101,9 +101,8 @@
     hud.label.text = @"正在清理...";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BookModel *book = self.booksArray[indexPath.row];
-        NSLog(@"bookName ===== %@",book.bookName);
-        BOOL result = [YLKeyedArchiver removeWithFolderName:book.bookName fileName:nil];
-        NSLog(@"result ===== %d",result);
+        //[YLReadTextParser parserForceWithURL:book.fileUrl];
+        [YLKeyedArchiver removeWithFolderName:book.bookName fileName:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES];
         });

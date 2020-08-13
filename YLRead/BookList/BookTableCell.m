@@ -49,7 +49,7 @@ CGFloat const kBookTableCellHeight = 105;
     _book = book;
     self.coverImageView.image = book.coverImage;
     self.titleLabel.text = book.bookName;
-    self.endLabel.text = book.isEnd ? @"完结" : @"连载";
+    self.endLabel.text = [NSString stringWithFormat:@"%@ 著 · %@",book.author,book.isEnd ? @"完结" : @"连载"];
     self.describeLabel.text = book.intro;
 }
 
