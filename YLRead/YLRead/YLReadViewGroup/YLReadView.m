@@ -17,6 +17,12 @@
 
 @implementation YLReadView
 
+- (void)dealloc{
+    if (_frameRef) {
+        CFRelease(_frameRef);
+    }
+}
+
 - (instancetype)init{
     return [self initWithFrame:CGRectZero];
 }
@@ -44,11 +50,6 @@
     
     //5.开始绘制
     CTFrameDraw(_frameRef, context);
-    
-    //释放资源
-    //CFRelease(frame);
-    //CFRelease(path);
-    //CFRelease(framesetter);
 }
 
 /// 当前页模型(使用contentSize绘制)
@@ -64,6 +65,9 @@
 }
 
 - (void)setFrameRef:(CTFrameRef)frameRef{
+    if (_frameRef) {
+        CFRelease(_frameRef);
+    }
     _frameRef = frameRef;
     if (frameRef) {
         [self setNeedsDisplay];

@@ -23,10 +23,11 @@
 CTFrameRef getFrameRefByAttrString(NSAttributedString *attrString, CGRect rect){
     ///绘制局域
     CGPathRef path = CGPathCreateWithRect(rect, nil);
-
     //设置绘制内容
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString);
     CTFrameRef frameRef = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
+    CFRelease(framesetter);
+    CGPathRelease(path);
     return frameRef;
 }
 
@@ -46,11 +47,13 @@ NSMutableArray<NSValue *> *getPageingRanges(NSAttributedString *attrString, CGRe
         CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(rangeOffset, 0), path, nil);
         range = CTFrameGetVisibleStringRange(frame);
         [rangeArray addObject:[NSValue valueWithRange:NSMakeRange(rangeOffset, range.length)]];
+        CFRelease(frame);
         rangeOffset += range.length;
     } while (range.location + range.length < attrString.length);
+    CFRelease(framesetter);
+    CGPathRelease(path);
     return rangeArray;
 }
-
 
 /// 获取指定内容高度
 ///
@@ -64,11 +67,16 @@ CGFloat getAttrStringHeight(NSAttributedString *attrString,CGFloat maxW){
     if (attrString.length > 0){
         // 注意设置的高度必须大于文本高度
         CGFloat maxH = 1000;
-        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString);
         CGRect drawingRect = CGRectMake(0, 0, maxW, maxH);
+
+        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attrString);
         CGPathRef path = CGPathCreateWithRect(drawingRect, nil);
         CTFrameRef frameRef = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
-
+        
+        /// 释放资源
+        CFRelease(framesetter);
+        CGPathRelease(path);
+                
         CFArrayRef lines = CTFrameGetLines(frameRef);//as! [CTLine]
         int lineCount = (int)CFArrayGetCount(lines);
         
@@ -86,13 +94,12 @@ CGFloat getAttrStringHeight(NSAttributedString *attrString,CGFloat maxW){
         CTLineRef line = CFArrayGetValueAtIndex(lines, lineCount - 1);
         CTLineGetTypographicBounds(line, &lineAscent, &lineDescent, &lineLeading);
         height = maxH - lineY + ceil(lineDescent);
+        
+        CFRelease(frameRef);
+//        CFRelease(lines);
     }
     return height;
 }
-
-
-
-
 
 /// 通过 [CGRect] 获得合适的 MenuRect
 ///
@@ -135,18 +142,20 @@ CGRect getMenuRect(NSArray<NSValue *> *rects,CGRect viewFrame){
 ///   - frameRef: CTFrame
 /// - Returns: CTLine
 CTLineRef getTouchLine(CGPoint point,CTFrameRef frameRef){
-    
     CTLineRef line = nil;
-    
     if (frameRef == nil) { return line; }
     
     CGPathRef path = CTFrameGetPath(frameRef);
     CGRect bounds = CGPathGetBoundingBox(path);
+    CGPathRelease(path);
     
     CFArrayRef lines = CTFrameGetLines(frameRef);
     int lineCount = (int)CFArrayGetCount(lines);
     
-    if (lineCount < 1) { return line; }
+    if (lineCount < 1) {
+        CFRelease(lines);
+        return line;
+    }
     
     CGPoint origins[lineCount];
     for (int i = 0; i < lineCount; i++) {
@@ -167,9 +176,13 @@ CTLineRef getTouchLine(CGPoint point,CTFrameRef frameRef){
         lineFrame = CGRectInset(lineFrame, -5, -5);
         if (CGRectContainsPoint(lineFrame, point)) {
             line = tempLine;
+            CFRelease(tempLine);
             break;
         }
+        CFRelease(tempLine);
     }
+    
+    CFRelease(lines);
     return line;
 }
 
@@ -186,6 +199,7 @@ NSRange getTouchLineRange(CGPoint point,CTFrameRef frameRef){
         CFRange lineRange = CTLineGetStringRange(line);
         range = NSMakeRange(lineRange.location == kCFNotFound ? NSNotFound : lineRange.location, lineRange.length);
     }
+    CFRelease(line);
     return range;
 }
 
@@ -201,6 +215,7 @@ signed long getTouchLocation(CGPoint point,CTFrameRef frameRef){
     if (line != nil) {
         location = CTLineGetStringIndexForPosition(line, point);
     }
+    CFRelease(line);
     return location;
 }
 
@@ -224,14 +239,16 @@ NSMutableArray<NSValue *> *getRangeRects(NSRange range,CTFrameRef frameRef,NSStr
     CFArrayRef lines = CTFrameGetLines(frameRef);
     int lineCount = (int)CFArrayGetCount(lines);
     
-    if (lineCount < 1) { return rects; }
+    if (lineCount < 1) {
+        CFRelease(lines);
+        return rects;
+    }
     
     CGPoint origins[lineCount];
     for (int i = 0; i < lineCount; i++) {
         origins[i] = CGPointZero;
     }
     CTFrameGetLineOrigins(frameRef, CFRangeMake(0, 0), origins);
-    
     
     for (int i = 0; i < lineCount; i ++) {
         CTLineRef line = CFArrayGetValueAtIndex(lines, i);
@@ -276,7 +293,9 @@ NSMutableArray<NSValue *> *getRangeRects(NSRange range,CTFrameRef frameRef,NSStr
             CGRect contentRect = CGRectMake(origin.x + xStart, origin.y - lineDescent, fabs(xEnd - xStart),lineAscent + lineDescent + lineLeading);
             [rects addObject:[NSValue valueWithCGRect:contentRect]];
         }
+        CFRelease(line);
     }
+    CFRelease(lines);
     return rects;
 }
 @end

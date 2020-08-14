@@ -62,7 +62,6 @@
     if (titles.count <= 0) { return ; }
     
     for (UIButton *item in self.items) {
-        
         [item removeFromSuperview];
     }
     
@@ -71,19 +70,12 @@
     NSInteger count = titles.count;
     
     for (int i = 0; i < count; i++) {
-        
         UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
-        
         item.tag = i;
-        
         [item setTitle:titles[i] forState:UIControlStateNormal];
-        
         [item setTitle:titles[i] forState:UIControlStateSelected];
-        
         [self.items addObject:item];
-        
         [self addSubview:item];
-        
         [item addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
     }
     
