@@ -121,7 +121,7 @@ NSString *const kYLReadRecordModelPage = @"page";
     }
 }
 
-/// 修改阅读记录为指定章节页码 (toPage == DZM_READ_LAST_PAGE 为当前章节最后一页)
+/// 修改阅读记录为指定章节页码 (toPage == -1 为当前章节最后一页)
 - (void)modifyWithChapterID:(NSUInteger)chapterID toPage:(NSInteger)toPage{
     [self modifyWithChapterID:chapterID toPage:toPage isSave:YES];
 }

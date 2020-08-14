@@ -96,7 +96,6 @@ CGFloat getAttrStringHeight(NSAttributedString *attrString,CGFloat maxW){
         height = maxH - lineY + ceil(lineDescent);
         
         CFRelease(frameRef);
-//        CFRelease(lines);
     }
     return height;
 }
@@ -111,13 +110,12 @@ CGRect getMenuRect(NSArray<NSValue *> *rects,CGRect viewFrame){
     if (rects.count < 1) {
         return menuRect;
     }
-    if (rects.count == 1) {
-        menuRect = rects.firstObject.CGRectValue;
-    }else{
-        menuRect = rects.firstObject.CGRectValue;
+    menuRect = rects.firstObject.CGRectValue;
+
+    if (rects.count > 1) {
         NSInteger count = rects.count;
         
-        for (int i = 0; i < count + 1; i++) {
+        for (int i = 0; i < count; i++) {
             CGRect rect = rects[i].CGRectValue;
             
             CGFloat minX = MIN(menuRect.origin.x, rect.origin.x);
@@ -147,13 +145,12 @@ CTLineRef getTouchLine(CGPoint point,CTFrameRef frameRef){
     
     CGPathRef path = CTFrameGetPath(frameRef);
     CGRect bounds = CGPathGetBoundingBox(path);
-    CGPathRelease(path);
+    //CGPathRelease(path);
     
     CFArrayRef lines = CTFrameGetLines(frameRef);
     int lineCount = (int)CFArrayGetCount(lines);
     
     if (lineCount < 1) {
-        CFRelease(lines);
         return line;
     }
     
@@ -176,13 +173,9 @@ CTLineRef getTouchLine(CGPoint point,CTFrameRef frameRef){
         lineFrame = CGRectInset(lineFrame, -5, -5);
         if (CGRectContainsPoint(lineFrame, point)) {
             line = tempLine;
-            CFRelease(tempLine);
             break;
         }
-        CFRelease(tempLine);
     }
-    
-    CFRelease(lines);
     return line;
 }
 
@@ -199,7 +192,6 @@ NSRange getTouchLineRange(CGPoint point,CTFrameRef frameRef){
         CFRange lineRange = CTLineGetStringRange(line);
         range = NSMakeRange(lineRange.location == kCFNotFound ? NSNotFound : lineRange.location, lineRange.length);
     }
-    CFRelease(line);
     return range;
 }
 
@@ -215,7 +207,6 @@ signed long getTouchLocation(CGPoint point,CTFrameRef frameRef){
     if (line != nil) {
         location = CTLineGetStringIndexForPosition(line, point);
     }
-    CFRelease(line);
     return location;
 }
 
@@ -240,7 +231,7 @@ NSMutableArray<NSValue *> *getRangeRects(NSRange range,CTFrameRef frameRef,NSStr
     int lineCount = (int)CFArrayGetCount(lines);
     
     if (lineCount < 1) {
-        CFRelease(lines);
+
         return rects;
     }
     
@@ -293,9 +284,8 @@ NSMutableArray<NSValue *> *getRangeRects(NSRange range,CTFrameRef frameRef,NSStr
             CGRect contentRect = CGRectMake(origin.x + xStart, origin.y - lineDescent, fabs(xEnd - xStart),lineAscent + lineDescent + lineLeading);
             [rects addObject:[NSValue valueWithCGRect:contentRect]];
         }
-        CFRelease(line);
     }
-    CFRelease(lines);
     return rects;
 }
+
 @end

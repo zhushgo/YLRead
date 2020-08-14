@@ -13,7 +13,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 
-
 @interface YLReadMagnifierView : UIWindow
 
 /// 目标视图Window (注意: 传视图的Window 例子: self.view.window)
@@ -113,16 +112,12 @@
 }
 
 - (void)setoffsetPoint:(CGPoint)offsetPoint {
-    
     _offsetPoint = offsetPoint;
-    
     [self setTargetPoint:self.targetPoint];
 }
 
 - (void)setScale:(CGFloat)scale {
-    
     _scale = scale;
-    
     [self.contentLayer setNeedsDisplay];
 }
 
@@ -320,8 +315,8 @@ void removeNotification_ReadMonitor(id target){
         CGPathAddRects(path, nil, rects, count);
         CGContextAddPath(ctx, path);
         CGContextFillPath(ctx);
-    }
-    
+        CGPathRelease(path);
+    }    
     CTFrameDraw(self.frameRef, ctx);
 }
 
@@ -375,11 +370,8 @@ void removeNotification_ReadMonitor(id target){
             [self addSubview:self.RCursorView];
             [self updateCursorFrame];
         }
-        
     }else{
-        
         if (_LCursorView) {
-            
             [_LCursorView removeFromSuperview];
             _LCursorView = nil;
             
@@ -501,8 +493,6 @@ void removeNotification_ReadMonitor(id target){
          // 隐藏菜单
          [self showMenu:NO];
          
-         
-         
          if (CGRectContainsPoint(CGRectInset(_LCursorView.frame , kYLReadLongPressCursorViewOffet, kYLReadLongPressCursorViewOffet), point)) { // 触摸到左边光标
              _isCursorLorR = YES;
              _isTouchCursor = YES;
@@ -594,7 +584,6 @@ void removeNotification_ReadMonitor(id target){
         // 获得选中区域
         _selectRange = getTouchLineRange(point, self.frameRef);
 
-        
         // 获得选中选中范围
         self.rects = getRangeRects(self.selectRange, self.frameRef, self.pageModel.content.string);
 
@@ -716,6 +705,7 @@ void removeNotification_ReadMonitor(id target){
     }
     return _RCursorView;
 }
+
 @end
 
 

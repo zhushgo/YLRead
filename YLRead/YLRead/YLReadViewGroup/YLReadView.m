@@ -9,12 +9,6 @@
 #import "YLReadView.h"
 #import "YLGlobalTools.h"
 
-@interface YLReadView ()
-
-
-@end
-
-
 @implementation YLReadView
 
 - (void)dealloc{
@@ -47,7 +41,6 @@
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     CGContextTranslateCTM(context, 0, CGRectGetHeight(rect));
     CGContextScaleCTM(context, 1.0, -1.0);
-    
     //5.开始绘制
     CTFrameDraw(_frameRef, context);
 }
@@ -64,10 +57,13 @@
     self.frameRef = getFrameRefByAttrString(content, CGRectMake(0, 0,getReadViewRect().size.width, getReadViewRect().size.height));
 }
 
+//CoreFoundation不支持ARC，需要手动去管理内存的释放
 - (void)setFrameRef:(CTFrameRef)frameRef{
     if (_frameRef) {
         CFRelease(_frameRef);
+        _frameRef = nil;
     }
+//    CFRetain(frameRef);
     _frameRef = frameRef;
     if (frameRef) {
         [self setNeedsDisplay];

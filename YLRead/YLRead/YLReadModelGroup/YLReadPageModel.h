@@ -34,7 +34,6 @@ typedef NS_ENUM(NSUInteger,YLPageHeadType) {
 @property (nonatomic, assign) CGSize contentSize;
 
 /// 当前内容头部类型 (目前主要是滚动模式使用)
-//@property (nonatomic, assign) double headTypeIndex;
 @property (nonatomic, assign) YLPageHeadType headType;
 
 /// 当前内容总高(cell 高度)
