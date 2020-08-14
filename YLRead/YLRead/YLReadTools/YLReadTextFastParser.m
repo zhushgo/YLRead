@@ -81,8 +81,9 @@
         [self parserWithReadModel:readModel chapterID:chapterListModel.id];
         
         // 设置第一个章节为阅读记录
-        [readModel.recordModel modifyWithChapterID:chapterListModel.id toPage:0 isSave:NO];
-        
+        if (![YLReadRecordModel isExistWithBookID:readModel.bookID]) {
+            [readModel.recordModel modifyWithChapterID:chapterListModel.id toPage:0 isSave:NO];
+        }
         // 保存
         [readModel save];
         

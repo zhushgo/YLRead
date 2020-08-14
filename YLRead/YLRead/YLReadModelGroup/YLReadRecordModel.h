@@ -89,7 +89,7 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 /// 是否存在阅读记录
 + (BOOL)isExistWithBookID:(NSString *)bookID;
 
-/// 获取阅读记录对象,如果则创建对象返回
+/// 获取阅读记录对象,如果没有记录则创建对象返回
 + (YLReadRecordModel *)modelWithBookID:(NSString *)bookID;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;

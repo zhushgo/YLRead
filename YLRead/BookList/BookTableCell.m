@@ -34,15 +34,14 @@ CGFloat const kBookTableCellHeight = 105;
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.contentView.frame = CGRectMake(12, 0, CGRectGetWidth(self.frame) - 12 * 2.0, CGRectGetHeight(self.frame));
-    
     CGFloat contentView_width = CGRectGetWidth(self.contentView.frame);
     self.coverImageView.frame = CGRectMake(12, 18, 60, 80);
     
     CGFloat start_x = CGRectGetMaxX(self.coverImageView.frame) + 12.0;
-    _titleLabel.frame = CGRectMake(start_x, 22, contentView_width - start_x - 40, 16);
-    _endLabel.frame = CGRectMake(start_x,  CGRectGetMaxY(_titleLabel.frame) + 8, contentView_width - start_x - 40, 16);
-    _describeLabel.frame = CGRectMake(start_x, CGRectGetMaxY(_endLabel.frame) + 8, contentView_width - start_x - 40, 30);
+    CGFloat contentWidth = contentView_width - start_x - 12;
+    _titleLabel.frame = CGRectMake(start_x, 22,contentWidth , 16);
+    _endLabel.frame = CGRectMake(start_x,  CGRectGetMaxY(_titleLabel.frame) + 8, contentWidth, 16);
+    _describeLabel.frame = CGRectMake(start_x, CGRectGetMaxY(_endLabel.frame) + 8, contentWidth, 30);
 }
 
 - (void)setBook:(BookModel *)book{
@@ -51,6 +50,13 @@ CGFloat const kBookTableCellHeight = 105;
     self.titleLabel.text = book.bookName;
     self.endLabel.text = [NSString stringWithFormat:@"%@ 著 · %@",book.author,book.isEnd ? @"完结" : @"连载"];
     self.describeLabel.text = book.intro;
+    
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ 著 · ",book.author] attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFang SC" size: 12],NSForegroundColorAttributeName:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]}];
+    [string appendAttributedString:[[NSAttributedString alloc] initWithString:book.isEnd ? @"完结" : @"连载" attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFang SC" size: 13],NSForegroundColorAttributeName:[UIColor colorWithRed:251/255.0 green:142/255.0 blue:114/255.0 alpha:1.0]}]];
+    [string appendAttributedString:[[NSAttributedString alloc] initWithString:@"  " attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFang SC" size: 12],NSForegroundColorAttributeName:[UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1.0]}]];
+    [string appendAttributedString:[[NSAttributedString alloc] initWithString:book.readChapter attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFang SC" size: 12],NSForegroundColorAttributeName:[UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1.0]}]];
+
+    self.endLabel.attributedText = string;
 }
 
 #pragma mark - setter and getter

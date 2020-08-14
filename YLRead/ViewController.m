@@ -21,8 +21,6 @@
 #import "HTTPManager.h"
 #import "MBProgressHUD.h"
 
-
-
 @interface ViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 
@@ -40,22 +38,20 @@
     self.navigationItem.title = @"书架";
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.tableView];
-    
+        
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+         [LingDianParser getBookAllStringByBookID:@"445252"];
+        NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
+    });
+//    [BiQuGeParser getBookAllStringByBookID:@"1959"];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [BookModel getBooks:^(NSMutableArray<BookModel *> *bookArray) {
         self.booksArray = bookArray;
         [self.tableView reloadData];
     }];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//         [LingDianParser getBookAllStringByBookID:@"445252"];
-        NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
-    });
-    
-    
-//    [BiQuGeParser getBookAllStringByBookID:@"1959"];
-   
-//    [LingDianParser textRegula];
-    
 }
 
 - (void)viewWillLayoutSubviews{

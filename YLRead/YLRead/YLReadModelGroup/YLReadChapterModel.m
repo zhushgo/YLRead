@@ -89,13 +89,11 @@ NSString *const kYLReadChapterModelName = @"name";
     return self.pageModels[page].range.location + self.pageModels[page].range.length;
 }
 
-
 /// 获取指定页中间
 - (NSUInteger)locationCenter:(NSUInteger)page{
     NSRange range = self.pageModels[page].range;
     return range.location + (range.location + range.length) / 2;
 }
-
 
 /// 获取存在指定坐标的页码
 - (NSUInteger)page:(NSUInteger)location{

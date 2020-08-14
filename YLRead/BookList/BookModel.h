@@ -27,6 +27,8 @@
 FOUNDATION_EXPORT NSBundle *bookBundle(void);
 @interface BookModel (Loader)
 
+@property (nonatomic, strong) NSString *readChapter;
+
 - (NSURL *)fileUrl;
 - (UIImage *)coverImage;
 

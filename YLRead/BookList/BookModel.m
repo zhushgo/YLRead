@@ -119,11 +119,24 @@ NSString *const kBookModelCover = @"cover";
 @end
 
 
+
+
 NSBundle *bookBundle(void){
     return [NSBundle bundleWithPath:[NSBundle.mainBundle pathForResource:@"BookResources" ofType:@"bundle"]];
 }
+#import <objc/message.h>
+#import "YLReadRecordModel.h"
+#import "YLReadChapterModel.h"
 
 @implementation BookModel (Loader)
+
+- (void)setReadChapter:(NSString *)readChapter{
+    objc_setAssociatedObject(self, @selector(readChapter), readChapter, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)readChapter{
+    return objc_getAssociatedObject(self, _cmd);
+}
 
 - (NSURL *)fileUrl{
     return [bookBundle() URLForResource:self.bookName withExtension:@"txt"];
@@ -134,7 +147,6 @@ NSBundle *bookBundle(void){
 }
 
 - (UIImage *)coverImage{
-    
     return [UIImage imageNamed:self.cover];
 }
 
@@ -146,6 +158,12 @@ NSBundle *bookBundle(void){
         NSArray<NSDictionary *> *array1 = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         [array1 enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             BookModel *model = [BookModel modelObjectWithDictionary:obj];
+            if ([YLReadRecordModel isExistWithBookID:model.bookName]) {
+                YLReadRecordModel *record = [YLReadRecordModel modelWithBookID:model.bookName];
+                model.readChapter = record.chapterModel.name;
+            }else{
+                model.readChapter = @"尚未阅读";
+            }
             [array addObject:model];
         }];
          dispatch_async(dispatch_get_main_queue(), ^{

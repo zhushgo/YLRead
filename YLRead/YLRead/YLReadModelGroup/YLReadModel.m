@@ -87,7 +87,6 @@ float getReadToalProgress(YLReadModel *readModel,YLReadRecordModel *recordModel)
 /// 是否存在阅读对象
 + (BOOL)isExistWithBookID:(NSString *)bookID{
 //    return [YLKeyedArchiver isExistWithFolderName:kYLReadObjectKey fileName:bookID];
-
     return [YLKeyedArchiver isExistWithFolderName:bookID fileName:kYLReadObjectKey];
 }
 
@@ -97,20 +96,18 @@ float getReadToalProgress(YLReadModel *readModel,YLReadRecordModel *recordModel)
     model.bookID = bookID;
     if ([YLReadModel isExistWithBookID:bookID]) {
        model = (YLReadModel *)[YLKeyedArchiver unarchiverWithFolderName:bookID fileName:kYLReadObjectKey];
-//        model = (YLReadModel *)[YLKeyedArchiver unarchiverWithFolderName:kYLReadObjectKey fileName:bookID];
-
+        //model = (YLReadModel *)[YLKeyedArchiver unarchiverWithFolderName:kYLReadObjectKey fileName:bookID];
     }
     // 获取阅读记录
     model.recordModel = [YLReadRecordModel modelWithBookID:bookID];
     return model;
 }
 
-
 - (YLReadRecordModel *)recordModel{
     if (_recordModel == nil) {
-        _recordModel = [[YLReadRecordModel alloc] init];
+        _recordModel = [YLReadRecordModel modelWithBookID:self.bookID];
     }
-    return _recordModel;;
+    return _recordModel;
 }
 
 - (NSMutableArray<YLReadMarkModel *> *)markModels{
