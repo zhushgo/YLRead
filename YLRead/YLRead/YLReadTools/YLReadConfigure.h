@@ -19,8 +19,7 @@ FOUNDATION_EXPORT UIColor *kYLRead_Color_Menu(void);
 FOUNDATION_EXPORT UIColor *kYLRead_Color_MenuBG(void);
 /// 阅读背景颜色列表
 FOUNDATION_EXPORT NSArray<UIColor *> *kYLRead_Color_BG(void);
-/// 阅读背景颜色支持 - 牛皮黄
-FOUNDATION_EXPORT UIColor *kYLRead_Color_BG_0(void);
+
 
 
 /// 阅读最小阅读字体大小

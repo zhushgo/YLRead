@@ -71,7 +71,6 @@
     if (_imageView == nil) {
         _imageView = [[UIImageView alloc] init];
         _imageView.backgroundColor = YLReadConfigure.shareConfigure.bgColor;
-
     }
     return _imageView;
 }

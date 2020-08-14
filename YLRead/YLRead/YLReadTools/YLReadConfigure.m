@@ -21,17 +21,15 @@ UIColor *kYLRead_Color_MenuBG(void){
     return [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.95];
 }
 
-//read_bg_0_icon
-//read_bg_0
-UIColor *kYLRead_Color_BG_0(void){
-    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]];;
-}
-
-
+//read_bg_2_icon
 NSArray<UIColor *> *kYLRead_Color_BG(void){
-    return  @[UIColor.whiteColor,[UIColor colorWithRed:238/255.0 green:224/255.0 blue:202/255.0 alpha:0.95],[UIColor colorWithRed:205/255.0 green:239/255.0 blue:205/255.0 alpha:0.95],[UIColor colorWithRed:206/255.0 green:233/255.0 blue:241/255.0 alpha:0.95],[UIColor colorWithRed:58/255.0 green:52/255.0 blue:54/255.0 alpha:0.95],[UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]]];
+    return @[[UIColor colorWithRed:234/255.0 green:234/255.0 blue:239/255.0 alpha:1],
+             [UIColor colorWithRed:227/255.0 green:237/255.0 blue:205/255.0 alpha:1],
+             [UIColor colorWithRed:250/255.0 green:249/255.0 blue:222/255.0 alpha:1],
+             [UIColor colorWithRed:58/255.0 green:52/255.0 blue:54/255.0 alpha:0.95],
+             [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]],
+             [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_1_icon"]]];
 }
-
 
 NSInteger const kYLRead_FontSize_Min = 12; 
 NSInteger const kYLRead_FontSize_Max = 24;
@@ -63,7 +61,7 @@ NSInteger const kYLRead_FontSize_TitleSpace = 8;
             _progressType = [dict[@"progressType"] integerValue];
             _fontSize = [dict[@"fontSize"] intValue];
         }else{
-            _bgColorIndex = [kYLRead_Color_BG() indexOfObject:kYLRead_Color_BG_0()]; // 背景
+            _bgColorIndex = 0; // 背景
             _fontType = YLFontTypeTwo;// 字体类型
             _effectType = YLEffectTypeSimulation;// 翻页类型
             _spacingType = YLSpacingTypeSmall;// 间距类型
@@ -151,9 +149,6 @@ NSInteger const kYLRead_FontSize_TitleSpace = 8;
 }
 
 - (UIColor *)bgColor{
-    if (_bgColorIndex == [kYLRead_Color_BG() indexOfObject:kYLRead_Color_BG_0()] ) {
-        return [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0"]];;
-    }
     return kYLRead_Color_BG()[_bgColorIndex];
 }
 
