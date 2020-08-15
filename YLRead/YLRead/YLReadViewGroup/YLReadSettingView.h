@@ -16,34 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateDisplayProgressButton;
 @end
 
-
-///字体类型
-@interface YLReadSettingFontTypeView : YLReadBaseView
-
-@end
-
-
-///背景色
-@interface YLReadSettingBGColorView : YLReadBaseView
-
-@end
-
 /// 亮度
 @interface YLReadSettingLightView : YLReadBaseView
 
 @end
 
-
-///翻页类型
-@interface YLReadSettingEffectTypeView : YLReadBaseView
-
-@end
-
-
-///间距
-@interface YLReadSettingSpacingView : YLReadBaseView
-
-@end
 
 
 
@@ -54,14 +31,7 @@ FOUNDATION_EXPORT CGFloat getYLReadSettingViewHeight(void);
 @property (nonatomic ,strong) YLReadSettingLightView *lightView;
 /// 字体大小
 @property (nonatomic ,strong) YLReadSettingFontSizeView *fontSizeView;
-/// 背景
-@property (nonatomic ,strong) YLReadSettingBGColorView *bgColorView;
-/// 翻页效果
-@property (nonatomic ,strong) YLReadSettingEffectTypeView *effectTypeView;
-/// 字体
-@property (nonatomic ,strong) YLReadSettingFontTypeView *fontTypeView;
-/// 间距
-@property (nonatomic ,strong) YLReadSettingSpacingView *spacingView;
+
 @end
 
 NS_ASSUME_NONNULL_END
