@@ -47,7 +47,7 @@
         // 禁止手势返回
         vc.fd_interactivePopDisabled = YES;
         
-        // 添加单机手势
+        // 添加单击手势
         [vc.contentView addGestureRecognizer:self.singleTap];
         // 初始化日夜间遮盖
         [vc.view addSubview:self.cover];
@@ -155,7 +155,7 @@
     }
      [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
          
-         CGFloat y = isShow ? (CGRectGetHeight(UIScreen.mainScreen.bounds) - getYLReadSettingViewHeight()) : CGRectGetHeight(UIScreen.mainScreen.bounds);
+         CGFloat y = isShow ? (CGRectGetHeight(UIScreen.mainScreen.bounds) - CGRectGetHeight(self.settingView.bounds)) : CGRectGetHeight(UIScreen.mainScreen.bounds);
          CGRect topFrame = self.settingView.frame;
          topFrame.origin = CGPointMake(0, y);
          self.settingView.frame = topFrame;
@@ -183,9 +183,14 @@
 }
 
 #pragma mark - UIGestureRecognizerDelegate
-/// 手势拦截
+
+/** 手势拦截 ： 询问 delegate 一个手势是否应该接收一个触摸对象
+ * @return 默认为 YES，允许手势识别器检查触摸对象；返回 NO 拦截该次事件
+ * @discussion 在调用手势识别器的 -touchesBegan:withEvent: 方法之前调用这个方法
+ */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
-    if ([self.classStrings containsObject:NSStringFromClass(touch.view.class)]) {
+    if ([self.classStrings containsObject:NSStringFromClass(touch.view.class)] ||
+        [touch.view.superview isKindOfClass:UICollectionViewCell.class]) {
         return NO;
     }
     return YES;
@@ -197,8 +202,7 @@
 - (NSArray<NSString *> *)classStrings{
     if (_classStrings == nil) {
         _classStrings = @[@"YLReadTopView",@"YLReadBottomView",@"YLReadSettingView",
-                          @"YLReadSettingFontSizeView", @"YLReadSettingFontTypeView",@"YLReadSettingLightView",
-                          @"YLReadSettingSpacingView",@"YLReadSettingEffectTypeView",@"YLReadSettingBGColorView",
+                          @"YLReadSettingFontSizeView",@"YLReadSettingLightView",
                           @"YLReadFuncView",@"YLReadProgressView",@"UIControl",
                           @"UISlider",@"ASValueTrackingSlider"];
     }
@@ -269,7 +273,6 @@
     if (_settingView == nil) {
         _settingView = [[YLReadSettingView alloc] initWithReadMenu:self];
         _settingView.hidden = YES;
-        _settingView.frame = CGRectMake(0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds), getYLReadSettingViewHeight());
     }
     return _settingView;
 }

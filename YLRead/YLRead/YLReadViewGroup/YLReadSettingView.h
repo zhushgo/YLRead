@@ -23,9 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
-
-FOUNDATION_EXPORT CGFloat getYLReadSettingViewHeight(void);
 @interface YLReadSettingView : YLReadBaseView
 /// 亮度
 @property (nonatomic ,strong) YLReadSettingLightView *lightView;

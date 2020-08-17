@@ -63,7 +63,6 @@
         CFRelease(_frameRef);
         _frameRef = nil;
     }
-//    CFRetain(frameRef);
     _frameRef = frameRef;
     if (frameRef) {
         [self setNeedsDisplay];

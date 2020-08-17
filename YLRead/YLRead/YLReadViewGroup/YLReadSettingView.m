@@ -24,7 +24,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     YLReadSettingTypeSpacing,/// 间距
 };
 
-
 @interface YLReadSettingCollectionCell : UICollectionViewCell
 @property (nonatomic ,strong) UILabel *itemLable;
 @property (nonatomic ,strong) UIImageView *itemImageView;
@@ -38,7 +37,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
         self.contentView.backgroundColor = UIColor.clearColor;
         [self.contentView addSubview:self.itemLable];
         [self.contentView addSubview:self.itemImageView];
-        self.userInteractionEnabled = YES;
         
         self.layer.cornerRadius = 6;
         self.layer.borderWidth = 1;
@@ -50,7 +48,7 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 - (void)layoutSubviews{
     [super layoutSubviews];
     _itemLable.frame = self.contentView.bounds;
-    _itemImageView.frame = self.contentView.bounds;
+    _itemImageView.center = CGPointMake(CGRectGetWidth(self.contentView.bounds) / 2.0, CGRectGetHeight(self.contentView.bounds) / 2.0);
 }
 
 - (void)reloadData:(id)data settingType:(YLReadSettingType)settingType index:(NSInteger)index{
@@ -111,6 +109,14 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     return _itemLable;
 }
 
+- (UIImageView *)itemImageView{
+    if (_itemImageView == nil) {
+        _itemImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
+        _itemImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _itemImageView;
+}
+
 @end
 
 #define TableCellIdentifer @"YLReadSettingTableCell"
@@ -141,6 +147,10 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 
 #pragma mark - UICollectionViewDelegate
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(80, 30 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0));
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.itemArray.count;
 }
@@ -155,6 +165,7 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     if (self.didSelectItemHandler) {
         self.didSelectItemHandler(self.itemArray[indexPath.row],indexPath.row);
     }
+    [collectionView reloadData];
 }
 
 #pragma mark - setter and getters
@@ -183,14 +194,12 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
         default:
             break;
     }
-    
     [self.collectionView reloadData];
 }
 
 - (UICollectionView *)collectionView{
     if (_collectionView == nil){
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.itemSize = CGSizeMake(80, 30 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0));
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -198,7 +207,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.bounces = NO;
         _collectionView.backgroundColor = UIColor.clearColor;
         [_collectionView registerClass:[YLReadSettingCollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
     }
@@ -444,21 +452,7 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 
 
 
-/// 子视图高度
 
-CGFloat getYLReadMenuSettingSubViewHeight(void){
-    return 50 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0);
-}
-/// settingView 内容高度
-
-CGFloat getYLReadMenuSettingContentHeight(void){
-    return getYLReadMenuSettingSubViewHeight() * 6.0;
-}
-
-/// settingView 总高度(内容高度 + iphoneX情况下底部间距)
-CGFloat getYLReadSettingViewHeight(void){
-    return ylReadIsIPhoneNotchScreen() ? (getYLReadMenuSettingContentHeight() + 20 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0)) : getYLReadMenuSettingContentHeight();
-}
 
 @interface YLReadSettingView ()
 <UITableViewDelegate,UITableViewDataSource>
@@ -474,10 +468,12 @@ CGFloat getYLReadSettingViewHeight(void){
 - (instancetype)initWithReadMenu:(YLReadMenu *)readMenu{
     self = [super initWithReadMenu:readMenu];
     if (self) {
+        self.frame = CGRectMake(0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds), ylReadIsIPhoneNotchScreen() ? (50 * 6.0 + 34) : 50 * 6.0);
+        
         self.backgroundColor = kYLRead_Color_MenuBG();
         _lightView = [[YLReadSettingLightView alloc]initWithReadMenu:readMenu];
         [self addSubview:_lightView];
-
+        
         _fontSizeView = [[YLReadSettingFontSizeView alloc]initWithReadMenu:readMenu];
         [self addSubview:_fontSizeView];
         
@@ -488,12 +484,12 @@ CGFloat getYLReadSettingViewHeight(void){
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat x = 15 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0);;
-    CGFloat w = UIScreen.mainScreen.bounds.size.width - 30 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0);
-    CGFloat h = getYLReadMenuSettingSubViewHeight();
-    _lightView.frame = CGRectMake(x, 0, w, h);
-    _fontSizeView.frame = CGRectMake( x,CGRectGetMaxY(_lightView.frame),w, h);
-    self.tableView.frame = CGRectMake(x, CGRectGetMaxY(_fontSizeView.frame), w, h * 4.0);
+    CGFloat x = 16;
+    CGFloat width = CGRectGetWidth(self.bounds) - 16 * 2.0;
+    CGFloat height = 50;
+    _lightView.frame = CGRectMake(x, 0, width, height);
+    _fontSizeView.frame = CGRectMake( x,CGRectGetMaxY(_lightView.frame),width, height);
+    self.tableView.frame = CGRectMake(x, CGRectGetMaxY(_fontSizeView.frame), width, height * 4.0);
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
@@ -571,12 +567,12 @@ CGFloat getYLReadSettingViewHeight(void){
 
 - (UITableView *)tableView{
     if(_tableView == nil){
-        UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen.bounds), 100) style:UITableViewStylePlain];
-        tableView.bounces = NO;
+        UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen.bounds), 200) style:UITableViewStylePlain];
+        tableView.scrollEnabled = NO;
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = UIColor.clearColor;
-        tableView.rowHeight = getYLReadMenuSettingSubViewHeight();
+        tableView.rowHeight = 50;
         tableView.showsVerticalScrollIndicator = NO;
         tableView.showsHorizontalScrollIndicator = NO;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
