@@ -34,11 +34,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
-
+    
     self.navigationItem.title = @"书架";
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.tableView];
-        
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //         [LingDianParser getBookAllStringByBookID:@"445252"];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
@@ -97,7 +97,6 @@
     hud.label.text = @"正在清理...";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BookModel *book = self.booksArray[indexPath.row];
-        //[YLReadTextParser parserForceWithURL:book.fileUrl];
         [YLKeyedArchiver removeWithFolderName:book.bookName fileName:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES];
