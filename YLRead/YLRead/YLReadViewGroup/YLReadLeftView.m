@@ -178,13 +178,13 @@
 
 - (void)clickItem:(UIButton *)item {
     
-    if (self.selectIndex == item.tag) { return ; }
+    //if (self.selectIndex == item.tag) { return ; }
     
     [self scrollIndex:item.tag animated:YES];
     
-    if ([self.delegate respondsToSelector:@selector(segmentedControl:clickIndex:)]) {
+    if ([self.delegate respondsToSelector:@selector(segmentedControl:clickIndex:repeatTap:)]) {
         
-        [self.delegate segmentedControl:self clickIndex:item.tag];
+        [self.delegate segmentedControl:self clickIndex:item.tag repeatTap:self.selectIndex == item.tag];
     }
 }
 
@@ -253,24 +253,30 @@ CGFloat const kYLReadLeft_Header_Height = 50;
     [self.markView.tableView reloadData];
 }
 
-#pragma mark - DZMSegmentedControlDelegate
+#pragma mark - YLReadSegmentedControlDelegate
 
-- (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl clickIndex:(NSInteger)index{
+- (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl clickIndex:(NSInteger)index repeatTap:(BOOL)isRepeat{
     
-    [UIView animateWithDuration:0.2 animations:^{
-        
-        if (index == 0) {// 显示目录
-            [self bringSubviewToFront:self.catalogView];
-            self.catalogView.alpha = 1;
-            self.markView.alpha = 0;
-        }else{// 显示书签
-            [self bringSubviewToFront:self.markView];
+    if (isRepeat) {
+        if (index == 0) {// 反序
+            self.catalogView.isReverse = !self.catalogView.isReverse;
+        }
+    }else{
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            if (index == 0) {// 显示目录
+                [self bringSubviewToFront:self.catalogView];
+                self.catalogView.alpha = 1;
+                self.markView.alpha = 0;
+            }else{// 显示书签
+                [self bringSubviewToFront:self.markView];
                 self.markView.alpha = 1;
                 self.catalogView.alpha = 0;
-        }
-    } completion:^(BOOL finished) {
-        
-    }];
+            }
+        } completion:^(BOOL finished) {}];
+    }
+    
+
 }
 
 #pragma mark - setter and getters

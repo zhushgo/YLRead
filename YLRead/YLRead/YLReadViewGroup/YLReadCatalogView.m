@@ -74,6 +74,8 @@
 @interface YLReadCatalogView ()
 <UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic ,strong) NSArray<YLReadChapterListModel *> *reverseArray;
+@property (nonatomic ,strong) NSArray<YLReadChapterListModel *> *dataArray;
 
 @end
 
@@ -86,6 +88,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        _isReverse = NO;
         [self addSubview:self.tableView];
     }
     return self;
@@ -105,9 +108,9 @@
         if (self.readModel.chapterListModels.count) {
             
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %d", self.readModel.recordModel.chapterModel.id];
-            YLReadChapterListModel *chapterListModel = [self.readModel.chapterListModels filteredArrayUsingPredicate:predicate].firstObject;
+            YLReadChapterListModel *chapterListModel = [self.dataArray filteredArrayUsingPredicate:predicate].firstObject;
             if (chapterListModel) {
-                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.readModel.chapterListModels indexOfObject:chapterListModel] inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.dataArray indexOfObject:chapterListModel] inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
             }
         }
     }
@@ -116,13 +119,13 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.readModel.chapterListModels.count;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YLReadCatalogCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer forIndexPath:indexPath];
      // 章节
-    YLReadChapterListModel *chapterListModel = self.readModel.chapterListModels[indexPath.row];
+    YLReadChapterListModel *chapterListModel = self.dataArray[indexPath.row];
     // 章节名
     cell.chapterName.text = chapterListModel.name;
     
@@ -143,16 +146,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.delegate && [self.delegate respondsToSelector:@selector(catalogViewClickChapter:chapterListModel:)]) {
-        [self.delegate catalogViewClickChapter:self chapterListModel:self.readModel.chapterListModels[indexPath.row]];
+        [self.delegate catalogViewClickChapter:self chapterListModel:self.dataArray[indexPath.row]];
     }
 }
 
 #pragma mark - setter and getters
 
+- (void)setIsReverse:(BOOL)isReverse{
+    _isReverse = isReverse;
+    [self scrollRecord];
+}
+
 - (void)setReadModel:(YLReadModel *)readModel{
     _readModel = readModel;
     [self.tableView reloadData];
     [self scrollRecord];
+}
+
+- (NSArray<YLReadChapterListModel *> *)dataArray{
+    if (_isReverse) {
+        if (_reverseArray.count < 1) {
+            NSMutableArray *array = [NSMutableArray arrayWithArray:self.readModel.chapterListModels];
+            _reverseArray = [[array reverseObjectEnumerator] allObjects];
+        }
+        return _reverseArray;///倒序数组
+    }
+    return self.readModel.chapterListModels;///正序数组
 }
 
 - (UITableView *)tableView{

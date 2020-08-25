@@ -24,11 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic ,weak) id <YLReadCatalogViewDelegate> delegate;
 
+@property (nonatomic ,assign) BOOL isReverse;//是否是倒序
+
 /// 数据源
 @property (nonatomic ,strong) YLReadModel *readModel;
 
 @property (nonatomic ,strong) UITableView *tableView;
-
 
 /// 滚动到阅读记录
 - (void)scrollRecord;

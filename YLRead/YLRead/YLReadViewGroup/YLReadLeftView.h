@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YLReadSegmentedControlDelegate <NSObject>
 @optional
 /// 点击了按钮
-- (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl clickIndex:(NSInteger)index;
+- (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl clickIndex:(NSInteger)index repeatTap:(BOOL)isRepeat;
 /// 当前滑动到的索引
 - (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl scrollIndex:(NSInteger)index;
 @end
