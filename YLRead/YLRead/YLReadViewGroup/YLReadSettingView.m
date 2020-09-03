@@ -492,10 +492,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     self.tableView.frame = CGRectMake(x, CGRectGetMaxY(_fontSizeView.frame), width, height * 4.0);
 }
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
-    return [super pointInside:point withEvent:event];
-}
-
 #pragma mark - response click
 
 - (void)didSelectItem:(id)data settingType:(YLReadSettingType)settingType index:(NSInteger)index{

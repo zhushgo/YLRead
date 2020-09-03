@@ -82,7 +82,7 @@
             }
         }];
     }
-    SLog(@"catalogueArray === %@",catalogueArray);
+//    SLog(@"catalogueArray === %@",catalogueArray);
     return catalogueArray;
 }
 
@@ -100,7 +100,7 @@
     int page = 1;
     do {
         ling = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
-        NSLog(@"ling ===== %@",ling);
+//        NSLog(@"ling ===== %@",ling);
         sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:ling] encoding:NSUTF8StringEncoding error:nil];
         NSError *error;
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];

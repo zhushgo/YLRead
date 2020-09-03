@@ -20,6 +20,7 @@
 
 #import "HTTPManager.h"
 #import "MBProgressHUD.h"
+#import "BiQuGeParser.h"
 
 @interface ViewController ()
 <UITableViewDelegate,UITableViewDataSource>
@@ -40,10 +41,11 @@
     [self.view addSubview:self.tableView];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//         [LingDianParser getBookAllStringByBookID:@"445252"];
+        //[BiQuGeParser getBookAllStringByBookID:@"53605"];
+//         [LingDianParser getBookAllStringByBookID:@"4626"];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
     });
-//    [BiQuGeParser getBookAllStringByBookID:@"1959"];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{

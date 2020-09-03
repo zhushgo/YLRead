@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//http://www.shuquge.com
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BiQuGeParser : NSObject
 /** 获取小说的纯文本
- *
+ * 53605
  * &nbsp;&nbsp;&nbsp;&nbsp;
  */
 + (NSMutableString *)getBookAllStringByBookID:(NSString *)bookID;
