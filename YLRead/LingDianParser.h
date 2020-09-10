@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //https://route.51mypc.cn/novels/search/牧神记
 //https://route.51mypc.cn/novels/download/185607
-//https://m.lingdiankanshu.co/445252/all.html
+//https://m.lingdiankanshu.co/343014/all.html
 
 /** 零点看书小说网：提取小说文本内容
  * 牧神记：187917
- * 北颂  ：410820       第0989章 红妆!红妆!
- * 万族之劫 ： 445252    第572章 太山!
- * 小阁老：421518        第一百七十二章 赢定了
+ * 北颂  ：410820       第0994章 老虎出更必见血
+ * 万族之劫 ： 445252    第584章 回归
+ * 小阁老：421518        第一百七十八章 朴成性与朴成寅
  * 全球高武 ： 343014
  * 赘婿：4626
  * 大泼猴：5910
