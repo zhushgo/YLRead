@@ -240,22 +240,17 @@
         
         // 章节内容范围
         NSRange range = rangeDict.allValues.firstObject.rangeValue;
-        
         // 当前章节
         YLReadChapterListModel *chapterListModel = readModel.chapterListModels[priority];
-                
         /// 第一个章节
         BOOL isFirstChapter = (priority == 0);
-                
         /// 最后一个章节
         BOOL isLastChapter = (priority == (readModel.chapterListModels.count - 1));
-                
         // 上一个章节ID
-        NSInteger previousChapterID = isFirstChapter ? -1 : readModel.chapterListModels[priority - 1].id;
-                
+        NSInteger previousChapterID = isFirstChapter ? kYLReadChapterIDMin : readModel.chapterListModels[priority - 1].id;
         // 下一个章节ID
-        NSInteger nextChapterID  = isLastChapter ? -1 : readModel.chapterListModels[priority + 1].id;
-            
+        NSInteger nextChapterID  = isLastChapter ? kYLReadChapterIDMax : readModel.chapterListModels[priority + 1].id;
+        
         // 章节内容
         YLReadChapterModel *chapterModel = [[YLReadChapterModel alloc] init];
         // 书ID

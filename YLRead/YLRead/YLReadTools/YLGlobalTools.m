@@ -220,6 +220,13 @@ CGFloat const kYLReadStatusTopViewHeight = 40;
 /// bottomView 高度
 CGFloat const kYLReadStatusBottomViewHeight = 30;
 
+
+
+NSInteger const kYLReadBookHomePage = -1;
+NSInteger const kYLReadChapterLastPage = 888888888;
+NSInteger const kYLReadChapterIDMin = 0;
+NSInteger const kYLReadChapterIDMax = 9999999;
+
 /// 长按阅读视图通知 info 数据 key
 NSString *const kYLReadLongPressViewKey = @"kYLReadLongPressViewKey";
 /// 长按阅读视图通知

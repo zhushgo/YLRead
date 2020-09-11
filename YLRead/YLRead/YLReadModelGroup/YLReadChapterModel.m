@@ -139,11 +139,11 @@ NSString *const kYLReadChapterModelName = @"name";
 }
 
 - (BOOL)isFirstChapter{
-     return self.previousChapterID == -1;
+     return self.previousChapterID == kYLReadChapterIDMin;
 }
 
 - (BOOL)isLastChapter{
-    return self.nextChapterID == -1;
+    return self.nextChapterID == kYLReadChapterIDMax || self.nextChapterID == nil;
 }
 
 - (float)pageTotalHeight{

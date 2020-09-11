@@ -17,23 +17,116 @@ NSUInteger kYLReadRecordCurrentChapterLocation;
 
 NSString *const kYLReadRecordModelBookID = @"bookID";
 NSString *const kYLReadRecordModelChapterModel = @"chapterModel";
+NSString *const kYLReadRecordModelContentAttributedString = @"contentAttributedString";
+NSString *const kYLReadRecordModelContentString = @"contentString";
+NSString *const kYLReadRecordModelIsFirstChapter = @"isFirstChapter";
+NSString *const kYLReadRecordModelIsFirstPage = @"isFirstPage";
+NSString *const kYLReadRecordModelIsLastChapter = @"isLastChapter";
+NSString *const kYLReadRecordModelIsLastPage = @"isLastPage";
+NSString *const kYLReadRecordModelLocationFirst = @"locationFirst";
+NSString *const kYLReadRecordModelLocationLast = @"locationLast";
 NSString *const kYLReadRecordModelPage = @"page";
+NSString *const kYLReadRecordModelPageModel = @"pageModel";
 
-@interface YLReadRecordModel ()
-
-- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
-
-@end
 
 @implementation YLReadRecordModel
 
 @synthesize bookID = _bookID;
 @synthesize chapterModel = _chapterModel;
+@synthesize contentAttributedString = _contentAttributedString;
+@synthesize contentString = _contentString;
+@synthesize isFirstChapter = _isFirstChapter;
+@synthesize isFirstPage = _isFirstPage;
+@synthesize isLastChapter = _isLastChapter;
+@synthesize isLastPage = _isLastPage;
+@synthesize locationFirst = _locationFirst;
+@synthesize locationLast = _locationLast;
 @synthesize page = _page;
+@synthesize pageModel = _pageModel;
+
+
+#pragma mark - Helper Method
+
+///重写 -description 方法
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - NSCoding Methods
+
+///实现 NSCoding 的序列化方法
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    if(self.bookID != nil){
+        [aCoder encodeObject:_bookID forKey:kYLReadRecordModelBookID];
+    }
+    if(_chapterModel != nil){
+        [aCoder encodeObject:self.chapterModel forKey:kYLReadRecordModelChapterModel];
+    }
+    if(self.contentAttributedString != nil){
+        [aCoder encodeObject:_contentAttributedString forKey:kYLReadRecordModelContentAttributedString];
+    }
+    if(self.contentString != nil){
+        [aCoder encodeObject:_contentString forKey:kYLReadRecordModelContentString];
+    }
+    [aCoder encodeObject:@(_isFirstChapter) forKey:kYLReadRecordModelIsFirstChapter];
+    [aCoder encodeObject:@(_isFirstPage) forKey:kYLReadRecordModelIsFirstPage];
+    [aCoder encodeObject:@(_isLastChapter) forKey:kYLReadRecordModelIsLastChapter];
+    [aCoder encodeObject:@(_isLastPage) forKey:kYLReadRecordModelIsLastPage];
+    [aCoder encodeObject:@(_locationFirst) forKey:kYLReadRecordModelLocationFirst];
+    [aCoder encodeObject:@(_locationLast) forKey:kYLReadRecordModelLocationLast];
+    [aCoder encodeObject:@(_page) forKey:kYLReadRecordModelPage];
+    if(_pageModel != nil){
+        [aCoder encodeObject:self.pageModel forKey:kYLReadRecordModelPageModel];
+    }
+}
+
+///实现 NSCoding 的反序列化方法
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    self.bookID = [aDecoder decodeObjectForKey:kYLReadRecordModelBookID];
+    self.chapterModel = [aDecoder decodeObjectForKey:kYLReadRecordModelChapterModel];
+    self.contentAttributedString = [aDecoder decodeObjectForKey:kYLReadRecordModelContentAttributedString];
+    self.contentString = [aDecoder decodeObjectForKey:kYLReadRecordModelContentString];
+    self.isFirstChapter = [[aDecoder decodeObjectForKey:kYLReadRecordModelIsFirstChapter] boolValue];
+    self.isFirstPage = [[aDecoder decodeObjectForKey:kYLReadRecordModelIsFirstPage] boolValue];
+    self.isLastChapter = [[aDecoder decodeObjectForKey:kYLReadRecordModelIsLastChapter] boolValue];
+    self.isLastPage = [[aDecoder decodeObjectForKey:kYLReadRecordModelIsLastPage] boolValue];
+    self.locationFirst = [[aDecoder decodeObjectForKey:kYLReadRecordModelLocationFirst] integerValue];
+    self.locationLast = [[aDecoder decodeObjectForKey:kYLReadRecordModelLocationLast] integerValue];
+    self.page = [[aDecoder decodeObjectForKey:kYLReadRecordModelPage] integerValue];
+    self.pageModel = [aDecoder decodeObjectForKey:kYLReadRecordModelPageModel];
+    return self;
+}
+
+///实现该方法，确保实例被 copy 时自身的参数也被 copy
+- (instancetype)copyWithZone:(NSZone *)zone{
+    YLReadRecordModel *copy = [[YLReadRecordModel alloc] init];
+    if (copy) {
+        copy.bookID = [self.bookID copy];
+        copy.chapterModel = [self.chapterModel copy];
+        copy.contentAttributedString = [self.contentAttributedString copy];
+        copy.contentString = [self.contentString copy];
+        copy.isFirstChapter = self.isFirstChapter;
+        copy.isFirstPage = self.isFirstPage;
+        copy.isLastChapter = self.isLastChapter;
+        copy.isLastPage = self.isLastPage;
+        copy.locationFirst = self.locationFirst;
+        copy.locationLast = self.locationLast;
+        copy.page = self.page;
+        //copy.pageModel = [self.pageModel copy];
+    }
+    return copy;
+}
+
+@end
 
 
 
 
+
+
+
+@implementation YLReadRecordModel (Service)
 
 - (YLReadPageModel *)pageModel{
     return self.chapterModel.pageModels[self.page];
@@ -121,7 +214,7 @@ NSString *const kYLReadRecordModelPage = @"page";
     }
 }
 
-/// 修改阅读记录为指定章节页码 (toPage == -1 为当前章节最后一页)
+/// 修改阅读记录为指定章节页码 (toPage == kYLReadChapterLastPage 为当前章节最后一页)
 - (void)modifyWithChapterID:(NSUInteger)chapterID toPage:(NSInteger)toPage{
     [self modifyWithChapterID:chapterID toPage:toPage isSave:YES];
 }
@@ -130,7 +223,7 @@ NSString *const kYLReadRecordModelPage = @"page";
     if ([YLReadChapterModel isExistWithBookID:self.bookID chapterID:chapterID]) {
         self.chapterModel = [YLReadChapterModel modelWithBookID:self.bookID chapterID:chapterID];
         
-        if (toPage == -1) {
+        if (toPage == kYLReadChapterLastPage) {
             [self lastPage];
         }else{
             self.page = toPage;
@@ -186,64 +279,103 @@ NSString *const kYLReadRecordModelPage = @"page";
     return model;
 }
 
+@end
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict{
-    return [[self alloc] initWithDictionary:dict];
+
+
+
+
+
+
+
+
+
+
+
+
+
+@implementation YLReadRecordModel (JsonModel)
+
+/// 根据传递的 Dictionary 创建一个实例
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary{
+    if (dictionary && [dictionary isKindOfClass:[NSDictionary class]] && dictionary.allKeys > 0){
+        return [[self alloc]initWithDictionary:dictionary];
+    }else{
+        return nil;
+    }
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict{
+/// 根据传递的 Dictionary 初始化该实例
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary{
     self = [super init];
-    if(self && [dict isKindOfClass:[NSDictionary class]]) {
-        self.bookID = [self objectOrNilForKey:kYLReadRecordModelBookID fromDictionary:dict];
-        self.chapterModel = [self objectOrNilForKey:kYLReadRecordModelChapterModel fromDictionary:dict];
-        self.page = [[self objectOrNilForKey:kYLReadRecordModelPage fromDictionary:dict] integerValue];
+    if(self && [dictionary isKindOfClass:[NSDictionary class]]) {
+        if(![dictionary[kYLReadRecordModelBookID] isKindOfClass:[NSNull class]]){
+            self.bookID = dictionary[kYLReadRecordModelBookID];
+        }
+        if(![dictionary[kYLReadRecordModelChapterModel] isKindOfClass:[NSNull class]]){
+            self.chapterModel = [[YLReadChapterModel alloc] initWithDictionary:dictionary[kYLReadRecordModelChapterModel]];
+        }
+        if(![dictionary[kYLReadRecordModelContentAttributedString] isKindOfClass:[NSNull class]]){
+            self.contentAttributedString = dictionary[kYLReadRecordModelContentAttributedString];
+        }
+        if(![dictionary[kYLReadRecordModelContentString] isKindOfClass:[NSNull class]]){
+            self.contentString = dictionary[kYLReadRecordModelContentString];
+        }
+        if(![dictionary[kYLReadRecordModelIsFirstChapter] isKindOfClass:[NSNull class]]){
+            self.isFirstChapter = [dictionary[kYLReadRecordModelIsFirstChapter] boolValue];
+        }
+        if(![dictionary[kYLReadRecordModelIsFirstPage] isKindOfClass:[NSNull class]]){
+            self.isFirstPage = [dictionary[kYLReadRecordModelIsFirstPage] boolValue];
+        }
+        if(![dictionary[kYLReadRecordModelIsLastChapter] isKindOfClass:[NSNull class]]){
+            self.isLastChapter = [dictionary[kYLReadRecordModelIsLastChapter] boolValue];
+        }
+        if(![dictionary[kYLReadRecordModelIsLastPage] isKindOfClass:[NSNull class]]){
+            self.isLastPage = [dictionary[kYLReadRecordModelIsLastPage] boolValue];
+        }
+        if(![dictionary[kYLReadRecordModelLocationFirst] isKindOfClass:[NSNull class]]){
+            self.locationFirst = [dictionary[kYLReadRecordModelLocationFirst] integerValue];
+        }
+        if(![dictionary[kYLReadRecordModelLocationLast] isKindOfClass:[NSNull class]]){
+            self.locationLast = [dictionary[kYLReadRecordModelLocationLast] integerValue];
+        }
+        if(![dictionary[kYLReadRecordModelPage] isKindOfClass:[NSNull class]]){
+            self.page = [dictionary[kYLReadRecordModelPage] integerValue];
+        }
+        if(![dictionary[kYLReadRecordModelPageModel] isKindOfClass:[NSNull class]]){
+            //self.pageModel = [[YLReadPageModel alloc] initWithDictionary:dictionary[kYLReadRecordModelPageModel]];
+        }
     }
     return self;
 }
 
-- (NSDictionary *)dictionaryRepresentation{
-    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.bookID forKey:kYLReadRecordModelBookID];
-    [mutableDict setValue:self.chapterModel forKey:kYLReadRecordModelChapterModel];
-    [mutableDict setValue:[NSNumber numberWithInteger:self.page] forKey:kYLReadRecordModelPage];
-    return [NSDictionary dictionaryWithDictionary:mutableDict];
-}
-
-- (NSString *)description{
-    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
-}
-
-#pragma mark - Helper Method
-- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict{
-    id object = [dict objectForKey:aKey];
-    return [object isEqual:[NSNull null]] ? nil : object;
-}
-
-
-#pragma mark - NSCoding Methods
-
-- (id)initWithCoder:(NSCoder *)aDecoder{
-    self = [super init];
-    self.bookID = [aDecoder decodeObjectForKey:kYLReadRecordModelBookID];
-    self.chapterModel = [aDecoder decodeObjectForKey:kYLReadRecordModelChapterModel];
-    self.page = [aDecoder decodeDoubleForKey:kYLReadRecordModelPage];
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:_bookID forKey:kYLReadRecordModelBookID];
-    [aCoder encodeObject:_chapterModel forKey:kYLReadRecordModelChapterModel];
-    [aCoder encodeDouble:_page forKey:kYLReadRecordModelPage];
-}
-
-- (id)copyWithZone:(NSZone *)zone{
-    YLReadRecordModel *copy = [[YLReadRecordModel alloc] init];
-    if (copy) {
-        copy.bookID = [self.bookID copyWithZone:zone];
-        copy.chapterModel = [self.chapterModel copyWithZone:zone];
-        copy.page = self.page;
+///返回该实例的可用属性值
+-(NSDictionary *)dictionaryRepresentation{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    if(self.bookID != nil){
+        dictionary[kYLReadRecordModelBookID] = self.bookID;
     }
-    return copy;
+    if(self.chapterModel != nil){
+        dictionary[kYLReadRecordModelChapterModel] = [self.chapterModel dictionaryRepresentation];
+    }
+    if(self.contentAttributedString != nil){
+        dictionary[kYLReadRecordModelContentAttributedString] = self.contentAttributedString;
+    }
+    if(self.contentString != nil){
+        dictionary[kYLReadRecordModelContentString] = self.contentString;
+    }
+    dictionary[kYLReadRecordModelIsFirstChapter] = @(self.isFirstChapter);
+    dictionary[kYLReadRecordModelIsFirstPage] = @(self.isFirstPage);
+    dictionary[kYLReadRecordModelIsLastChapter] = @(self.isLastChapter);
+    dictionary[kYLReadRecordModelIsLastPage] = @(self.isLastPage);
+    dictionary[kYLReadRecordModelLocationFirst] = @(self.locationFirst);
+    dictionary[kYLReadRecordModelLocationLast] = @(self.locationLast);
+    dictionary[kYLReadRecordModelPage] = @(self.page);
+    if(self.pageModel != nil){
+        dictionary[kYLReadRecordModelPageModel] = self.pageModel;
+    }
+    return dictionary;
 }
+
 
 @end

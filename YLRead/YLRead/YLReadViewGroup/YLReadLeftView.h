@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)segmentedControl:(YLReadSegmentedControl *)segmentedControl scrollIndex:(NSInteger)index;
 @end
 
+/// 滑条宽度自适应填充
+static CGFloat const kYLReadSegmentedControlSliderWidthFill = -1;
 @interface YLReadSegmentedControl : UIView
 
 /// 代理

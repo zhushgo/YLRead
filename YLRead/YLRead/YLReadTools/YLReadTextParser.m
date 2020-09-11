@@ -124,10 +124,7 @@
         BOOL isHavePreface = YES;
         // 遍历
         for (int i = 0; i < count + 1; i ++) {
-            // 章节数量分析:
-            // count + 1  = 匹配到的章节数量 + 最后一个章节
-            // 1 + count + 1  = 第一章前面的前言内容 + 匹配到的章节数量 + 最后一个章节
-            //NSLog(@"章节总数: \(%ld + 1)  当前正在解析: \(%d + 1)",count,i);
+            // 章节数量分析: count + 1  = 前言内容 + 匹配到的章节数量
             NSRange range = NSMakeRange(0, 0);
             NSUInteger location = 0;
             if (i < count) {
@@ -154,7 +151,7 @@
                     isHavePreface = NO;
                     continue;
                 }
-            }else if (i == count) { // 结尾
+            }else if (i == count) { // 结尾:最后一章
                 // 章节名
                 chapterModel.name = [content substringWithRange:lastRange];
                 // 内容(不包含章节名)
@@ -169,25 +166,27 @@
             // 章节开头双空格 + 章节纯内容
             chapterModel.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,chapterModel.content.removeSEHeadAndTail];
             // 设置上一个章节ID
-            chapterModel.previousChapterID = lastChapterModel.id;
-            
-            // 设置下一个章节ID
-            if (i == (count - 1)) { // 最后一个章节了
-                chapterModel.nextChapterID = -1;
+            if (i == 0) {
+                chapterModel.previousChapterID = kYLReadChapterIDMin;
             }else{
-                lastChapterModel.nextChapterID = chapterModel.id;
+                chapterModel.previousChapterID = lastChapterModel.id;
             }
-            
+            // 设置下一个章节ID
+            if (i == count) { // 最后一章
+                chapterModel.nextChapterID = kYLReadChapterIDMax;
+            }
             // 保存
             [chapterModel save];
+            
+            lastChapterModel.nextChapterID = chapterModel.id;
             [lastChapterModel save];
             
             // 记录
             lastRange = range;
-            lastChapterModel = chapterModel;
-            
             // 通过章节内容生成章节列表
             [chapterListModels addObject:[self getChapterListModel:chapterModel]];
+            
+            lastChapterModel = chapterModel;
         }
     }else{
         // 章节内容

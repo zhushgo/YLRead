@@ -174,6 +174,8 @@
 		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
 		1AA8A20324C6E82F00839A83 /* BiQuGeParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiQuGeParser.h; sourceTree = "<group>"; };
 		1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiQuGeParser.m; sourceTree = "<group>"; };
+		1ABEC7C1250B15BD008D0DAC /* YLRead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLRead.h; sourceTree = "<group>"; };
+		1ABEC7C2250B15D7008D0DAC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1ACA604E24CEA49B00EC22B0 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		1ACA604F24CEA49B00EC22B0 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		1ACA605124CEA4E400EC22B0 /* BookTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableCell.h; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
 				1A6E7E5C24B863FB00F42EA4 /* Info.plist */,
 				1A6E7E5D24B863FB00F42EA4 /* main.m */,
+				1ABEC7C2250B15D7008D0DAC /* PrefixHeader.pch */,
 			);
 			path = YLRead;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */,
 				1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */,
 				1A6E7E9024B8649100F42EA4 /* YLReadViewScrollController.m */,
+				1ABEC7C1250B15BD008D0DAC /* YLRead.h */,
 			);
 			path = YLRead;
 			sourceTree = "<group>";
@@ -643,6 +647,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${SRCROOT}/YLRead/PrefixHeader.pch";
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -660,6 +666,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2NC8A2MPU;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${SRCROOT}/YLRead/PrefixHeader.pch";
 				INFOPLIST_FILE = YLRead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

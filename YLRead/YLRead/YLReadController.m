@@ -214,7 +214,7 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
         [self clearPageController];
     }
     // 清空坐标
-    kYLReadRecordCurrentChapterLocation = -1;
+    kYLReadRecordCurrentChapterLocation = kYLReadChapterIDMin;
 
     // 返回
     [self.navigationController popViewControllerAnimated:YES];
@@ -420,7 +420,7 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
                 [YLReadTextFastParser parserWithReadModel:self.readModel chapterID:chapterID];
             }
             // 修改阅读记录
-            [recordModel modifyWithChapterID:chapterID toPage:-1 isSave:NO];
+            [recordModel modifyWithChapterID:chapterID toPage:kYLReadChapterLastPage isSave:NO];
         }else{ // 加载网络章节数据
             // ----- 搜索网络小说 -----
             return nil;
@@ -750,19 +750,20 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
         return [self getAboveReadViewController];
     } else { // 仿真
         // 翻页累计
-        _tempNumber -= 1;
+        _tempNumber --;
         // 获取当前页阅读记录
         YLReadRecordModel *recordModel = ((YLReadViewController *)viewController).recordModel;
         // 如果没有则从背面页面获取
         if (recordModel == nil) {
             recordModel = ((YLReadViewBGController *)viewController).recordModel;
         }
-        
+        if (recordModel.isFirstChapter && recordModel.isFirstPage) {
+            _tempNumber ++;
+            return nil;
+        }
         if (labs(_tempNumber) % 2 == 0) { // 背面
             recordModel = [self getAboveReadRecordModelWithRecordModel:recordModel];
-            
             return [self getReadViewBGControllerWithRecordModel:recordModel];
-            
         }else{ // 内容
             return [self getReadViewController:recordModel];
         }
@@ -775,12 +776,17 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
         return [self getBelowReadViewController];
     } else { // 仿真
         // 翻页累计
-        _tempNumber += 1;
+        _tempNumber ++;
         // 获取当前页阅读记录
         YLReadRecordModel *recordModel = ((YLReadViewController *)viewController).recordModel;
         // 如果没有则从背面页面获取
         if (recordModel == nil) {
             recordModel = ((YLReadViewBGController *)viewController).recordModel;
+        }
+        
+        if (recordModel.isLastChapter && recordModel.isLastPage) {
+            _tempNumber --;
+            return nil;
         }
         
         if (labs(_tempNumber) % 2 == 0) { // 背面
@@ -791,6 +797,5 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
         }
     }
 }
-    
 
 @end

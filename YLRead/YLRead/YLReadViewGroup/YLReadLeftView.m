@@ -40,7 +40,7 @@
         self.sliderColor = [UIColor redColor];
         self.sliderHeight = 2;
         self.sliderBottom = 0;
-        self.sliderWidth = -1;
+        self.sliderWidth = kYLReadSegmentedControlSliderWidthFill;
         self.itemSpace = 0;
         self.sliderView = [[UIView alloc] init];
         self.insets = UIEdgeInsetsZero;

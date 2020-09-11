@@ -55,7 +55,14 @@ FOUNDATION_EXPORT CGRect getReadRect(void);
 FOUNDATION_EXPORT CGRect getReadViewRect(void);
 
 
-
+///书籍首页-书名页
+FOUNDATION_EXPORT NSInteger const kYLReadBookHomePage;
+///用于指代章节最后一页
+FOUNDATION_EXPORT NSInteger const kYLReadChapterLastPage;
+///用于指代第一章
+FOUNDATION_EXPORT NSInteger const kYLReadChapterIDMin;
+///用于指代最后一章的后一章（表示没有）
+FOUNDATION_EXPORT NSInteger const kYLReadChapterIDMax;
 
 
 /// 获得当前时间戳

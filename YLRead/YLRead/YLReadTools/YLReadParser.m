@@ -34,7 +34,7 @@
     NSMutableArray<YLReadPageModel *> *pageModels = [NSMutableArray array];
     if (isFirstChapter) { // 第一页为书籍页面
         YLReadPageModel *pageModel = [[YLReadPageModel alloc]init];
-        pageModel.range = NSMakeRange(-1, 1);
+        pageModel.range = NSMakeRange(kYLReadBookHomePage, 1);
         pageModel.contentSize = getReadViewRect().size;
         [pageModels addObject:pageModel];
     }

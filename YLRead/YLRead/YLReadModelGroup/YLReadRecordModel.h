@@ -17,7 +17,6 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 @class YLReadChapterModel,YLReadPageModel;
 @interface YLReadRecordModel : NSObject <NSCoding, NSCopying>
 
-
 /// 小说ID
 @property (nonatomic, strong) NSString *bookID;
 /// 当前记录的阅读章节
@@ -53,7 +52,12 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 /// 当前记录页码富文本
 @property (nonatomic, strong) NSAttributedString *contentAttributedString;
 
+@end
 
+
+
+///浏览器业务方法
+@interface YLReadRecordModel (Service)
 
 /// 当前记录切到上一页
 - (void)previousPage;
@@ -72,7 +76,7 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 - (void)modifyWithChapterID:(NSUInteger)chapterID location:(NSInteger)location;
 - (void)modifyWithChapterID:(NSUInteger)chapterID location:(NSInteger)location isSave:(BOOL)isSave;
 
-/// 修改阅读记录为指定章节页码 (toPage == -1 为当前章节最后一页)
+/// 修改阅读记录为指定章节页码 (toPage == kYLReadLastPage 为当前章节最后一页)
 - (void)modifyWithChapterID:(NSUInteger)chapterID toPage:(NSInteger)toPage;
 - (void)modifyWithChapterID:(NSUInteger)chapterID toPage:(NSInteger)toPage isSave:(BOOL)isSave;
 
@@ -92,11 +96,17 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 /// 获取阅读记录对象,如果没有记录则创建对象返回
 + (YLReadRecordModel *)modelWithBookID:(NSString *)bookID;
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
-- (NSDictionary *)dictionaryRepresentation;
 
 @end
 
+
+@interface YLReadRecordModel (JsonModel)
+
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+-(NSDictionary *)dictionaryRepresentation;
+
+@end
 
 NS_ASSUME_NONNULL_END

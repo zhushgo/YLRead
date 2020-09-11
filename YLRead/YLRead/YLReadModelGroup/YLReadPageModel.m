@@ -124,7 +124,7 @@ NSString *const kYLReadPageModelPage = @"page";
 
 /// 书籍首页
 - (BOOL)isHomePage{
-    return self.range.location == -1;
+    return self.range.location == kYLReadBookHomePage;
 }
 
 /// 获取显示内容(考虑可能会变换字体颜色的情况)

@@ -109,7 +109,7 @@ CGFloat getYLReadProgressViewHeight(void){
               // 获得章节列表模型
               YLReadChapterListModel *chapterListModel = readModel.chapterListModels[index];
               // 页码
-              NSInteger toPage = (index == count) ? -1 : 0;
+              NSInteger toPage = (index == count) ? kYLReadChapterLastPage : 0;
               
               // 传递
               if (self.readMenu.delegate && [self.readMenu.delegate respondsToSelector:@selector(readMenuDraggingProgress:toChapterID:toPage:)]) {
