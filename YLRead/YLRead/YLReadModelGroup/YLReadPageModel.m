@@ -7,7 +7,6 @@
 //
 
 #import "YLReadPageModel.h"
-#import "YLReadConfigure.h"
 
 NSString *const kYLReadPageModelHeadTypeHeight = @"headTypeHeight";
 NSString *const kYLReadPageModelRange = @"range";

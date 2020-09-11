@@ -7,13 +7,7 @@
 //
 
 #import "YLReadViewStatusBottomView.h"
-#import "YLReadConfigure.h"
-#import "YLGlobalTools.h"
 
-
-@interface YLReadBatteryView ()
-
-@end
 
 @implementation YLReadBatteryView
 

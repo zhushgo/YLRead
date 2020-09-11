@@ -8,8 +8,6 @@
 
 #import "YLReadLongPressViewController.h"
 #import "YLReadLongPressView.h"
-#import "YLReadConfigure.h"
-#import "YLGlobalTools.h"
 
 @interface YLReadLongPressViewController ()
 

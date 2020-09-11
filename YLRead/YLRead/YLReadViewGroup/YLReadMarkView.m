@@ -8,12 +8,10 @@
 
 #import "YLReadMarkView.h"
 
-#import "YLReadConfigure.h"
 #import "YLReadUserDefaults.h"
 
 #import "YLReadModel.h"
 #import "YLReadMarkModel.h"
-#import "YLGlobalTools.h"
 
 
 #define CellIdentifer @"YLReadMarkCell"

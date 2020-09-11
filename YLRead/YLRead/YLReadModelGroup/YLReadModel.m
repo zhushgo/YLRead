@@ -12,7 +12,6 @@
 #import "YLReadChapterModel.h"
 #import "YLReadPageModel.h"
 #import "YLKeyedArchiver.h"
-#import "YLGlobalTools.h"
 #import "NSString+Extend.h"
 
 NSString *const kYLReadModelBookID = @"bookID";

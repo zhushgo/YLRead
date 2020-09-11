@@ -7,9 +7,6 @@
 //
 
 #import "YLReadTopView.h"
-#import "YLReadConfigure.h"
-#import "YLGlobalTools.h"
-#import "YLReadController.h"
 
 @implementation YLReadTopView
 

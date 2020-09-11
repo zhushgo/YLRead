@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// 段落头部双圆角空格
 FOUNDATION_EXPORT NSString *const kYLReadParagraphSpace;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface NSString (Extend)
+
+///正则替代
 - (NSString *)replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template;
 
 /// 去除首尾空格和换行

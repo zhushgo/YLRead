@@ -9,7 +9,6 @@
 #import "YLReadViewCell.h"
 #import "YLReadView.h"
 #import "YLReadPageModel.h"
-#import "YLGlobalTools.h"
 
 @implementation YLReadViewCell
 

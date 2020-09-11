@@ -56,7 +56,7 @@ extern NSUInteger kYLReadRecordCurrentChapterLocation;
 
 
 
-///浏览器业务方法
+///阅读器业务
 @interface YLReadRecordModel (Service)
 
 /// 当前记录切到上一页

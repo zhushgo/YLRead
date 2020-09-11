@@ -7,7 +7,6 @@
 //
 
 #import "YLReadView.h"
-#import "YLGlobalTools.h"
 
 @implementation YLReadView
 

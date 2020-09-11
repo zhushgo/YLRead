@@ -20,10 +20,8 @@
 #import "YLReadViewBGController.h"
 
 #import "YLReadMarkModel.h"
-#import "YLReadConfigure.h"
 #import "YLReadChapterListModel.h"
 
-#import "YLGlobalTools.h"
 #import "YLReadTextFastParser.h"
 
 @interface YLReadController ()

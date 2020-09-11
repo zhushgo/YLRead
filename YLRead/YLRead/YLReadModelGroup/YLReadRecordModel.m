@@ -8,7 +8,6 @@
 
 #import "YLReadRecordModel.h"
 #import "YLReadChapterModel.h"
-#import "YLGlobalTools.h"
 #import "YLKeyedArchiver.h"
 
 
@@ -376,6 +375,5 @@ NSString *const kYLReadRecordModelPageModel = @"pageModel";
     }
     return dictionary;
 }
-
 
 @end

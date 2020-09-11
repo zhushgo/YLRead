@@ -13,21 +13,21 @@ NS_ASSUME_NONNULL_BEGIN
 @class YLReadPageModel;
 @interface YLReadChapterModel : NSObject <NSCoding, NSCopying>
 
- /// 小说ID
+/// 小说ID
 @property (nonatomic, strong) NSString *bookID;
- /// 章节ID
+/// 章节ID
 @property (nonatomic, assign) NSInteger id;
-  /// 上一章ID
+/// 上一章ID
 @property (nonatomic, assign) NSInteger previousChapterID;
- /// 下一章ID
+/// 下一章ID
 @property (nonatomic, assign) NSInteger nextChapterID;
 /// 章节名称
 @property (nonatomic, strong) NSString *name;
- /// 内容属性变化记录 : 字体属性变化
- @property (nonatomic, strong) NSDictionary<NSAttributedStringKey,id> *attributes;
- /// 经过排版的内容
+/// 内容属性变化记录 : 字体属性变化
+@property (nonatomic, strong) NSDictionary<NSAttributedStringKey,id> *attributes;
+/// 经过排版的内容
 @property (nonatomic, strong) NSString *content;
- /// 优先级 (一般章节段落都带有排序的优先级从0开始)
+/// 优先级 (一般章节段落都带有排序的优先级从0开始)
 @property (nonatomic, assign) NSInteger priority;
 /// 本章有多少页
 @property (nonatomic, assign) NSInteger pageCount;
@@ -43,7 +43,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSAttributedString *fullContent;
 /// 分页总高 (上下滚动模式使用)
 @property (nonatomic, assign) float pageTotalHeight;
+@end
 
+
+
+
+
+///阅读器业务
+@interface YLReadChapterModel (Service)
 
 /// 更新字体
 - (void)updateFont;
@@ -79,10 +86,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)modelWithBookID:(NSString *)bookID chapterID:(NSInteger)chapterID;
 + (instancetype)modelWithBookID:(NSString *)bookID chapterID:(NSInteger)chapterID isUpdateFont:(BOOL)isUpdateFont;
 
+@end
+
+
+
+
+@interface YLReadChapterModel (JsonModel)
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionaryRepresentation;
-
 @end
+
 
 NS_ASSUME_NONNULL_END

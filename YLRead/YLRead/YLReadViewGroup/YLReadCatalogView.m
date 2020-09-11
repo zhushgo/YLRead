@@ -12,7 +12,6 @@
 #import "YLReadChapterModel.h"
 #import "YLReadChapterListModel.h"
 #import "YLReadUserDefaults.h"
-#import "YLReadConfigure.h"
 
 #define CellIdentifer @"YLReadCatalogCell"
 

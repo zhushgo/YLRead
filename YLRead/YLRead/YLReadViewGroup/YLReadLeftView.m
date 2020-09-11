@@ -7,8 +7,6 @@
 //
 
 #import "YLReadLeftView.h"
-#import "YLReadConfigure.h"
-#import "YLGlobalTools.h"
 #import "YLReadUserDefaults.h"
 
 @interface YLReadSegmentedControl()

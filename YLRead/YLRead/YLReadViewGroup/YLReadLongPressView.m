@@ -9,7 +9,6 @@
 #import "YLReadLongPressView.h"
 #import "YLReadLongPressCursorView.h"
 #import "YLCoreText.h"
-#import "YLReadConfigure.h"
 #import <CoreGraphics/CoreGraphics.h>
 
 

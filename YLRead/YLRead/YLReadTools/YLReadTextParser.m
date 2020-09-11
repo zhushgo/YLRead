@@ -95,33 +95,33 @@
     }
 }
 
-/// 解析整本小说
-///
-/// - Parameters:
-///   - bookID: 小说ID
-///   - content: 小说内容
-/// - Returns: 章节列表
+/**  解析整本小说
+ * @param bookID 小说ID
+ * @param contentString 小说内容
+ * @return 章节列表
+ */
 + (NSMutableArray<YLReadChapterListModel *> *)parserWithBookID:(NSString *)bookID content:(NSString *)contentString{
     // 章节列表
     NSMutableArray<YLReadChapterListModel *> *chapterListModels = [NSMutableArray array];
-    // 正则
-    NSString *parten = @"第[0-9一二两三四五六七八九十零百千]*[章回].*";
-    // 排版
+    
+    // 文字排版
     NSString *content = [YLReadParser contentTypesettingWithContent:contentString];
-    // 开始匹配
+    
+    // 正则匹配
+    NSString *parten = @"第[0-9一二两三四五六七八九十零百千]*[章回].*";
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:parten options:NSRegularExpressionCaseInsensitive error:nil];
-    // 正则匹配结果
     NSArray<NSTextCheckingResult *> *results = [regularExpression matchesInString:content options:NSMatchingReportCompletion range:NSMakeRange(0, content.length)];
+    // 章节数量
+    NSInteger count = results.count;
+    
     // 解析匹配结果
-    if (results.count) {
-        // 章节数量
-        NSInteger count = results.count;
+    if (count) {
         // 记录最后一个Range
-        NSRange lastRange;
-        // 记录最后一个章节对象C
+        NSRange lastRange = NSMakeRange(0, 0);
+        // 记录最后一个章节对象
         YLReadChapterModel *lastChapterModel = nil;
-        // 有前言
-        BOOL isHavePreface = YES;
+        // 判断是否有前言
+        BOOL isHavePreface = [[content substringToIndex:10] containsString:@"前言"];
         // 遍历
         for (int i = 0; i < count + 1; i ++) {
             // 章节数量分析: count + 1  = 前言内容 + 匹配到的章节数量
@@ -132,61 +132,60 @@
                 location = range.location;
             }
             // 章节内容
-            YLReadChapterModel *chapterModel = [[YLReadChapterModel alloc]init];
+            YLReadChapterModel *curentChapter = [[YLReadChapterModel alloc]init];
             // 书ID
-            chapterModel.bookID = bookID;
+            curentChapter.bookID = bookID;
             // 章节ID
-            chapterModel.id = i + isHavePreface;
+            curentChapter.id = i + isHavePreface;
             // 优先级
-            chapterModel.priority = i - !isHavePreface;
+            curentChapter.priority = i - !isHavePreface;
             if (i == 0) { // 前言
                 // 章节名
-                chapterModel.name = @"前言";
+                curentChapter.name = @"前言";
                 // 内容
-                chapterModel.content = [content substringWithRange:NSMakeRange(0, location)];
+                curentChapter.content = [content substringWithRange:NSMakeRange(0, location)];
                 // 记录
                 lastRange = range;
                 // 没有内容则不需要添加列表
-                if (chapterModel.content.length < 1) {
-                    isHavePreface = NO;
+                if (!isHavePreface) {
                     continue;
                 }
             }else if (i == count) { // 结尾:最后一章
                 // 章节名
-                chapterModel.name = [content substringWithRange:lastRange];
+                curentChapter.name = [content substringWithRange:lastRange];
                 // 内容(不包含章节名)
-                chapterModel.content = [content substringWithRange:NSMakeRange(lastRange.location + lastRange.length, content.length - lastRange.location - lastRange.length)];
+                curentChapter.content = [content substringWithRange:NSMakeRange(lastRange.location + lastRange.length, content.length - lastRange.location - lastRange.length)];
             }else { // 中间章节
                 // 章节名
-                chapterModel.name = [content substringWithRange:lastRange];
+                curentChapter.name = [content substringWithRange:lastRange];
                 // 内容(不包含章节名)
-                chapterModel.content = [content substringWithRange:NSMakeRange(lastRange.location + lastRange.length, location - lastRange.location - lastRange.length)];
+                curentChapter.content = [content substringWithRange:NSMakeRange(lastRange.location + lastRange.length, location - lastRange.location - lastRange.length)];
             }
             
             // 章节开头双空格 + 章节纯内容
-            chapterModel.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,chapterModel.content.removeSEHeadAndTail];
+            curentChapter.content = [NSString stringWithFormat:@"%@%@",kYLReadParagraphSpace,curentChapter.content.removeSEHeadAndTail];
             // 设置上一个章节ID
             if (i == 0) {
-                chapterModel.previousChapterID = kYLReadChapterIDMin;
+                curentChapter.previousChapterID = kYLReadChapterIDMin;
             }else{
-                chapterModel.previousChapterID = lastChapterModel.id;
+                curentChapter.previousChapterID = lastChapterModel.id;
             }
             // 设置下一个章节ID
             if (i == count) { // 最后一章
-                chapterModel.nextChapterID = kYLReadChapterIDMax;
+                curentChapter.nextChapterID = kYLReadChapterIDMax;
             }
             // 保存
-            [chapterModel save];
+            [curentChapter save];
             
-            lastChapterModel.nextChapterID = chapterModel.id;
+            lastChapterModel.nextChapterID = curentChapter.id;
             [lastChapterModel save];
             
             // 记录
             lastRange = range;
             // 通过章节内容生成章节列表
-            [chapterListModels addObject:[self getChapterListModel:chapterModel]];
+            [chapterListModels addObject:[self getChapterListModel:curentChapter]];
             
-            lastChapterModel = chapterModel;
+            lastChapterModel = curentChapter;
         }
     }else{
         // 章节内容

@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// tap手势启用
 @property (nonatomic ,assign) BOOL tapGestureRecognizerEnabled;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

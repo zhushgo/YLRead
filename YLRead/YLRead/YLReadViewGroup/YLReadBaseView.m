@@ -7,7 +7,6 @@
 //
 
 #import "YLReadBaseView.h"
-#import "YLReadConfigure.h"
 #import "YLReadMenu.h"
 
 @implementation YLReadBaseView

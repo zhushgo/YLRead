@@ -7,9 +7,7 @@
 //
 
 #import "YLReadViewBGController.h"
-#import "YLReadConfigure.h"
 #import "YLReadRecordModel.h"
-#import "YLGlobalTools.h"
 
 @interface YLReadViewBGController ()
 

@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger,YLSpacingType) {
 };
 
 
-// MARK: 阅读页面配置
+//阅读页面配置
 @interface YLReadConfigure : NSObject
 /// 开启长按菜单功能 (滚动模式是不支持长按功能的),默认为 YES
 @property (nonatomic ,assign) BOOL openLongPress;

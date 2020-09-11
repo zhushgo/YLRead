@@ -8,7 +8,6 @@
 
 #import "YLReadHomeView.h"
 #import "YLReadModel.h"
-#import "YLReadConfigure.h"
 
 @interface YLReadHomeView ()
 

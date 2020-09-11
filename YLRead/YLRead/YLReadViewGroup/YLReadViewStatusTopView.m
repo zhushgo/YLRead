@@ -7,7 +7,6 @@
 //
 
 #import "YLReadViewStatusTopView.h"
-#import "YLReadConfigure.h"
 
 @interface YLReadViewStatusTopView ()
 

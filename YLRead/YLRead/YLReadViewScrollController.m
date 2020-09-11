@@ -13,15 +13,10 @@
 #import "YLReadHomeViewCell.h"
 #import "YLReadViewCell.h"
 
-#import "YLReadConfigure.h"
 #import "YLReadViewStatusTopView.h"
 #import "YLReadViewStatusBottomView.h"
-
-#import "YLReadController.h"
 #import "YLReadPageModel.h"
 #import "YLReadChapterModel.h"
-#import "YLGlobalTools.h"
-#import "YLReadConfigure.h"
 #import "YLReadTextFastParser.h"
 
 @interface YLReadViewScrollController ()

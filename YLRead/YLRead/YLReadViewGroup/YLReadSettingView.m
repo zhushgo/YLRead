@@ -7,12 +7,9 @@
 //
 
 #import "YLReadSettingView.h"
-#import "YLReadConfigure.h"
 #import "YLReadUserDefaults.h"
 #import "YLReadMenu.h"
-#import "YLReadController.h"
 #import "YLReadChapterListModel.h"
-#import "YLGlobalTools.h"
 
 
 typedef NS_ENUM(NSUInteger,YLReadSettingType) {

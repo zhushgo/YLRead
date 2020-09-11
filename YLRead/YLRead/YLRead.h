@@ -2,7 +2,7 @@
 //  YLRead.h
 //  YLRead
 //
-//  Created by 苏沫离 on 2020/9/11.
+//  Created by 苏沫离 on 2020/6/11.
 //  Copyright © 2020 苏沫离. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #define YLRead_h
 
 #import "YLGlobalTools.h"
-
+#import "YLReadConfigure.h"
+#import "YLReadController.h"
 
 #endif /* YLRead_h */
