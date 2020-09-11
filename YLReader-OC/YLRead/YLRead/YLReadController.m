@@ -36,7 +36,6 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
 }
 
 
-
 /// 章节列表
 @property (nonatomic ,strong) YLReadLeftView *leftView;
 /// 翻页控制器 (仿真)
@@ -108,10 +107,8 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
 - (void)longPressViewNotification:(NSNotification *)notification {
     // 获得状态
     NSDictionary *info = notification.userInfo;
-    
     // 隐藏菜单
     [self.readMenu showMenuWithIsShow:NO];
-        
     // 解析状态
     if (info && [info.allKeys containsObject:kYLRead_ReadMonitor_Notification_key]) {
         BOOL isOpen = [info[kYLRead_ReadMonitor_Notification_key] boolValue];
@@ -329,7 +326,7 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
     return _leftView;
 }
 
-// 阅读视图
+/// 阅读视图
 - (YLReadContentView *)contentView{
     if (_contentView == nil) {
         _contentView = [[YLReadContentView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(UIScreen.mainScreen.bounds), CGRectGetHeight(UIScreen.mainScreen.bounds))];
@@ -590,7 +587,6 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
     switch (YLReadConfigure.shareConfigure.effectType) {
         case YLEffectTypeSimulation:{// 仿真
             if (displayController == nil) { return; }
-
             // 创建
             NSDictionary *options = @{UIPageViewControllerOptionSpineLocationKey:@(UIPageViewControllerSpineLocationMin)};
             _pageViewController = [[YLReadPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
@@ -604,10 +600,8 @@ YLReadContentViewDelegate,YLReadCatalogViewDelegate,YLReadMarkViewDelegate>
             // 翻页背部带文字效果
             _pageViewController.doubleSided = YES;
             [_pageViewController setViewControllers:(displayController ? @[displayController] : nil) direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-            
         } break;
         case YLEffectTypeTranslation:{// 平移
-            
             if (displayController == nil) { return; }
             
             // 创建

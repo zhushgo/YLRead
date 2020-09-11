@@ -44,18 +44,14 @@
     if (self.isShowCover == isShow) {
         return;
     }
-
     if (isShow) {
         [self bringSubviewToFront:self.cover];
         self.cover.userInteractionEnabled = YES;
     }
-    
     self.isShowCover = isShow;
-    
     [UIView animateWithDuration:0.2 animations:^{
         self.cover.alpha = isShow;
     }];
-
 }
 
 #pragma mark - response click

@@ -544,8 +544,7 @@
  *
  *  @param controller 控制器
  */
-- (void)addController:(UIViewController * _Nullable)controller
-{
+- (void)addController:(UIViewController * _Nullable)controller{
     if (controller) {
         
         [self addChildViewController:controller];
@@ -578,8 +577,7 @@
 /**
  *  给控制器添加阴影
  */
-- (void)setShadowController:(UIViewController * _Nullable)controller
-{
+- (void)setShadowController:(UIViewController * _Nullable)controller{
     if (controller) {
         
         controller.view.layer.shadowColor = [UIColor blackColor].CGColor; // 阴影颜色
