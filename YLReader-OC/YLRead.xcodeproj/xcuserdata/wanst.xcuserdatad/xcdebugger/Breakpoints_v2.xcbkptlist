@@ -78,8 +78,8 @@
             filePath = "YLRead/YLRead/YLReadTools/YLReadTextFastParser.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "+parserWithReadModel:chapterID:isUpdateFont:"
             landmarkType = "7">
          </BreakpointContent>

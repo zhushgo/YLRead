@@ -109,6 +109,7 @@
     
     // 正则匹配
     NSString *parten = @"第[0-9一二两三四五六七八九十零百千]*[章回].*";
+    parten = @"第[0-9一二两三四五六七八九十零百千]*[章].*";
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:parten options:NSRegularExpressionCaseInsensitive error:nil];
     NSArray<NSTextCheckingResult *> *results = [regularExpression matchesInString:content options:NSMatchingReportCompletion range:NSMakeRange(0, content.length)];
     // 章节数量

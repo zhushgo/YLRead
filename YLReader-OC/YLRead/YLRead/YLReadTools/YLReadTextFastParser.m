@@ -113,6 +113,7 @@
     
     // 正则
     NSString *parten = @"第[0-9一二两三四五六七八九十零百千]*[章回].*";
+    parten = @"第[0-9一二两三四五六七八九十零百千]*[章].*";
     // 排版
     content = [YLReadParser contentTypesettingWithContent:content];
 
