@@ -10,7 +10,7 @@
 
 
 #import "LingDianParser.h"
-#import "NSString+Extend.h"
+#import "NSString+YLReader.h"
 
 @implementation LingDianParser
 

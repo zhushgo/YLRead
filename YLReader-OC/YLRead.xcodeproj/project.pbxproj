@@ -7,6 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1E9B462512FBD6001D44B5 /* YLKeyedArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AEC2512FBD6001D44B5 /* YLKeyedArchiver.m */; };
+		1A1E9B472512FBD6001D44B5 /* YLCoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AEE2512FBD6001D44B5 /* YLCoreText.m */; };
+		1A1E9B482512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AF32512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		1A1E9B4A2512FBD6001D44B5 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AF52512FBD6001D44B5 /* UIPageViewController+Extend.m */; };
+		1A1E9B4B2512FBD6001D44B5 /* YLGlobalTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AF72512FBD6001D44B5 /* YLGlobalTools.m */; };
+		1A1E9B4C2512FBD6001D44B5 /* YLReadConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AF92512FBD6001D44B5 /* YLReadConfigure.m */; };
+		1A1E9B4D2512FBD6001D44B5 /* YLReadUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9AFB2512FBD6001D44B5 /* YLReadUserDefaults.m */; };
+		1A1E9B4F2512FBD6001D44B5 /* YLReadPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B032512FBD6001D44B5 /* YLReadPageModel.m */; };
+		1A1E9B512512FBD6001D44B5 /* YLReadRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B052512FBD6001D44B5 /* YLReadRecordModel.m */; };
+		1A1E9B522512FBD6001D44B5 /* YLReadChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */; };
+		1A1E9B532512FBD6001D44B5 /* YLReadMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */; };
+		1A1E9B542512FBD6001D44B5 /* YLReadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */; };
+		1A1E9B552512FBD6001D44B5 /* YLReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B092512FBD6001D44B5 /* YLReadModel.m */; };
+		1A1E9B562512FBD6001D44B5 /* YLReadParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B0E2512FBD6001D44B5 /* YLReadParser.m */; };
+		1A1E9B582512FBD6001D44B5 /* YLReadPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B172512FBD6001D44B5 /* YLReadPageViewController.m */; };
+		1A1E9B592512FBD6001D44B5 /* YLReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B192512FBD6001D44B5 /* YLReadViewController.m */; };
+		1A1E9B5A2512FBD6001D44B5 /* YLReadViewScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B1A2512FBD6001D44B5 /* YLReadViewScrollController.m */; };
+		1A1E9B5B2512FBD6001D44B5 /* YLReadHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B1D2512FBD6001D44B5 /* YLReadHomeView.m */; };
+		1A1E9B5C2512FBD6001D44B5 /* YLReadTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B1F2512FBD6001D44B5 /* YLReadTopView.m */; };
+		1A1E9B5D2512FBD6001D44B5 /* YLReadLongPressCursorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B232512FBD6001D44B5 /* YLReadLongPressCursorView.m */; };
+		1A1E9B5E2512FBD6001D44B5 /* YLReadSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B242512FBD6001D44B5 /* YLReadSettingView.m */; };
+		1A1E9B5F2512FBD6001D44B5 /* YLReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B252512FBD6001D44B5 /* YLReadView.m */; };
+		1A1E9B602512FBD6001D44B5 /* YLReadTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B262512FBD6001D44B5 /* YLReadTrackingSlider.m */; };
+		1A1E9B612512FBD6001D44B5 /* YLReadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B272512FBD6001D44B5 /* YLReadViewCell.m */; };
+		1A1E9B622512FBD6001D44B5 /* YLReadBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B292512FBD6001D44B5 /* YLReadBottomView.m */; };
+		1A1E9B632512FBD6001D44B5 /* YLReadLongPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B2A2512FBD6001D44B5 /* YLReadLongPressView.m */; };
+		1A1E9B642512FBD6001D44B5 /* YLReadHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B2B2512FBD6001D44B5 /* YLReadHomeViewCell.m */; };
+		1A1E9B652512FBD6001D44B5 /* YLReadMarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B2D2512FBD6001D44B5 /* YLReadMarkView.m */; };
+		1A1E9B662512FBD6001D44B5 /* YLReadLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B2F2512FBD6001D44B5 /* YLReadLeftView.m */; };
+		1A1E9B672512FBD6001D44B5 /* YLReadViewStatusBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B332512FBD6001D44B5 /* YLReadViewStatusBottomView.m */; };
+		1A1E9B682512FBD6001D44B5 /* YLReadCatalogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B342512FBD6001D44B5 /* YLReadCatalogView.m */; };
+		1A1E9B692512FBD6001D44B5 /* YLReadContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B352512FBD6001D44B5 /* YLReadContentView.m */; };
+		1A1E9B6A2512FBD6001D44B5 /* YLReadBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B382512FBD6001D44B5 /* YLReadBaseView.m */; };
+		1A1E9B6B2512FBD6001D44B5 /* YLReadViewStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B3D2512FBD6001D44B5 /* YLReadViewStatusTopView.m */; };
+		1A1E9B6C2512FBD6001D44B5 /* YLReadLongPressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B402512FBD6001D44B5 /* YLReadLongPressViewController.m */; };
+		1A1E9B6D2512FBD6001D44B5 /* YLReadCoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B412512FBD6001D44B5 /* YLReadCoverController.m */; };
+		1A1E9B6E2512FBD6001D44B5 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B432512FBD6001D44B5 /* YLReadViewBGController.m */; };
+		1A1E9B6F2512FBD6001D44B5 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B442512FBD6001D44B5 /* YLReadController.m */; };
+		1A1E9B72251302DF001D44B5 /* NSString+YLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B71251302DF001D44B5 /* NSString+YLReader.m */; };
 		1A59909A24C549E20014D809 /* DemoText.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A59909924C549E10014D809 /* DemoText.html */; };
 		1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */; };
 		1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */; };
@@ -18,49 +57,8 @@
 		1A6E7E5824B863FB00F42EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */; };
 		1A6E7E5B24B863FB00F42EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */; };
 		1A6E7E5E24B863FB00F42EA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5D24B863FB00F42EA4 /* main.m */; };
-		1A6E7EBD24B8649100F42EA4 /* YLReadTextFastParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E6624B8649100F42EA4 /* YLReadTextFastParser.m */; };
-		1A6E7EBE24B8649100F42EA4 /* YLKeyedArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E6724B8649100F42EA4 /* YLKeyedArchiver.m */; };
-		1A6E7EBF24B8649100F42EA4 /* YLCoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E6A24B8649100F42EA4 /* YLCoreText.m */; };
-		1A6E7EC024B8649100F42EA4 /* YLGlobalTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E6C24B8649100F42EA4 /* YLGlobalTools.m */; };
-		1A6E7EC124B8649100F42EA4 /* YLReadParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E6D24B8649100F42EA4 /* YLReadParser.m */; };
-		1A6E7EC224B8649100F42EA4 /* YLReadConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7224B8649100F42EA4 /* YLReadConfigure.m */; };
-		1A6E7EC324B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */; };
-		1A6E7EC424B8649100F42EA4 /* YLReadUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */; };
-		1A6E7EC524B8649100F42EA4 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */; };
-		1A6E7EC724B8649100F42EA4 /* YLReadTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */; };
-		1A6E7EC824B8649100F42EA4 /* YLReadPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E7D24B8649100F42EA4 /* YLReadPageViewController.m */; };
-		1A6E7EC924B8649100F42EA4 /* YLReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */; };
-		1A6E7ECA24B8649100F42EA4 /* YLReadPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8524B8649100F42EA4 /* YLReadPageModel.m */; };
-		1A6E7ECB24B8649100F42EA4 /* YLReadChapterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8624B8649100F42EA4 /* YLReadChapterListModel.m */; };
-		1A6E7ECC24B8649100F42EA4 /* YLReadRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8724B8649100F42EA4 /* YLReadRecordModel.m */; };
-		1A6E7ECD24B8649100F42EA4 /* YLReadChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8824B8649100F42EA4 /* YLReadChapterModel.m */; };
-		1A6E7ECE24B8649100F42EA4 /* YLReadMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8924B8649100F42EA4 /* YLReadMarkModel.m */; };
-		1A6E7ECF24B8649100F42EA4 /* YLReadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8A24B8649100F42EA4 /* YLReadMenu.m */; };
-		1A6E7ED024B8649100F42EA4 /* YLReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E8B24B8649100F42EA4 /* YLReadModel.m */; };
-		1A6E7ED124B8649100F42EA4 /* YLReadViewScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9024B8649100F42EA4 /* YLReadViewScrollController.m */; };
-		1A6E7ED224B8649100F42EA4 /* YLReadHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9324B8649100F42EA4 /* YLReadHomeView.m */; };
-		1A6E7ED324B8649100F42EA4 /* YLReadTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9524B8649100F42EA4 /* YLReadTopView.m */; };
-		1A6E7ED424B8649100F42EA4 /* YLReadLongPressCursorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9924B8649100F42EA4 /* YLReadLongPressCursorView.m */; };
-		1A6E7ED524B8649100F42EA4 /* YLReadSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9A24B8649100F42EA4 /* YLReadSettingView.m */; };
-		1A6E7ED624B8649100F42EA4 /* YLReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9B24B8649100F42EA4 /* YLReadView.m */; };
-		1A6E7ED724B8649100F42EA4 /* YLReadTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9C24B8649100F42EA4 /* YLReadTrackingSlider.m */; };
-		1A6E7ED824B8649100F42EA4 /* YLReadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9D24B8649100F42EA4 /* YLReadViewCell.m */; };
-		1A6E7ED924B8649100F42EA4 /* YLReadBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E9F24B8649100F42EA4 /* YLReadBottomView.m */; };
-		1A6E7EDA24B8649100F42EA4 /* YLReadLongPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EA024B8649100F42EA4 /* YLReadLongPressView.m */; };
-		1A6E7EDB24B8649100F42EA4 /* YLReadHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EA124B8649100F42EA4 /* YLReadHomeViewCell.m */; };
-		1A6E7EDC24B8649100F42EA4 /* YLReadMarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EA324B8649100F42EA4 /* YLReadMarkView.m */; };
-		1A6E7EDD24B8649100F42EA4 /* YLReadLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EA524B8649100F42EA4 /* YLReadLeftView.m */; };
-		1A6E7EDE24B8649100F42EA4 /* YLReadViewStatusBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EA924B8649100F42EA4 /* YLReadViewStatusBottomView.m */; };
-		1A6E7EDF24B8649100F42EA4 /* YLReadCatalogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EAA24B8649100F42EA4 /* YLReadCatalogView.m */; };
-		1A6E7EE024B8649100F42EA4 /* YLReadContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EAB24B8649100F42EA4 /* YLReadContentView.m */; };
-		1A6E7EE124B8649100F42EA4 /* YLReadBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EAE24B8649100F42EA4 /* YLReadBaseView.m */; };
-		1A6E7EE224B8649100F42EA4 /* YLReadViewStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB324B8649100F42EA4 /* YLReadViewStatusTopView.m */; };
-		1A6E7EE324B8649100F42EA4 /* YLReadLongPressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB624B8649100F42EA4 /* YLReadLongPressViewController.m */; };
-		1A6E7EE424B8649100F42EA4 /* YLReadCoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB724B8649100F42EA4 /* YLReadCoverController.m */; };
-		1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */; };
-		1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */; };
-		1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7EBB24B8649100F42EA4 /* YLReadController.m */; };
 		1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */; };
+		1AAFFDD625131131002A886B /* YLReadChapterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFFDD425131131002A886B /* YLReadChapterListModel.m */; };
 		1ACA605024CEA49B00EC22B0 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA604F24CEA49B00EC22B0 /* BookModel.m */; };
 		1ACA605324CEA4E400EC22B0 /* BookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA605224CEA4E400EC22B0 /* BookTableCell.m */; };
 		1ACA605524CEA8BD00EC22B0 /* BookResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA605424CEA8BD00EC22B0 /* BookResources.bundle */; };
@@ -68,6 +66,85 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1E9AEC2512FBD6001D44B5 /* YLKeyedArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLKeyedArchiver.m; sourceTree = "<group>"; };
+		1A1E9AED2512FBD6001D44B5 /* YLReadUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadUserDefaults.h; sourceTree = "<group>"; };
+		1A1E9AEE2512FBD6001D44B5 /* YLCoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCoreText.m; sourceTree = "<group>"; };
+		1A1E9AF02512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		1A1E9AF12512FBD6001D44B5 /* UIPageViewController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPageViewController+Extend.h"; sourceTree = "<group>"; };
+		1A1E9AF32512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		1A1E9AF52512FBD6001D44B5 /* UIPageViewController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPageViewController+Extend.m"; sourceTree = "<group>"; };
+		1A1E9AF62512FBD6001D44B5 /* YLReadConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadConfigure.h; sourceTree = "<group>"; };
+		1A1E9AF72512FBD6001D44B5 /* YLGlobalTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGlobalTools.m; sourceTree = "<group>"; };
+		1A1E9AF82512FBD6001D44B5 /* YLKeyedArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLKeyedArchiver.h; sourceTree = "<group>"; };
+		1A1E9AF92512FBD6001D44B5 /* YLReadConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadConfigure.m; sourceTree = "<group>"; };
+		1A1E9AFA2512FBD6001D44B5 /* YLCoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLCoreText.h; sourceTree = "<group>"; };
+		1A1E9AFB2512FBD6001D44B5 /* YLReadUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadUserDefaults.m; sourceTree = "<group>"; };
+		1A1E9AFC2512FBD6001D44B5 /* YLGlobalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGlobalTools.h; sourceTree = "<group>"; };
+		1A1E9B002512FBD6001D44B5 /* YLReadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMenu.h; sourceTree = "<group>"; };
+		1A1E9B012512FBD6001D44B5 /* YLReadMarkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMarkModel.h; sourceTree = "<group>"; };
+		1A1E9B022512FBD6001D44B5 /* YLReadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadModel.h; sourceTree = "<group>"; };
+		1A1E9B032512FBD6001D44B5 /* YLReadPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadPageModel.m; sourceTree = "<group>"; };
+		1A1E9B052512FBD6001D44B5 /* YLReadRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadRecordModel.m; sourceTree = "<group>"; };
+		1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadChapterModel.m; sourceTree = "<group>"; };
+		1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMarkModel.m; sourceTree = "<group>"; };
+		1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMenu.m; sourceTree = "<group>"; };
+		1A1E9B092512FBD6001D44B5 /* YLReadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadModel.m; sourceTree = "<group>"; };
+		1A1E9B0B2512FBD6001D44B5 /* YLReadPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadPageModel.h; sourceTree = "<group>"; };
+		1A1E9B0C2512FBD6001D44B5 /* YLReadChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadChapterModel.h; sourceTree = "<group>"; };
+		1A1E9B0D2512FBD6001D44B5 /* YLReadRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadRecordModel.h; sourceTree = "<group>"; };
+		1A1E9B0E2512FBD6001D44B5 /* YLReadParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadParser.m; sourceTree = "<group>"; };
+		1A1E9B112512FBD6001D44B5 /* YLReadParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadParser.h; sourceTree = "<group>"; };
+		1A1E9B132512FBD6001D44B5 /* YLRead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLRead.h; sourceTree = "<group>"; };
+		1A1E9B152512FBD6001D44B5 /* YLReadCoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadCoverController.h; sourceTree = "<group>"; };
+		1A1E9B162512FBD6001D44B5 /* YLReadLongPressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressViewController.h; sourceTree = "<group>"; };
+		1A1E9B172512FBD6001D44B5 /* YLReadPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadPageViewController.m; sourceTree = "<group>"; };
+		1A1E9B182512FBD6001D44B5 /* YLReadViewBGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewBGController.h; sourceTree = "<group>"; };
+		1A1E9B192512FBD6001D44B5 /* YLReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewController.m; sourceTree = "<group>"; };
+		1A1E9B1A2512FBD6001D44B5 /* YLReadViewScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewScrollController.m; sourceTree = "<group>"; };
+		1A1E9B1B2512FBD6001D44B5 /* YLReadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadController.h; sourceTree = "<group>"; };
+		1A1E9B1D2512FBD6001D44B5 /* YLReadHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadHomeView.m; sourceTree = "<group>"; };
+		1A1E9B1E2512FBD6001D44B5 /* YLReadLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLeftView.h; sourceTree = "<group>"; };
+		1A1E9B1F2512FBD6001D44B5 /* YLReadTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTopView.m; sourceTree = "<group>"; };
+		1A1E9B202512FBD6001D44B5 /* YLReadContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadContentView.h; sourceTree = "<group>"; };
+		1A1E9B212512FBD6001D44B5 /* YLReadCatalogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadCatalogView.h; sourceTree = "<group>"; };
+		1A1E9B222512FBD6001D44B5 /* YLReadViewStatusBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewStatusBottomView.h; sourceTree = "<group>"; };
+		1A1E9B232512FBD6001D44B5 /* YLReadLongPressCursorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressCursorView.m; sourceTree = "<group>"; };
+		1A1E9B242512FBD6001D44B5 /* YLReadSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadSettingView.m; sourceTree = "<group>"; };
+		1A1E9B252512FBD6001D44B5 /* YLReadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadView.m; sourceTree = "<group>"; };
+		1A1E9B262512FBD6001D44B5 /* YLReadTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTrackingSlider.m; sourceTree = "<group>"; };
+		1A1E9B272512FBD6001D44B5 /* YLReadViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewCell.m; sourceTree = "<group>"; };
+		1A1E9B282512FBD6001D44B5 /* YLReadBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadBaseView.h; sourceTree = "<group>"; };
+		1A1E9B292512FBD6001D44B5 /* YLReadBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadBottomView.m; sourceTree = "<group>"; };
+		1A1E9B2A2512FBD6001D44B5 /* YLReadLongPressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressView.m; sourceTree = "<group>"; };
+		1A1E9B2B2512FBD6001D44B5 /* YLReadHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadHomeViewCell.m; sourceTree = "<group>"; };
+		1A1E9B2C2512FBD6001D44B5 /* YLReadViewStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewStatusTopView.h; sourceTree = "<group>"; };
+		1A1E9B2D2512FBD6001D44B5 /* YLReadMarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMarkView.m; sourceTree = "<group>"; };
+		1A1E9B2E2512FBD6001D44B5 /* YLReadTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTopView.h; sourceTree = "<group>"; };
+		1A1E9B2F2512FBD6001D44B5 /* YLReadLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLeftView.m; sourceTree = "<group>"; };
+		1A1E9B302512FBD6001D44B5 /* YLReadHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadHomeView.h; sourceTree = "<group>"; };
+		1A1E9B312512FBD6001D44B5 /* YLReadSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadSettingView.h; sourceTree = "<group>"; };
+		1A1E9B322512FBD6001D44B5 /* YLReadLongPressCursorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressCursorView.h; sourceTree = "<group>"; };
+		1A1E9B332512FBD6001D44B5 /* YLReadViewStatusBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewStatusBottomView.m; sourceTree = "<group>"; };
+		1A1E9B342512FBD6001D44B5 /* YLReadCatalogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadCatalogView.m; sourceTree = "<group>"; };
+		1A1E9B352512FBD6001D44B5 /* YLReadContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadContentView.m; sourceTree = "<group>"; };
+		1A1E9B362512FBD6001D44B5 /* YLReadLongPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressView.h; sourceTree = "<group>"; };
+		1A1E9B372512FBD6001D44B5 /* YLReadBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadBottomView.h; sourceTree = "<group>"; };
+		1A1E9B382512FBD6001D44B5 /* YLReadBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadBaseView.m; sourceTree = "<group>"; };
+		1A1E9B392512FBD6001D44B5 /* YLReadViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewCell.h; sourceTree = "<group>"; };
+		1A1E9B3A2512FBD6001D44B5 /* YLReadTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTrackingSlider.h; sourceTree = "<group>"; };
+		1A1E9B3B2512FBD6001D44B5 /* YLReadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadView.h; sourceTree = "<group>"; };
+		1A1E9B3C2512FBD6001D44B5 /* YLReadMarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMarkView.h; sourceTree = "<group>"; };
+		1A1E9B3D2512FBD6001D44B5 /* YLReadViewStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewStatusTopView.m; sourceTree = "<group>"; };
+		1A1E9B3E2512FBD6001D44B5 /* YLReadHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadHomeViewCell.h; sourceTree = "<group>"; };
+		1A1E9B3F2512FBD6001D44B5 /* YLReadPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadPageViewController.h; sourceTree = "<group>"; };
+		1A1E9B402512FBD6001D44B5 /* YLReadLongPressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressViewController.m; sourceTree = "<group>"; };
+		1A1E9B412512FBD6001D44B5 /* YLReadCoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadCoverController.m; sourceTree = "<group>"; };
+		1A1E9B422512FBD6001D44B5 /* YLReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewController.h; sourceTree = "<group>"; };
+		1A1E9B432512FBD6001D44B5 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
+		1A1E9B442512FBD6001D44B5 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
+		1A1E9B452512FBD6001D44B5 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
+		1A1E9B70251302DF001D44B5 /* NSString+YLReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YLReader.h"; sourceTree = "<group>"; };
+		1A1E9B71251302DF001D44B5 /* NSString+YLReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YLReader.m"; sourceTree = "<group>"; };
 		1A59909924C549E10014D809 /* DemoText.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DemoText.html; sourceTree = "<group>"; };
 		1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
@@ -88,93 +165,10 @@
 		1A6E7E5A24B863FB00F42EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6E7E5C24B863FB00F42EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A6E7E5D24B863FB00F42EA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1A6E7E6624B8649100F42EA4 /* YLReadTextFastParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTextFastParser.m; sourceTree = "<group>"; };
-		1A6E7E6724B8649100F42EA4 /* YLKeyedArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLKeyedArchiver.m; sourceTree = "<group>"; };
-		1A6E7E6824B8649100F42EA4 /* YLReadUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadUserDefaults.h; sourceTree = "<group>"; };
-		1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		1A6E7E6A24B8649100F42EA4 /* YLCoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCoreText.m; sourceTree = "<group>"; };
-		1A6E7E6B24B8649100F42EA4 /* YLReadConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadConfigure.h; sourceTree = "<group>"; };
-		1A6E7E6C24B8649100F42EA4 /* YLGlobalTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGlobalTools.m; sourceTree = "<group>"; };
-		1A6E7E6D24B8649100F42EA4 /* YLReadParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadParser.m; sourceTree = "<group>"; };
-		1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
-		1A6E7E6F24B8649100F42EA4 /* YLReadTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTextParser.h; sourceTree = "<group>"; };
-		1A6E7E7024B8649100F42EA4 /* YLKeyedArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLKeyedArchiver.h; sourceTree = "<group>"; };
-		1A6E7E7124B8649100F42EA4 /* YLReadTextFastParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTextFastParser.h; sourceTree = "<group>"; };
-		1A6E7E7224B8649100F42EA4 /* YLReadConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadConfigure.m; sourceTree = "<group>"; };
-		1A6E7E7324B8649100F42EA4 /* YLCoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLCoreText.h; sourceTree = "<group>"; };
-		1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
-		1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadUserDefaults.m; sourceTree = "<group>"; };
-		1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
-		1A6E7E7824B8649100F42EA4 /* YLGlobalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGlobalTools.h; sourceTree = "<group>"; };
-		1A6E7E7924B8649100F42EA4 /* YLReadParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadParser.h; sourceTree = "<group>"; };
-		1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTextParser.m; sourceTree = "<group>"; };
-		1A6E7E7B24B8649100F42EA4 /* YLReadCoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadCoverController.h; sourceTree = "<group>"; };
-		1A6E7E7C24B8649100F42EA4 /* YLReadLongPressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressViewController.h; sourceTree = "<group>"; };
-		1A6E7E7D24B8649100F42EA4 /* YLReadPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadPageViewController.m; sourceTree = "<group>"; };
-		1A6E7E7E24B8649100F42EA4 /* YLReadViewBGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewBGController.h; sourceTree = "<group>"; };
-		1A6E7E7F24B8649100F42EA4 /* UIPageViewController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPageViewController+Extend.h"; sourceTree = "<group>"; };
-		1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewController.m; sourceTree = "<group>"; };
-		1A6E7E8224B8649100F42EA4 /* YLReadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMenu.h; sourceTree = "<group>"; };
-		1A6E7E8324B8649100F42EA4 /* YLReadMarkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMarkModel.h; sourceTree = "<group>"; };
-		1A6E7E8424B8649100F42EA4 /* YLReadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadModel.h; sourceTree = "<group>"; };
-		1A6E7E8524B8649100F42EA4 /* YLReadPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadPageModel.m; sourceTree = "<group>"; };
-		1A6E7E8624B8649100F42EA4 /* YLReadChapterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadChapterListModel.m; sourceTree = "<group>"; };
-		1A6E7E8724B8649100F42EA4 /* YLReadRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadRecordModel.m; sourceTree = "<group>"; };
-		1A6E7E8824B8649100F42EA4 /* YLReadChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadChapterModel.m; sourceTree = "<group>"; };
-		1A6E7E8924B8649100F42EA4 /* YLReadMarkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMarkModel.m; sourceTree = "<group>"; };
-		1A6E7E8A24B8649100F42EA4 /* YLReadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMenu.m; sourceTree = "<group>"; };
-		1A6E7E8B24B8649100F42EA4 /* YLReadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadModel.m; sourceTree = "<group>"; };
-		1A6E7E8C24B8649100F42EA4 /* YLReadChapterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadChapterListModel.h; sourceTree = "<group>"; };
-		1A6E7E8D24B8649100F42EA4 /* YLReadPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadPageModel.h; sourceTree = "<group>"; };
-		1A6E7E8E24B8649100F42EA4 /* YLReadChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadChapterModel.h; sourceTree = "<group>"; };
-		1A6E7E8F24B8649100F42EA4 /* YLReadRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadRecordModel.h; sourceTree = "<group>"; };
-		1A6E7E9024B8649100F42EA4 /* YLReadViewScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewScrollController.m; sourceTree = "<group>"; };
-		1A6E7E9124B8649100F42EA4 /* YLReadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadController.h; sourceTree = "<group>"; };
-		1A6E7E9324B8649100F42EA4 /* YLReadHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadHomeView.m; sourceTree = "<group>"; };
-		1A6E7E9424B8649100F42EA4 /* YLReadLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLeftView.h; sourceTree = "<group>"; };
-		1A6E7E9524B8649100F42EA4 /* YLReadTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTopView.m; sourceTree = "<group>"; };
-		1A6E7E9624B8649100F42EA4 /* YLReadContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadContentView.h; sourceTree = "<group>"; };
-		1A6E7E9724B8649100F42EA4 /* YLReadCatalogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadCatalogView.h; sourceTree = "<group>"; };
-		1A6E7E9824B8649100F42EA4 /* YLReadViewStatusBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewStatusBottomView.h; sourceTree = "<group>"; };
-		1A6E7E9924B8649100F42EA4 /* YLReadLongPressCursorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressCursorView.m; sourceTree = "<group>"; };
-		1A6E7E9A24B8649100F42EA4 /* YLReadSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadSettingView.m; sourceTree = "<group>"; };
-		1A6E7E9B24B8649100F42EA4 /* YLReadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadView.m; sourceTree = "<group>"; };
-		1A6E7E9C24B8649100F42EA4 /* YLReadTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadTrackingSlider.m; sourceTree = "<group>"; };
-		1A6E7E9D24B8649100F42EA4 /* YLReadViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewCell.m; sourceTree = "<group>"; };
-		1A6E7E9E24B8649100F42EA4 /* YLReadBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadBaseView.h; sourceTree = "<group>"; };
-		1A6E7E9F24B8649100F42EA4 /* YLReadBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadBottomView.m; sourceTree = "<group>"; };
-		1A6E7EA024B8649100F42EA4 /* YLReadLongPressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressView.m; sourceTree = "<group>"; };
-		1A6E7EA124B8649100F42EA4 /* YLReadHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadHomeViewCell.m; sourceTree = "<group>"; };
-		1A6E7EA224B8649100F42EA4 /* YLReadViewStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewStatusTopView.h; sourceTree = "<group>"; };
-		1A6E7EA324B8649100F42EA4 /* YLReadMarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMarkView.m; sourceTree = "<group>"; };
-		1A6E7EA424B8649100F42EA4 /* YLReadTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTopView.h; sourceTree = "<group>"; };
-		1A6E7EA524B8649100F42EA4 /* YLReadLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLeftView.m; sourceTree = "<group>"; };
-		1A6E7EA624B8649100F42EA4 /* YLReadHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadHomeView.h; sourceTree = "<group>"; };
-		1A6E7EA724B8649100F42EA4 /* YLReadSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadSettingView.h; sourceTree = "<group>"; };
-		1A6E7EA824B8649100F42EA4 /* YLReadLongPressCursorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressCursorView.h; sourceTree = "<group>"; };
-		1A6E7EA924B8649100F42EA4 /* YLReadViewStatusBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewStatusBottomView.m; sourceTree = "<group>"; };
-		1A6E7EAA24B8649100F42EA4 /* YLReadCatalogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadCatalogView.m; sourceTree = "<group>"; };
-		1A6E7EAB24B8649100F42EA4 /* YLReadContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadContentView.m; sourceTree = "<group>"; };
-		1A6E7EAC24B8649100F42EA4 /* YLReadLongPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadLongPressView.h; sourceTree = "<group>"; };
-		1A6E7EAD24B8649100F42EA4 /* YLReadBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadBottomView.h; sourceTree = "<group>"; };
-		1A6E7EAE24B8649100F42EA4 /* YLReadBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadBaseView.m; sourceTree = "<group>"; };
-		1A6E7EAF24B8649100F42EA4 /* YLReadViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewCell.h; sourceTree = "<group>"; };
-		1A6E7EB024B8649100F42EA4 /* YLReadTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadTrackingSlider.h; sourceTree = "<group>"; };
-		1A6E7EB124B8649100F42EA4 /* YLReadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadView.h; sourceTree = "<group>"; };
-		1A6E7EB224B8649100F42EA4 /* YLReadMarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMarkView.h; sourceTree = "<group>"; };
-		1A6E7EB324B8649100F42EA4 /* YLReadViewStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewStatusTopView.m; sourceTree = "<group>"; };
-		1A6E7EB424B8649100F42EA4 /* YLReadHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadHomeViewCell.h; sourceTree = "<group>"; };
-		1A6E7EB524B8649100F42EA4 /* YLReadPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadPageViewController.h; sourceTree = "<group>"; };
-		1A6E7EB624B8649100F42EA4 /* YLReadLongPressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadLongPressViewController.m; sourceTree = "<group>"; };
-		1A6E7EB724B8649100F42EA4 /* YLReadCoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadCoverController.m; sourceTree = "<group>"; };
-		1A6E7EB824B8649100F42EA4 /* YLReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewController.h; sourceTree = "<group>"; };
-		1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPageViewController+Extend.m"; sourceTree = "<group>"; };
-		1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadViewBGController.m; sourceTree = "<group>"; };
-		1A6E7EBB24B8649100F42EA4 /* YLReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadController.m; sourceTree = "<group>"; };
-		1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
 		1AA8A20324C6E82F00839A83 /* BiQuGeParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiQuGeParser.h; sourceTree = "<group>"; };
 		1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiQuGeParser.m; sourceTree = "<group>"; };
-		1ABEC7C1250B15BD008D0DAC /* YLRead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLRead.h; sourceTree = "<group>"; };
+		1AAFFDD425131131002A886B /* YLReadChapterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadChapterListModel.m; sourceTree = "<group>"; };
+		1AAFFDD525131131002A886B /* YLReadChapterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadChapterListModel.h; sourceTree = "<group>"; };
 		1ABEC7C2250B15D7008D0DAC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1ACA604E24CEA49B00EC22B0 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		1ACA604F24CEA49B00EC22B0 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
@@ -196,6 +190,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1E9AEA2512FBD6001D44B5 /* YLReader */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9B132512FBD6001D44B5 /* YLRead.h */,
+				1A1E9AFD2512FBD6001D44B5 /* YLReaderParser */,
+				1A1E9B142512FBD6001D44B5 /* YLReaderUI */,
+				1A1E9AEB2512FBD6001D44B5 /* YLReadTools */,
+			);
+			path = YLReader;
+			sourceTree = "<group>";
+		};
+		1A1E9AEB2512FBD6001D44B5 /* YLReadTools */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9AEF2512FBD6001D44B5 /* Category */,
+				1A1E9AFA2512FBD6001D44B5 /* YLCoreText.h */,
+				1A1E9AEE2512FBD6001D44B5 /* YLCoreText.m */,
+				1A1E9AFC2512FBD6001D44B5 /* YLGlobalTools.h */,
+				1A1E9AF72512FBD6001D44B5 /* YLGlobalTools.m */,
+				1A1E9AF82512FBD6001D44B5 /* YLKeyedArchiver.h */,
+				1A1E9AEC2512FBD6001D44B5 /* YLKeyedArchiver.m */,
+				1A1E9AF62512FBD6001D44B5 /* YLReadConfigure.h */,
+				1A1E9AF92512FBD6001D44B5 /* YLReadConfigure.m */,
+				1A1E9AED2512FBD6001D44B5 /* YLReadUserDefaults.h */,
+				1A1E9AFB2512FBD6001D44B5 /* YLReadUserDefaults.m */,
+			);
+			path = YLReadTools;
+			sourceTree = "<group>";
+		};
+		1A1E9AEF2512FBD6001D44B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9AF02512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.h */,
+				1A1E9AF32512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m */,
+				1A1E9AF12512FBD6001D44B5 /* UIPageViewController+Extend.h */,
+				1A1E9AF52512FBD6001D44B5 /* UIPageViewController+Extend.m */,
+				1A1E9B70251302DF001D44B5 /* NSString+YLReader.h */,
+				1A1E9B71251302DF001D44B5 /* NSString+YLReader.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1A1E9AFD2512FBD6001D44B5 /* YLReaderParser */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9AFF2512FBD6001D44B5 /* YLReaderModel */,
+				1A1E9B112512FBD6001D44B5 /* YLReadParser.h */,
+				1A1E9B0E2512FBD6001D44B5 /* YLReadParser.m */,
+			);
+			path = YLReaderParser;
+			sourceTree = "<group>";
+		};
+		1A1E9AFF2512FBD6001D44B5 /* YLReaderModel */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFFDD525131131002A886B /* YLReadChapterListModel.h */,
+				1AAFFDD425131131002A886B /* YLReadChapterListModel.m */,
+				1A1E9B0C2512FBD6001D44B5 /* YLReadChapterModel.h */,
+				1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */,
+				1A1E9B012512FBD6001D44B5 /* YLReadMarkModel.h */,
+				1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */,
+				1A1E9B002512FBD6001D44B5 /* YLReadMenu.h */,
+				1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */,
+				1A1E9B022512FBD6001D44B5 /* YLReadModel.h */,
+				1A1E9B092512FBD6001D44B5 /* YLReadModel.m */,
+				1A1E9B0B2512FBD6001D44B5 /* YLReadPageModel.h */,
+				1A1E9B032512FBD6001D44B5 /* YLReadPageModel.m */,
+				1A1E9B0D2512FBD6001D44B5 /* YLReadRecordModel.h */,
+				1A1E9B052512FBD6001D44B5 /* YLReadRecordModel.m */,
+			);
+			path = YLReaderModel;
+			sourceTree = "<group>";
+		};
+		1A1E9B142512FBD6001D44B5 /* YLReaderUI */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9B1C2512FBD6001D44B5 /* YLReadViewGroup */,
+				1A1E9B1B2512FBD6001D44B5 /* YLReadController.h */,
+				1A1E9B442512FBD6001D44B5 /* YLReadController.m */,
+				1A1E9B152512FBD6001D44B5 /* YLReadCoverController.h */,
+				1A1E9B412512FBD6001D44B5 /* YLReadCoverController.m */,
+				1A1E9B162512FBD6001D44B5 /* YLReadLongPressViewController.h */,
+				1A1E9B402512FBD6001D44B5 /* YLReadLongPressViewController.m */,
+				1A1E9B3F2512FBD6001D44B5 /* YLReadPageViewController.h */,
+				1A1E9B172512FBD6001D44B5 /* YLReadPageViewController.m */,
+				1A1E9B182512FBD6001D44B5 /* YLReadViewBGController.h */,
+				1A1E9B432512FBD6001D44B5 /* YLReadViewBGController.m */,
+				1A1E9B422512FBD6001D44B5 /* YLReadViewController.h */,
+				1A1E9B192512FBD6001D44B5 /* YLReadViewController.m */,
+				1A1E9B452512FBD6001D44B5 /* YLReadViewScrollController.h */,
+				1A1E9B1A2512FBD6001D44B5 /* YLReadViewScrollController.m */,
+			);
+			path = YLReaderUI;
+			sourceTree = "<group>";
+		};
+		1A1E9B1C2512FBD6001D44B5 /* YLReadViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E9B282512FBD6001D44B5 /* YLReadBaseView.h */,
+				1A1E9B382512FBD6001D44B5 /* YLReadBaseView.m */,
+				1A1E9B372512FBD6001D44B5 /* YLReadBottomView.h */,
+				1A1E9B292512FBD6001D44B5 /* YLReadBottomView.m */,
+				1A1E9B212512FBD6001D44B5 /* YLReadCatalogView.h */,
+				1A1E9B342512FBD6001D44B5 /* YLReadCatalogView.m */,
+				1A1E9B202512FBD6001D44B5 /* YLReadContentView.h */,
+				1A1E9B352512FBD6001D44B5 /* YLReadContentView.m */,
+				1A1E9B302512FBD6001D44B5 /* YLReadHomeView.h */,
+				1A1E9B1D2512FBD6001D44B5 /* YLReadHomeView.m */,
+				1A1E9B3E2512FBD6001D44B5 /* YLReadHomeViewCell.h */,
+				1A1E9B2B2512FBD6001D44B5 /* YLReadHomeViewCell.m */,
+				1A1E9B1E2512FBD6001D44B5 /* YLReadLeftView.h */,
+				1A1E9B2F2512FBD6001D44B5 /* YLReadLeftView.m */,
+				1A1E9B322512FBD6001D44B5 /* YLReadLongPressCursorView.h */,
+				1A1E9B232512FBD6001D44B5 /* YLReadLongPressCursorView.m */,
+				1A1E9B362512FBD6001D44B5 /* YLReadLongPressView.h */,
+				1A1E9B2A2512FBD6001D44B5 /* YLReadLongPressView.m */,
+				1A1E9B3C2512FBD6001D44B5 /* YLReadMarkView.h */,
+				1A1E9B2D2512FBD6001D44B5 /* YLReadMarkView.m */,
+				1A1E9B312512FBD6001D44B5 /* YLReadSettingView.h */,
+				1A1E9B242512FBD6001D44B5 /* YLReadSettingView.m */,
+				1A1E9B2E2512FBD6001D44B5 /* YLReadTopView.h */,
+				1A1E9B1F2512FBD6001D44B5 /* YLReadTopView.m */,
+				1A1E9B3A2512FBD6001D44B5 /* YLReadTrackingSlider.h */,
+				1A1E9B262512FBD6001D44B5 /* YLReadTrackingSlider.m */,
+				1A1E9B3B2512FBD6001D44B5 /* YLReadView.h */,
+				1A1E9B252512FBD6001D44B5 /* YLReadView.m */,
+				1A1E9B392512FBD6001D44B5 /* YLReadViewCell.h */,
+				1A1E9B272512FBD6001D44B5 /* YLReadViewCell.m */,
+				1A1E9B222512FBD6001D44B5 /* YLReadViewStatusBottomView.h */,
+				1A1E9B332512FBD6001D44B5 /* YLReadViewStatusBottomView.m */,
+				1A1E9B2C2512FBD6001D44B5 /* YLReadViewStatusTopView.h */,
+				1A1E9B3D2512FBD6001D44B5 /* YLReadViewStatusTopView.m */,
+			);
+			path = YLReadViewGroup;
+			sourceTree = "<group>";
+		};
 		1A64DA4D24BD4CB5009AFB82 /* HttpGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,11 +377,11 @@
 				1AA8A20424C6E82F00839A83 /* BiQuGeParser.m */,
 				2204D81824BAA4F900C28A43 /* LingDianParser.h */,
 				2204D81924BAA4F900C28A43 /* LingDianParser.m */,
+				1A1E9AEA2512FBD6001D44B5 /* YLReader */,
 				1ACA604D24CEA49B00EC22B0 /* BookList */,
 				1A59909924C549E10014D809 /* DemoText.html */,
 				1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */,
 				1A64DA4D24BD4CB5009AFB82 /* HttpGroup */,
-				1A6E7E6424B8649100F42EA4 /* YLRead */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
 				1A6E7E5C24B863FB00F42EA4 /* Info.plist */,
@@ -259,122 +389,6 @@
 				1ABEC7C2250B15D7008D0DAC /* PrefixHeader.pch */,
 			);
 			path = YLRead;
-			sourceTree = "<group>";
-		};
-		1A6E7E6424B8649100F42EA4 /* YLRead */ = {
-			isa = PBXGroup;
-			children = (
-				1A6E7E9224B8649100F42EA4 /* YLReadViewGroup */,
-				1A6E7E6524B8649100F42EA4 /* YLReadTools */,
-				1A6E7E8124B8649100F42EA4 /* YLReadModelGroup */,
-				1A6E7E7F24B8649100F42EA4 /* UIPageViewController+Extend.h */,
-				1A6E7EB924B8649100F42EA4 /* UIPageViewController+Extend.m */,
-				1A6E7E9124B8649100F42EA4 /* YLReadController.h */,
-				1A6E7EBB24B8649100F42EA4 /* YLReadController.m */,
-				1A6E7E7B24B8649100F42EA4 /* YLReadCoverController.h */,
-				1A6E7EB724B8649100F42EA4 /* YLReadCoverController.m */,
-				1A6E7E7C24B8649100F42EA4 /* YLReadLongPressViewController.h */,
-				1A6E7EB624B8649100F42EA4 /* YLReadLongPressViewController.m */,
-				1A6E7EB524B8649100F42EA4 /* YLReadPageViewController.h */,
-				1A6E7E7D24B8649100F42EA4 /* YLReadPageViewController.m */,
-				1A6E7E7E24B8649100F42EA4 /* YLReadViewBGController.h */,
-				1A6E7EBA24B8649100F42EA4 /* YLReadViewBGController.m */,
-				1A6E7EB824B8649100F42EA4 /* YLReadViewController.h */,
-				1A6E7E8024B8649100F42EA4 /* YLReadViewController.m */,
-				1A6E7EBC24B8649100F42EA4 /* YLReadViewScrollController.h */,
-				1A6E7E9024B8649100F42EA4 /* YLReadViewScrollController.m */,
-				1ABEC7C1250B15BD008D0DAC /* YLRead.h */,
-			);
-			path = YLRead;
-			sourceTree = "<group>";
-		};
-		1A6E7E6524B8649100F42EA4 /* YLReadTools */ = {
-			isa = PBXGroup;
-			children = (
-				1A6E7E6E24B8649100F42EA4 /* NSString+Extend.h */,
-				1A6E7E7624B8649100F42EA4 /* NSString+Extend.m */,
-				1A6E7E6924B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.h */,
-				1A6E7E7424B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m */,
-				1A6E7E7324B8649100F42EA4 /* YLCoreText.h */,
-				1A6E7E6A24B8649100F42EA4 /* YLCoreText.m */,
-				1A6E7E7824B8649100F42EA4 /* YLGlobalTools.h */,
-				1A6E7E6C24B8649100F42EA4 /* YLGlobalTools.m */,
-				1A6E7E7024B8649100F42EA4 /* YLKeyedArchiver.h */,
-				1A6E7E6724B8649100F42EA4 /* YLKeyedArchiver.m */,
-				1A6E7E6B24B8649100F42EA4 /* YLReadConfigure.h */,
-				1A6E7E7224B8649100F42EA4 /* YLReadConfigure.m */,
-				1A6E7E7924B8649100F42EA4 /* YLReadParser.h */,
-				1A6E7E6D24B8649100F42EA4 /* YLReadParser.m */,
-				1A6E7E7124B8649100F42EA4 /* YLReadTextFastParser.h */,
-				1A6E7E6624B8649100F42EA4 /* YLReadTextFastParser.m */,
-				1A6E7E6F24B8649100F42EA4 /* YLReadTextParser.h */,
-				1A6E7E7A24B8649100F42EA4 /* YLReadTextParser.m */,
-				1A6E7E6824B8649100F42EA4 /* YLReadUserDefaults.h */,
-				1A6E7E7524B8649100F42EA4 /* YLReadUserDefaults.m */,
-			);
-			path = YLReadTools;
-			sourceTree = "<group>";
-		};
-		1A6E7E8124B8649100F42EA4 /* YLReadModelGroup */ = {
-			isa = PBXGroup;
-			children = (
-				1A6E7E8C24B8649100F42EA4 /* YLReadChapterListModel.h */,
-				1A6E7E8624B8649100F42EA4 /* YLReadChapterListModel.m */,
-				1A6E7E8E24B8649100F42EA4 /* YLReadChapterModel.h */,
-				1A6E7E8824B8649100F42EA4 /* YLReadChapterModel.m */,
-				1A6E7E8324B8649100F42EA4 /* YLReadMarkModel.h */,
-				1A6E7E8924B8649100F42EA4 /* YLReadMarkModel.m */,
-				1A6E7E8224B8649100F42EA4 /* YLReadMenu.h */,
-				1A6E7E8A24B8649100F42EA4 /* YLReadMenu.m */,
-				1A6E7E8424B8649100F42EA4 /* YLReadModel.h */,
-				1A6E7E8B24B8649100F42EA4 /* YLReadModel.m */,
-				1A6E7E8D24B8649100F42EA4 /* YLReadPageModel.h */,
-				1A6E7E8524B8649100F42EA4 /* YLReadPageModel.m */,
-				1A6E7E8F24B8649100F42EA4 /* YLReadRecordModel.h */,
-				1A6E7E8724B8649100F42EA4 /* YLReadRecordModel.m */,
-			);
-			path = YLReadModelGroup;
-			sourceTree = "<group>";
-		};
-		1A6E7E9224B8649100F42EA4 /* YLReadViewGroup */ = {
-			isa = PBXGroup;
-			children = (
-				1A6E7E9E24B8649100F42EA4 /* YLReadBaseView.h */,
-				1A6E7EAE24B8649100F42EA4 /* YLReadBaseView.m */,
-				1A6E7EAD24B8649100F42EA4 /* YLReadBottomView.h */,
-				1A6E7E9F24B8649100F42EA4 /* YLReadBottomView.m */,
-				1A6E7E9724B8649100F42EA4 /* YLReadCatalogView.h */,
-				1A6E7EAA24B8649100F42EA4 /* YLReadCatalogView.m */,
-				1A6E7E9624B8649100F42EA4 /* YLReadContentView.h */,
-				1A6E7EAB24B8649100F42EA4 /* YLReadContentView.m */,
-				1A6E7EA624B8649100F42EA4 /* YLReadHomeView.h */,
-				1A6E7E9324B8649100F42EA4 /* YLReadHomeView.m */,
-				1A6E7EB424B8649100F42EA4 /* YLReadHomeViewCell.h */,
-				1A6E7EA124B8649100F42EA4 /* YLReadHomeViewCell.m */,
-				1A6E7E9424B8649100F42EA4 /* YLReadLeftView.h */,
-				1A6E7EA524B8649100F42EA4 /* YLReadLeftView.m */,
-				1A6E7EA824B8649100F42EA4 /* YLReadLongPressCursorView.h */,
-				1A6E7E9924B8649100F42EA4 /* YLReadLongPressCursorView.m */,
-				1A6E7EAC24B8649100F42EA4 /* YLReadLongPressView.h */,
-				1A6E7EA024B8649100F42EA4 /* YLReadLongPressView.m */,
-				1A6E7EB224B8649100F42EA4 /* YLReadMarkView.h */,
-				1A6E7EA324B8649100F42EA4 /* YLReadMarkView.m */,
-				1A6E7EA724B8649100F42EA4 /* YLReadSettingView.h */,
-				1A6E7E9A24B8649100F42EA4 /* YLReadSettingView.m */,
-				1A6E7EA424B8649100F42EA4 /* YLReadTopView.h */,
-				1A6E7E9524B8649100F42EA4 /* YLReadTopView.m */,
-				1A6E7EB024B8649100F42EA4 /* YLReadTrackingSlider.h */,
-				1A6E7E9C24B8649100F42EA4 /* YLReadTrackingSlider.m */,
-				1A6E7EB124B8649100F42EA4 /* YLReadView.h */,
-				1A6E7E9B24B8649100F42EA4 /* YLReadView.m */,
-				1A6E7EAF24B8649100F42EA4 /* YLReadViewCell.h */,
-				1A6E7E9D24B8649100F42EA4 /* YLReadViewCell.m */,
-				1A6E7E9824B8649100F42EA4 /* YLReadViewStatusBottomView.h */,
-				1A6E7EA924B8649100F42EA4 /* YLReadViewStatusBottomView.m */,
-				1A6E7EA224B8649100F42EA4 /* YLReadViewStatusTopView.h */,
-				1A6E7EB324B8649100F42EA4 /* YLReadViewStatusTopView.m */,
-			);
-			path = YLReadViewGroup;
 			sourceTree = "<group>";
 		};
 		1ACA604D24CEA49B00EC22B0 /* BookList */ = {
@@ -460,60 +474,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1E9B482512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				1A1E9B6F2512FBD6001D44B5 /* YLReadController.m in Sources */,
+				1A1E9B4F2512FBD6001D44B5 /* YLReadPageModel.m in Sources */,
 				1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */,
-				1A6E7EC424B8649100F42EA4 /* YLReadUserDefaults.m in Sources */,
-				1A6E7EC924B8649100F42EA4 /* YLReadViewController.m in Sources */,
-				1A6E7EE724B8649100F42EA4 /* YLReadController.m in Sources */,
+				1A1E9B542512FBD6001D44B5 /* YLReadMenu.m in Sources */,
+				1A1E9B5D2512FBD6001D44B5 /* YLReadLongPressCursorView.m in Sources */,
 				1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */,
-				1A6E7EE224B8649100F42EA4 /* YLReadViewStatusTopView.m in Sources */,
-				1A6E7ED024B8649100F42EA4 /* YLReadModel.m in Sources */,
+				1A1E9B6A2512FBD6001D44B5 /* YLReadBaseView.m in Sources */,
+				1A1E9B612512FBD6001D44B5 /* YLReadViewCell.m in Sources */,
+				1A1E9B5A2512FBD6001D44B5 /* YLReadViewScrollController.m in Sources */,
 				1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */,
 				1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */,
-				1A6E7EC324B8649100F42EA4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				1A1E9B472512FBD6001D44B5 /* YLCoreText.m in Sources */,
+				1AAFFDD625131131002A886B /* YLReadChapterListModel.m in Sources */,
+				1A1E9B5F2512FBD6001D44B5 /* YLReadView.m in Sources */,
+				1A1E9B72251302DF001D44B5 /* NSString+YLReader.m in Sources */,
+				1A1E9B4C2512FBD6001D44B5 /* YLReadConfigure.m in Sources */,
+				1A1E9B652512FBD6001D44B5 /* YLReadMarkView.m in Sources */,
+				1A1E9B4A2512FBD6001D44B5 /* UIPageViewController+Extend.m in Sources */,
+				1A1E9B4B2512FBD6001D44B5 /* YLGlobalTools.m in Sources */,
 				1ACA605024CEA49B00EC22B0 /* BookModel.m in Sources */,
+				1A1E9B4D2512FBD6001D44B5 /* YLReadUserDefaults.m in Sources */,
 				1A6E7E5324B863F900F42EA4 /* ViewController.m in Sources */,
-				1A6E7ED524B8649100F42EA4 /* YLReadSettingView.m in Sources */,
-				1A6E7ECB24B8649100F42EA4 /* YLReadChapterListModel.m in Sources */,
-				1A6E7ECE24B8649100F42EA4 /* YLReadMarkModel.m in Sources */,
-				1A6E7ECF24B8649100F42EA4 /* YLReadMenu.m in Sources */,
-				1A6E7EDA24B8649100F42EA4 /* YLReadLongPressView.m in Sources */,
-				1A6E7ED324B8649100F42EA4 /* YLReadTopView.m in Sources */,
-				1A6E7ED224B8649100F42EA4 /* YLReadHomeView.m in Sources */,
+				1A1E9B692512FBD6001D44B5 /* YLReadContentView.m in Sources */,
+				1A1E9B592512FBD6001D44B5 /* YLReadViewController.m in Sources */,
+				1A1E9B522512FBD6001D44B5 /* YLReadChapterModel.m in Sources */,
+				1A1E9B6E2512FBD6001D44B5 /* YLReadViewBGController.m in Sources */,
+				1A1E9B6D2512FBD6001D44B5 /* YLReadCoverController.m in Sources */,
+				1A1E9B632512FBD6001D44B5 /* YLReadLongPressView.m in Sources */,
+				1A1E9B512512FBD6001D44B5 /* YLReadRecordModel.m in Sources */,
+				1A1E9B622512FBD6001D44B5 /* YLReadBottomView.m in Sources */,
+				1A1E9B552512FBD6001D44B5 /* YLReadModel.m in Sources */,
+				1A1E9B642512FBD6001D44B5 /* YLReadHomeViewCell.m in Sources */,
+				1A1E9B532512FBD6001D44B5 /* YLReadMarkModel.m in Sources */,
+				1A1E9B602512FBD6001D44B5 /* YLReadTrackingSlider.m in Sources */,
+				1A1E9B5C2512FBD6001D44B5 /* YLReadTopView.m in Sources */,
+				1A1E9B562512FBD6001D44B5 /* YLReadParser.m in Sources */,
+				1A1E9B5B2512FBD6001D44B5 /* YLReadHomeView.m in Sources */,
+				1A1E9B682512FBD6001D44B5 /* YLReadCatalogView.m in Sources */,
 				1A6E7E4D24B863F900F42EA4 /* AppDelegate.m in Sources */,
-				1A6E7EE024B8649100F42EA4 /* YLReadContentView.m in Sources */,
+				1A1E9B672512FBD6001D44B5 /* YLReadViewStatusBottomView.m in Sources */,
 				1ACA605324CEA4E400EC22B0 /* BookTableCell.m in Sources */,
-				1A6E7ED924B8649100F42EA4 /* YLReadBottomView.m in Sources */,
-				1A6E7EBE24B8649100F42EA4 /* YLKeyedArchiver.m in Sources */,
-				1A6E7EDB24B8649100F42EA4 /* YLReadHomeViewCell.m in Sources */,
+				1A1E9B462512FBD6001D44B5 /* YLKeyedArchiver.m in Sources */,
+				1A1E9B6C2512FBD6001D44B5 /* YLReadLongPressViewController.m in Sources */,
+				1A1E9B5E2512FBD6001D44B5 /* YLReadSettingView.m in Sources */,
+				1A1E9B6B2512FBD6001D44B5 /* YLReadViewStatusTopView.m in Sources */,
 				1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */,
+				1A1E9B582512FBD6001D44B5 /* YLReadPageViewController.m in Sources */,
 				2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */,
-				1A6E7ED124B8649100F42EA4 /* YLReadViewScrollController.m in Sources */,
-				1A6E7EC724B8649100F42EA4 /* YLReadTextParser.m in Sources */,
-				1A6E7EE624B8649100F42EA4 /* YLReadViewBGController.m in Sources */,
-				1A6E7ED724B8649100F42EA4 /* YLReadTrackingSlider.m in Sources */,
-				1A6E7EBD24B8649100F42EA4 /* YLReadTextFastParser.m in Sources */,
-				1A6E7EE124B8649100F42EA4 /* YLReadBaseView.m in Sources */,
-				1A6E7EBF24B8649100F42EA4 /* YLCoreText.m in Sources */,
-				1A6E7EC824B8649100F42EA4 /* YLReadPageViewController.m in Sources */,
-				1A6E7EC024B8649100F42EA4 /* YLGlobalTools.m in Sources */,
-				1A6E7ED624B8649100F42EA4 /* YLReadView.m in Sources */,
-				1A6E7EE524B8649100F42EA4 /* UIPageViewController+Extend.m in Sources */,
-				1A6E7EDD24B8649100F42EA4 /* YLReadLeftView.m in Sources */,
-				1A6E7ECA24B8649100F42EA4 /* YLReadPageModel.m in Sources */,
 				1A6E7E5E24B863FB00F42EA4 /* main.m in Sources */,
-				1A6E7EC224B8649100F42EA4 /* YLReadConfigure.m in Sources */,
-				1A6E7ED424B8649100F42EA4 /* YLReadLongPressCursorView.m in Sources */,
-				1A6E7EDF24B8649100F42EA4 /* YLReadCatalogView.m in Sources */,
-				1A6E7ECC24B8649100F42EA4 /* YLReadRecordModel.m in Sources */,
-				1A6E7ECD24B8649100F42EA4 /* YLReadChapterModel.m in Sources */,
-				1A6E7ED824B8649100F42EA4 /* YLReadViewCell.m in Sources */,
-				1A6E7EC124B8649100F42EA4 /* YLReadParser.m in Sources */,
-				1A6E7EDC24B8649100F42EA4 /* YLReadMarkView.m in Sources */,
 				1A64DA5D24BD54C0009AFB82 /* HTTPResponseSerialization.m in Sources */,
-				1A6E7EE424B8649100F42EA4 /* YLReadCoverController.m in Sources */,
-				1A6E7EE324B8649100F42EA4 /* YLReadLongPressViewController.m in Sources */,
-				1A6E7EC524B8649100F42EA4 /* NSString+Extend.m in Sources */,
-				1A6E7EDE24B8649100F42EA4 /* YLReadViewStatusBottomView.m in Sources */,
+				1A1E9B662512FBD6001D44B5 /* YLReadLeftView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,6 @@
 #import "ViewController.h"
 #import "BookTableCell.h"
 
-#import "YLReadTextParser.h"
 #import "LingDianParser.h"
 #import "YLKeyedArchiver.h"
 
@@ -77,7 +76,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.text = @"正在解析...";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        YLReadModel *readModel = [YLReadTextParser parserWithURL:book.fileUrl];
+        YLReadModel *readModel = [YLReadParser parserLocalTxtWithFileURL:book.fileUrl];
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES];
             YLReadController *readVC = [[YLReadController alloc] init];
