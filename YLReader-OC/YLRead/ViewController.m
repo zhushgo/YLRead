@@ -15,7 +15,6 @@
 #import "LingDianParser.h"
 #import "YLKeyedArchiver.h"
 
-#import "HTTPManager.h"
 #import "MBProgressHUD.h"
 #import "BiQuGeParser.h"
 
@@ -40,7 +39,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //[BiQuGeParser getBookAllStringByBookID:@"53605"];
-//         [LingDianParser getBookAllStringByBookID:@"300340"];
+        //[LingDianParser getBookAllStringByBookID:@"421518"];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
     });
 }

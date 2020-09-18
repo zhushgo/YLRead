@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //https://route.51mypc.cn/novels/search/牧神记
 //https://route.51mypc.cn/novels/download/185607
-//https://m.lingdiankanshu.co/343014/all.html
+//https://m.lingdiankanshu.co/445252/all.html
 
 /** 零点看书小说网：提取小说文本内容
  * 牧神记：187917
- * 北颂  ：410820       第1002章 猜测出的真相
- * 万族之劫 ： 445252    第595章 天没变
- * 小阁老：421518        第一百八十五章 敢拿钱侮辱我们公子
+ * 北颂  ：410820       第1010章 大财主寇季,败家翁寇准
+ * 万族之劫 ： 445252    第607章 家家有本难念的经
+ * 小阁老：421518        第一百九十六章 铮铮铁骨朴成性
  * 学霸的黑科技系统 ： 300340
  * 全球高武 ： 343014
  * 赘婿：4626
@@ -36,7 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
  * 大将：106074
  * 将血：1237
  * 锦衣当国：51560
- * 甲壳狂潮 ： 130348
  */
 @interface LingDianParser : NSObject
 

@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSDictionary<NSAttributedStringKey,id> *attributes;
 /// 经过排版的内容
 @property (nonatomic, strong) NSString *content;
-/// 优先级 (一般章节段落都带有排序的优先级从0开始)
-@property (nonatomic, assign) NSInteger priority;
+/// 当前章节在所有章节列表中的位置
+@property (nonatomic, assign) NSInteger indexInChapterList;
 /// 本章有多少页
 @property (nonatomic, assign) NSInteger pageCount;
 /// 分页数据

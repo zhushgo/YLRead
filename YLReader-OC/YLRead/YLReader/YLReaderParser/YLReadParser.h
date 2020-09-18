@@ -13,25 +13,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 解析完成
-typedef void(^ParserHanler)(YLReadModel *readModel);
-
+/** 本地 txt 文本解析
+ */
 @class YLReadPageModel,YLReadChapterListModel,YLReadChapterModel;
 
 @interface YLReadParser : NSObject
-
-/// 异步解析本地 txt
-+ (void)parserLocalTxtWithFileURL:(NSURL *)fileURL completion:(ParserHanler)handler;
-
-/// 同步解析本地 txt
-+ (YLReadModel *)parserLocalTxtWithFileURL:(NSURL *)fileURL;
-
-/**  解析整本小说
- * @param bookID 小说ID
- * @param contentString 小说内容
- * @return 章节列表
- */
-+ (NSMutableArray<YLReadChapterListModel *> *)parserWithBookID:(NSString *)bookID content:(NSString *)contentString;
 
 @end
 
@@ -42,6 +28,12 @@ typedef void(^ParserHanler)(YLReadModel *readModel);
 
 + (NSString *)getBookNameWithFileURL:(NSURL *)fileURL;
 
+/// 同步解析本地 txt
++ (YLReadModel *)parserLocalTxtWithFileURL:(NSURL *)fileURL;
+
+/// 异步解析本地 txt
++ (void)parserLocalTxtWithFileURL:(NSURL *)fileURL completion:(void(^)(YLReadModel *readModel))parserHanler;
+
 @end
 
 
@@ -50,6 +42,14 @@ typedef void(^ParserHanler)(YLReadModel *readModel);
 /// 获取单个指定章节
 + (YLReadChapterModel *)parserWithReadModel:(YLReadModel *)readModel chapterID:(NSInteger)chapterID;
 + (YLReadChapterModel *)parserWithReadModel:(YLReadModel *)readModel chapterID:(NSInteger)chapterID isUpdateFont:(BOOL)isUpdateFont;
+
+/** 解析整本小说的章节
+ * @param bookID 小说ID
+ * @param contentString 小说内容
+ * @return 章节列表
+ */
++ (NSMutableArray<YLReadChapterListModel *> *)parserWithBookID:(NSString *)bookID content:(NSString *)contentString;
+
 @end
 
 

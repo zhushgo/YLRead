@@ -21,30 +21,20 @@ typedef NS_ENUM(NSUInteger,YLBookSourceType) {
 
 /// 小说ID
 @property (nonatomic, strong) NSString *bookID;
-
 /// 小说名称
 @property (nonatomic, strong) NSString *bookName;
-
 /// 小说来源类型：默认网络
 @property (nonatomic, assign) YLBookSourceType bookSourceType;
-
 /// 当前阅读记录
 @property (nonatomic, strong) YLReadRecordModel *recordModel;
-
-/// 章节列表(如果是网络小说可以不需要放在这里记录,直接在目录视图里面加载接口或者读取本地数据库就好了。)
+/// 章节列表索引：简单的记录章节 id，name 数据
 @property (nonatomic, strong) NSArray<YLReadChapterListModel *> *chapterListModels;
-
 /// 书签列表
 @property (nonatomic, strong) NSMutableArray<YLReadMarkModel *> *markModels;
-
-/// 章节内容范围数组 [章节ID:[章节优先级:章节内容Range]]
-//var ranges:[String:[String:NSRange]]!
+/// 章节内容范围数组 [章节ID:[indexInChapterList:章节内容Range]]
 @property (nonatomic, strong) NSMutableDictionary<NSString *,NSDictionary<NSString *,NSValue *> *> *ranges;
-
 /// 本地小说全文
 @property (nonatomic, strong) NSString *fullText;
-
-
 /// 保存
 - (void)save;
 

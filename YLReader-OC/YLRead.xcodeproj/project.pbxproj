@@ -18,7 +18,6 @@
 		1A1E9B512512FBD6001D44B5 /* YLReadRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B052512FBD6001D44B5 /* YLReadRecordModel.m */; };
 		1A1E9B522512FBD6001D44B5 /* YLReadChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */; };
 		1A1E9B532512FBD6001D44B5 /* YLReadMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */; };
-		1A1E9B542512FBD6001D44B5 /* YLReadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */; };
 		1A1E9B552512FBD6001D44B5 /* YLReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B092512FBD6001D44B5 /* YLReadModel.m */; };
 		1A1E9B562512FBD6001D44B5 /* YLReadParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B0E2512FBD6001D44B5 /* YLReadParser.m */; };
 		1A1E9B582512FBD6001D44B5 /* YLReadPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B172512FBD6001D44B5 /* YLReadPageViewController.m */; };
@@ -46,11 +45,8 @@
 		1A1E9B6E2512FBD6001D44B5 /* YLReadViewBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B432512FBD6001D44B5 /* YLReadViewBGController.m */; };
 		1A1E9B6F2512FBD6001D44B5 /* YLReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B442512FBD6001D44B5 /* YLReadController.m */; };
 		1A1E9B72251302DF001D44B5 /* NSString+YLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E9B71251302DF001D44B5 /* NSString+YLReader.m */; };
+		1A3D197B25148EFB00F33DE8 /* YLReadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D197925148EF900F33DE8 /* YLReadMenu.m */; };
 		1A59909A24C549E20014D809 /* DemoText.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A59909924C549E10014D809 /* DemoText.html */; };
-		1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */; };
-		1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */; };
-		1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */; };
-		1A64DA5D24BD54C0009AFB82 /* HTTPResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */; };
 		1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A64DA5F24BD5B59009AFB82 /* MBProgressHUD.m */; };
 		1A6E7E4D24B863F900F42EA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E4C24B863F900F42EA4 /* AppDelegate.m */; };
 		1A6E7E5324B863F900F42EA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7E5224B863F900F42EA4 /* ViewController.m */; };
@@ -80,14 +76,12 @@
 		1A1E9AFA2512FBD6001D44B5 /* YLCoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLCoreText.h; sourceTree = "<group>"; };
 		1A1E9AFB2512FBD6001D44B5 /* YLReadUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadUserDefaults.m; sourceTree = "<group>"; };
 		1A1E9AFC2512FBD6001D44B5 /* YLGlobalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGlobalTools.h; sourceTree = "<group>"; };
-		1A1E9B002512FBD6001D44B5 /* YLReadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMenu.h; sourceTree = "<group>"; };
 		1A1E9B012512FBD6001D44B5 /* YLReadMarkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMarkModel.h; sourceTree = "<group>"; };
 		1A1E9B022512FBD6001D44B5 /* YLReadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadModel.h; sourceTree = "<group>"; };
 		1A1E9B032512FBD6001D44B5 /* YLReadPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadPageModel.m; sourceTree = "<group>"; };
 		1A1E9B052512FBD6001D44B5 /* YLReadRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadRecordModel.m; sourceTree = "<group>"; };
 		1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadChapterModel.m; sourceTree = "<group>"; };
 		1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMarkModel.m; sourceTree = "<group>"; };
-		1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMenu.m; sourceTree = "<group>"; };
 		1A1E9B092512FBD6001D44B5 /* YLReadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadModel.m; sourceTree = "<group>"; };
 		1A1E9B0B2512FBD6001D44B5 /* YLReadPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadPageModel.h; sourceTree = "<group>"; };
 		1A1E9B0C2512FBD6001D44B5 /* YLReadChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadChapterModel.h; sourceTree = "<group>"; };
@@ -145,15 +139,9 @@
 		1A1E9B452512FBD6001D44B5 /* YLReadViewScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadViewScrollController.h; sourceTree = "<group>"; };
 		1A1E9B70251302DF001D44B5 /* NSString+YLReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YLReader.h"; sourceTree = "<group>"; };
 		1A1E9B71251302DF001D44B5 /* NSString+YLReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YLReader.m"; sourceTree = "<group>"; };
+		1A3D197925148EF900F33DE8 /* YLReadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLReadMenu.m; sourceTree = "<group>"; };
+		1A3D197A25148EFB00F33DE8 /* YLReadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLReadMenu.h; sourceTree = "<group>"; };
 		1A59909924C549E10014D809 /* DemoText.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DemoText.html; sourceTree = "<group>"; };
-		1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
-		1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
-		1A64DA5524BD4D03009AFB82 /* HTTPRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestSerializer.h; sourceTree = "<group>"; };
-		1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestSerializer.m; sourceTree = "<group>"; };
-		1A64DA5824BD51CE009AFB82 /* HTTPSessionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPSessionDelegate.h; sourceTree = "<group>"; };
-		1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPSessionDelegate.m; sourceTree = "<group>"; };
-		1A64DA5B24BD54C0009AFB82 /* HTTPResponseSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPResponseSerialization.h; sourceTree = "<group>"; };
-		1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseSerialization.m; sourceTree = "<group>"; };
 		1A64DA5F24BD5B59009AFB82 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		1A64DA6024BD5B59009AFB82 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		1A6E7E4824B863F900F42EA4 /* YLRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +201,8 @@
 				1A1E9AEC2512FBD6001D44B5 /* YLKeyedArchiver.m */,
 				1A1E9AF62512FBD6001D44B5 /* YLReadConfigure.h */,
 				1A1E9AF92512FBD6001D44B5 /* YLReadConfigure.m */,
+				1A3D197A25148EFB00F33DE8 /* YLReadMenu.h */,
+				1A3D197925148EF900F33DE8 /* YLReadMenu.m */,
 				1A1E9AED2512FBD6001D44B5 /* YLReadUserDefaults.h */,
 				1A1E9AFB2512FBD6001D44B5 /* YLReadUserDefaults.m */,
 			);
@@ -251,8 +241,6 @@
 				1A1E9B062512FBD6001D44B5 /* YLReadChapterModel.m */,
 				1A1E9B012512FBD6001D44B5 /* YLReadMarkModel.h */,
 				1A1E9B072512FBD6001D44B5 /* YLReadMarkModel.m */,
-				1A1E9B002512FBD6001D44B5 /* YLReadMenu.h */,
-				1A1E9B082512FBD6001D44B5 /* YLReadMenu.m */,
 				1A1E9B022512FBD6001D44B5 /* YLReadModel.h */,
 				1A1E9B092512FBD6001D44B5 /* YLReadModel.m */,
 				1A1E9B0B2512FBD6001D44B5 /* YLReadPageModel.h */,
@@ -326,21 +314,6 @@
 			path = YLReadViewGroup;
 			sourceTree = "<group>";
 		};
-		1A64DA4D24BD4CB5009AFB82 /* HttpGroup */ = {
-			isa = PBXGroup;
-			children = (
-				1A64DA4E24BD4CB5009AFB82 /* HTTPManager.h */,
-				1A64DA4F24BD4CB5009AFB82 /* HTTPManager.m */,
-				1A64DA5824BD51CE009AFB82 /* HTTPSessionDelegate.h */,
-				1A64DA5924BD51CE009AFB82 /* HTTPSessionDelegate.m */,
-				1A64DA5524BD4D03009AFB82 /* HTTPRequestSerializer.h */,
-				1A64DA5624BD4D03009AFB82 /* HTTPRequestSerializer.m */,
-				1A64DA5B24BD54C0009AFB82 /* HTTPResponseSerialization.h */,
-				1A64DA5C24BD54C0009AFB82 /* HTTPResponseSerialization.m */,
-			);
-			path = HttpGroup;
-			sourceTree = "<group>";
-		};
 		1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +354,6 @@
 				1ACA604D24CEA49B00EC22B0 /* BookList */,
 				1A59909924C549E10014D809 /* DemoText.html */,
 				1A64DA5E24BD5B59009AFB82 /* MBProgressHUD */,
-				1A64DA4D24BD4CB5009AFB82 /* HttpGroup */,
 				1A6E7E5724B863FB00F42EA4 /* Assets.xcassets */,
 				1A6E7E5924B863FB00F42EA4 /* LaunchScreen.storyboard */,
 				1A6E7E5C24B863FB00F42EA4 /* Info.plist */,
@@ -477,15 +449,11 @@
 				1A1E9B482512FBD6001D44B5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				1A1E9B6F2512FBD6001D44B5 /* YLReadController.m in Sources */,
 				1A1E9B4F2512FBD6001D44B5 /* YLReadPageModel.m in Sources */,
-				1A64DA5724BD4D03009AFB82 /* HTTPRequestSerializer.m in Sources */,
-				1A1E9B542512FBD6001D44B5 /* YLReadMenu.m in Sources */,
 				1A1E9B5D2512FBD6001D44B5 /* YLReadLongPressCursorView.m in Sources */,
-				1A64DA5024BD4CB5009AFB82 /* HTTPManager.m in Sources */,
 				1A1E9B6A2512FBD6001D44B5 /* YLReadBaseView.m in Sources */,
 				1A1E9B612512FBD6001D44B5 /* YLReadViewCell.m in Sources */,
 				1A1E9B5A2512FBD6001D44B5 /* YLReadViewScrollController.m in Sources */,
 				1A64DA6124BD5B59009AFB82 /* MBProgressHUD.m in Sources */,
-				1A64DA5A24BD51CE009AFB82 /* HTTPSessionDelegate.m in Sources */,
 				1A1E9B472512FBD6001D44B5 /* YLCoreText.m in Sources */,
 				1AAFFDD625131131002A886B /* YLReadChapterListModel.m in Sources */,
 				1A1E9B5F2512FBD6001D44B5 /* YLReadView.m in Sources */,
@@ -523,8 +491,8 @@
 				1AA8A20524C6E82F00839A83 /* BiQuGeParser.m in Sources */,
 				1A1E9B582512FBD6001D44B5 /* YLReadPageViewController.m in Sources */,
 				2204D81A24BAA4F900C28A43 /* LingDianParser.m in Sources */,
+				1A3D197B25148EFB00F33DE8 /* YLReadMenu.m in Sources */,
 				1A6E7E5E24B863FB00F42EA4 /* main.m in Sources */,
-				1A64DA5D24BD54C0009AFB82 /* HTTPResponseSerialization.m in Sources */,
 				1A1E9B662512FBD6001D44B5 /* YLReadLeftView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

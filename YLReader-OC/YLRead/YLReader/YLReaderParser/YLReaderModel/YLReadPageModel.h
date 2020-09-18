@@ -30,7 +30,10 @@ typedef NS_ENUM(NSUInteger,YLPageHeadType) {
 /// 根据开头类型返回开头高度 (目前主要是滚动模式使用)
 @property (nonatomic, assign) CGFloat headTypeHeight;
 
-/// 当前内容Size (目前主要是(滚动模式 || 长按模式)使用)
+/** 当前内容Size
+ * 滚动模式使用其高度
+ * 长按粘贴复制时使用
+ */
 @property (nonatomic, assign) CGSize contentSize;
 
 /// 当前内容头部类型 (目前主要是滚动模式使用)

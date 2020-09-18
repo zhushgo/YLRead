@@ -43,7 +43,7 @@ float getReadToalProgress(YLReadModel *readModel,YLReadRecordModel *recordModel)
     }else{
         
         // 当前章节在所有章节列表中的位置
-        float chapterIndex = recordModel.chapterModel.priority;
+        float chapterIndex = recordModel.chapterModel.indexInChapterList;
         // 章节总数量
         float chapterCount = readModel.chapterListModels.count;
         // 阅读记录首位置
@@ -79,13 +79,11 @@ float getReadToalProgress(YLReadModel *readModel,YLReadRecordModel *recordModel)
 /// 保存
 - (void)save{
     [self.recordModel save];
-//    [YLKeyedArchiver archiverWithFolderName:kYLReadObjectKey fileName:self.bookID object:self];
     [YLKeyedArchiver archiverWithFolderName:self.bookID fileName:kYLReadObjectKey object:self];
 }
 
 /// 是否存在阅读对象
 + (BOOL)isExistWithBookID:(NSString *)bookID{
-//    return [YLKeyedArchiver isExistWithFolderName:kYLReadObjectKey fileName:bookID];
     return [YLKeyedArchiver isExistWithFolderName:bookID fileName:kYLReadObjectKey];
 }
 
@@ -95,7 +93,6 @@ float getReadToalProgress(YLReadModel *readModel,YLReadRecordModel *recordModel)
     model.bookID = bookID;
     if ([YLReadModel isExistWithBookID:bookID]) {
        model = (YLReadModel *)[YLKeyedArchiver unarchiverWithFolderName:bookID fileName:kYLReadObjectKey];
-        //model = (YLReadModel *)[YLKeyedArchiver unarchiverWithFolderName:kYLReadObjectKey fileName:bookID];
     }
     // 获取阅读记录
     model.recordModel = [YLReadRecordModel modelWithBookID:bookID];

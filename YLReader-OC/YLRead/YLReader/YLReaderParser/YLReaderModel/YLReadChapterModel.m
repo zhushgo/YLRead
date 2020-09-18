@@ -22,7 +22,7 @@ NSString *const kYLReadChapterModelNextChapterID = @"nextChapterID";
 NSString *const kYLReadChapterModelPageCount = @"pageCount";
 NSString *const kYLReadChapterModelPageModels = @"pageModels";
 NSString *const kYLReadChapterModelAttributes = @"attributes";
-NSString *const kYLReadChapterModelPriority = @"priority";
+NSString *const kYLReadChapterModelIndexInChapterList = @"indexInChapterList";
 NSString *const kYLReadChapterModelName = @"name";
 
 
@@ -44,7 +44,7 @@ NSString *const kYLReadChapterModelName = @"name";
 @synthesize pageCount = _pageCount;
 @synthesize pageModels = _pageModels;
 @synthesize attributes = _attributes;
-@synthesize priority = _priority;
+@synthesize indexInChapterList = _indexInChapterList;
 @synthesize name = _name;
 
 - (instancetype)init{
@@ -54,7 +54,7 @@ NSString *const kYLReadChapterModelName = @"name";
         self.nextChapterID = kYLReadChapterIDMax;
         self.previousChapterID = kYLReadChapterIDMin;
         self.name = @"前言";
-        self.priority = 0;
+        self.indexInChapterList = 0;
     }
     return self;
 }
@@ -83,7 +83,7 @@ NSString *const kYLReadChapterModelName = @"name";
     self.pageCount = [aDecoder decodeDoubleForKey:kYLReadChapterModelPageCount];
     self.pageModels = [aDecoder decodeObjectForKey:kYLReadChapterModelPageModels];
     self.attributes = [aDecoder decodeObjectForKey:kYLReadChapterModelAttributes];
-    self.priority = [aDecoder decodeDoubleForKey:kYLReadChapterModelPriority];
+    self.indexInChapterList = [aDecoder decodeDoubleForKey:kYLReadChapterModelIndexInChapterList];
     self.name = [aDecoder decodeObjectForKey:kYLReadChapterModelName];
     return self;
 }
@@ -100,7 +100,7 @@ NSString *const kYLReadChapterModelName = @"name";
     [aCoder encodeObject:_pageModels forKey:kYLReadChapterModelPageModels];
     
     [aCoder encodeObject:_attributes forKey:kYLReadChapterModelAttributes];
-    [aCoder encodeDouble:_priority forKey:kYLReadChapterModelPriority];
+    [aCoder encodeDouble:_indexInChapterList forKey:kYLReadChapterModelIndexInChapterList];
     [aCoder encodeObject:_name forKey:kYLReadChapterModelName];
 }
 
@@ -118,7 +118,7 @@ NSString *const kYLReadChapterModelName = @"name";
         copy.pageModels = [self.pageModels copyWithZone:zone];
         
         copy.attributes = [self.attributes copyWithZone:zone];
-        copy.priority = self.priority;
+        copy.indexInChapterList = self.indexInChapterList;
         copy.name = [self.name copyWithZone:zone];
     }
     return copy;
@@ -274,7 +274,7 @@ NSString *const kYLReadChapterModelName = @"name";
         self.pageCount = [[self objectOrNilForKey:kYLReadChapterModelPageCount fromDictionary:dict] doubleValue];
         self.pageModels = [self objectOrNilForKey:kYLReadChapterModelPageModels fromDictionary:dict];
         self.attributes = [self objectOrNilForKey:kYLReadChapterModelAttributes fromDictionary:dict];
-        self.priority = [[self objectOrNilForKey:kYLReadChapterModelPriority fromDictionary:dict] doubleValue];
+        self.indexInChapterList = [[self objectOrNilForKey:kYLReadChapterModelIndexInChapterList fromDictionary:dict] doubleValue];
         self.name = [self objectOrNilForKey:kYLReadChapterModelName fromDictionary:dict];
     }
     return self;
@@ -285,14 +285,14 @@ NSString *const kYLReadChapterModelName = @"name";
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.bookID forKey:kYLReadChapterModelBookID];
     [mutableDict setValue:self.content forKey:kYLReadChapterModelContent];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.previousChapterID] forKey:kYLReadChapterModelPreviousChapterID];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.id] forKey:kYLReadChapterModelId];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.previousChapterID] forKey:kYLReadChapterModelPreviousChapterID];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.id] forKey:kYLReadChapterModelId];
     [mutableDict setValue:self.fullContent forKey:kYLReadChapterModelFullContent];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.nextChapterID] forKey:kYLReadChapterModelNextChapterID];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.pageCount] forKey:kYLReadChapterModelPageCount];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.nextChapterID] forKey:kYLReadChapterModelNextChapterID];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.pageCount] forKey:kYLReadChapterModelPageCount];
     [mutableDict setValue:self.pageModels forKey:kYLReadChapterModelPageModels];
     [mutableDict setValue:self.attributes forKey:kYLReadChapterModelAttributes];
-    [mutableDict setValue:[NSNumber numberWithDouble:self.priority] forKey:kYLReadChapterModelPriority];
+    [mutableDict setValue:[NSNumber numberWithInteger:self.indexInChapterList] forKey:kYLReadChapterModelIndexInChapterList];
     [mutableDict setValue:self.name forKey:kYLReadChapterModelName];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
