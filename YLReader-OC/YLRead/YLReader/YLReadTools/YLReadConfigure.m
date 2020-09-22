@@ -17,18 +17,13 @@ UIColor *kYLRead_Color_Menu(void){
     return [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
 }
 
-UIColor *kYLRead_Color_MenuBG(void){
-    return [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.95];
-}
-
-//read_bg_2_icon
 NSArray<UIColor *> *kYLRead_Color_BG(void){
-    return @[[UIColor colorWithRed:234/255.0 green:234/255.0 blue:239/255.0 alpha:1],
-             [UIColor colorWithRed:250/255.0 green:249/255.0 blue:222/255.0 alpha:1],
-             [UIColor colorWithRed:58/255.0 green:52/255.0 blue:54/255.0 alpha:0.95],
-             [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]],
+    return @[[UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_0_icon"]],
              [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_1_icon"]],
-             [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_2_icon"]],];
+             [UIColor colorWithPatternImage:[UIImage imageNamed:@"read_bg_2_icon"]],
+             [UIColor colorWithRed:58/255.0 green:52/255.0 blue:54/255.0 alpha:0.95],
+             [UIColor colorWithRed:234/255.0 green:234/255.0 blue:239/255.0 alpha:1],
+             [UIColor colorWithRed:250/255.0 green:249/255.0 blue:222/255.0 alpha:1],];
 }
 
 NSInteger const kYLRead_FontSize_Min = 10;

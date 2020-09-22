@@ -467,7 +467,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     if (self) {
         self.frame = CGRectMake(0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds), ylReadIsIPhoneNotchScreen() ? (50 * 6.0 + 34) : 50 * 6.0);
         
-        self.backgroundColor = kYLRead_Color_MenuBG();
         _lightView = [[YLReadSettingLightView alloc]initWithReadMenu:readMenu];
         [self addSubview:_lightView];
         

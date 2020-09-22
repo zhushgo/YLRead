@@ -404,7 +404,6 @@
             tableView.estimatedSectionFooterHeight = 0;
             tableView.estimatedSectionHeaderHeight = 0;
         }
-        
         _tableView = tableView;
     }
     return _tableView;

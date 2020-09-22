@@ -75,31 +75,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class YLReadController,YLReadContentView;
 @interface YLReadMenu : NSObject
-
 /// 控制器
 @property (nonatomic ,weak) YLReadController *vc;
-
 /// 阅读主视图
 @property (nonatomic ,weak) YLReadContentView *contentView;
-
 /// 代理
 @property (nonatomic ,weak)id <YLReadMenuDelegate> delegate;
-
 /// 菜单显示状态
 @property (nonatomic ,assign) BOOL isMenuShow;
-
 /// 单击手势
 @property (nonatomic ,strong) UITapGestureRecognizer *singleTap;
-
 /// TopView
 @property (nonatomic ,strong) YLReadTopView *topView;
-
 /// BottomView
 @property (nonatomic ,strong) YLReadBottomView *bottomView;
-
 /// SettingView
 @property (nonatomic ,strong) YLReadSettingView *settingView;
-
 /// 日夜间遮盖
 @property (nonatomic ,strong) UIView *cover;
 
@@ -107,13 +98,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///  菜单展示
 - (void)showMenuWithIsShow:(BOOL)isShow;
-
 /// TopView展示
 - (void)showTopViewWithIsShow:(BOOL)isShow completion:(void(^)(void))animationCompletion;
-
 /// BottomView展示
 - (void)showBottomViewWithIsShow:(BOOL)isShow  completion:(void(^)(void))animationCompletion;
-   
 /// SettingView展示
 - (void)showSettingViewWithIsShow:(BOOL)isShow  completion:(void(^)(void))animationCompletion;
 
