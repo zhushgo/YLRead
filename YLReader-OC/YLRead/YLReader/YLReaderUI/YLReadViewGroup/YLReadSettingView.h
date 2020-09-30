@@ -16,16 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateDisplayProgressButton;
 @end
 
-/// 亮度
-@interface YLReadSettingLightView : YLReadBaseView
-
-@end
 
 
 
 @interface YLReadSettingView : YLReadBaseView
-/// 亮度
-@property (nonatomic ,strong) YLReadSettingLightView *lightView;
 /// 字体大小
 @property (nonatomic ,strong) YLReadSettingFontSizeView *fontSizeView;
 

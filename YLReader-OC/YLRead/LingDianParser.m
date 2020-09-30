@@ -94,6 +94,7 @@
     NSMutableString *sectionContent = [[NSMutableString alloc] init];
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";//根据正则表达式，取出指定文本
     regula = @"(?<=</div>\\s{0,20}\n\\s{0,20}</div>\\s{0,20}\n\\s{0,20}</div>)[\\s\\S]*?</div>";
+    regula = @"(?<=</script>)[\\s\\S]*?</div>";
 
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;

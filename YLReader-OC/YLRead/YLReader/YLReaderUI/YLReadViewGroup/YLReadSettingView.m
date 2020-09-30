@@ -13,8 +13,7 @@
 
 
 typedef NS_ENUM(NSUInteger,YLReadSettingType) {
-    YLReadSettingTypeLight = 0,
-    YLReadSettingTypeFontSize,/// 字体大小
+    YLReadSettingTypeFontSize = 0,/// 字体大小
     YLReadSettingTypeBGColor,/// 背景色
     YLReadSettingTypeEffect,/// 翻页效果
     YLReadSettingTypeFont,/// 字体
@@ -170,9 +169,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 - (void)setSettingType:(YLReadSettingType)settingType{
     _settingType = settingType;
     switch (settingType) {
-        case YLReadSettingTypeLight:{
-            
-        }break;
         case YLReadSettingTypeFontSize:{
             
         }break;
@@ -365,87 +361,6 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 
 
 
-@interface YLReadSettingLightView ()
-@property (nonatomic ,strong) UIImageView *leftIcon;
-@property (nonatomic ,strong) UISlider *slider;
-@property (nonatomic ,strong) UIImageView *rightIcon;
-@end
-@implementation YLReadSettingLightView
-
-- (instancetype)initWithReadMenu:(YLReadMenu *)readMenu{
-    self = [super initWithReadMenu:readMenu];
-    if (self) {
-        self.backgroundColor = UIColor.clearColor;
-        [self addSubview:self.leftIcon];
-        [self addSubview:self.slider];
-        [self addSubview:self.rightIcon];
-    }
-    return self;
-}
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    CGFloat w = self.frame.size.width;
-    CGFloat h = self.frame.size.height;
-    CGFloat iconWH = 20 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0);
-    CGFloat iconY = (h - iconWH) / 2;
-    self.leftIcon.frame = CGRectMake(0,iconY, iconWH, iconWH);
-    self.rightIcon.frame = CGRectMake(w - iconWH, iconY,iconWH,iconWH);
-    CGFloat sliderX = CGRectGetMaxX(self.leftIcon.frame) + 15 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0);
-    CGFloat sliderW = self.rightIcon.frame.origin.x - 15 * (CGRectGetWidth(UIScreen.mainScreen.bounds) / 375.0) - sliderX;
-    self.slider.frame = CGRectMake( sliderX, 0, sliderW, h);
-}
-
-#pragma mark - response click
- 
-/// 滑块变化
-- (void)sliderChanged:(UISlider *)sender{
-    UIScreen.mainScreen.brightness = sender.value;
-}
-
-#pragma mark - setter and getters
-
-- (UIImageView *)leftIcon{
-    if (_leftIcon == nil) {
-        UIImageView *imageView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"light_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        imageView.tintColor = kYLRead_Color_Menu();
-        _leftIcon = imageView;
-    }
-    return _leftIcon;
-}
-
-- (UIImageView *)rightIcon{
-    if (_rightIcon == nil) {
-        UIImageView *imageView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"light_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        imageView.tintColor = kYLRead_Color_Menu();
-        _rightIcon = imageView;
-    }
-    return _rightIcon;
-}
-
-// 进度条
-- (UISlider *)slider{
-    if (_slider == nil) {
-        UISlider *slider = [[UISlider alloc] init];
-        slider.minimumValue = 0.0;
-        slider.maximumValue = 1.0;
-        slider.value = UIScreen.mainScreen.brightness;
-        [slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
-        [slider setThumbImage:[[UIImage imageNamed:@"slider"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-        // 设置当前进度颜色
-        slider.minimumTrackTintColor = kYLRead_Color_Main();
-        // 设置总进度颜色
-        slider.maximumTrackTintColor = kYLRead_Color_Menu();
-        // 设置当前拖拽圆圈颜色
-        slider.tintColor = kYLRead_Color_Menu();
-        
-        _slider = slider;
-    }
-    return _slider;
-}
-
-@end
-
 
 
 
@@ -465,10 +380,7 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
 - (instancetype)initWithReadMenu:(YLReadMenu *)readMenu{
     self = [super initWithReadMenu:readMenu];
     if (self) {
-        self.frame = CGRectMake(0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds), ylReadIsIPhoneNotchScreen() ? (50 * 6.0 + 34) : 50 * 6.0);
-        
-        _lightView = [[YLReadSettingLightView alloc]initWithReadMenu:readMenu];
-        [self addSubview:_lightView];
+        self.frame = CGRectMake(0, CGRectGetHeight(UIScreen.mainScreen.bounds), CGRectGetWidth(UIScreen.mainScreen.bounds), ylReadIsIPhoneNotchScreen() ? (50 * 5.0 + 34) : (50 * 5.0 + 10));
         
         _fontSizeView = [[YLReadSettingFontSizeView alloc]initWithReadMenu:readMenu];
         [self addSubview:_fontSizeView];
@@ -483,8 +395,7 @@ typedef NS_ENUM(NSUInteger,YLReadSettingType) {
     CGFloat x = 16;
     CGFloat width = CGRectGetWidth(self.bounds) - 16 * 2.0;
     CGFloat height = 50;
-    _lightView.frame = CGRectMake(x, 0, width, height);
-    _fontSizeView.frame = CGRectMake( x,CGRectGetMaxY(_lightView.frame),width, height);
+    _fontSizeView.frame = CGRectMake( x, 10,width, height);
     self.tableView.frame = CGRectMake(x, CGRectGetMaxY(_fontSizeView.frame), width, height * 4.0);
 }
 
