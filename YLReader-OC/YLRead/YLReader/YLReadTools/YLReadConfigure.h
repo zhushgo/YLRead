@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT UIColor *kYLRead_Color_Main(void);
 /// 菜单默认颜色
 FOUNDATION_EXPORT UIColor *kYLRead_Color_Menu(void);
-/// 菜单背景颜色
-FOUNDATION_EXPORT UIColor *kYLRead_Color_MenuBG(void);
 /// 阅读背景颜色列表
 FOUNDATION_EXPORT NSArray<UIColor *> *kYLRead_Color_BG(void);
 
@@ -65,7 +63,7 @@ typedef NS_ENUM(NSUInteger,YLSpacingType) {
 };
 
 
-//阅读页面配置
+//阅读页面配置：字体、背景色、间距
 @interface YLReadConfigure : NSObject
 /// 开启长按菜单功能 (滚动模式是不支持长按功能的),默认为 YES
 @property (nonatomic ,assign) BOOL openLongPress;

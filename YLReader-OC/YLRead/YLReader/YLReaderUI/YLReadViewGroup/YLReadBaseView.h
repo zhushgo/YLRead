@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class YLReadMenu;
 @interface YLReadBaseView : UIView
+
 /// 菜单对象
 @property (nonatomic ,strong) YLReadMenu *readMenu;
 

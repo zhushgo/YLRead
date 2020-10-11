@@ -65,8 +65,9 @@
         readModel.bookSourceType = YLBookSourceTypeLocal;
         readModel.bookName = bookName;
         readModel.chapterListModels = chapterListModels;
-        // 设置第一个章节为阅读记录
-        [readModel.recordModel modifyWithChapterID:readModel.chapterListModels.firstObject.id toPage:0 isSave:NO];
+        if (![YLReadRecordModel isExistWithBookID:bookID]) {///没有阅读记录，则设置第一个章节为阅读记录
+            [readModel.recordModel modifyWithChapterID:readModel.chapterListModels.firstObject.id toPage:0 isSave:NO];
+        }
         [readModel save];
         return readModel;
     }else{
