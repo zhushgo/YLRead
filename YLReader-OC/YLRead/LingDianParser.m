@@ -60,8 +60,8 @@
     if (catalogueArray.count > 0) {
         [catalogueArray removeLastObject];
     }
-    
     NSString *regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";//根据正则表达式，取出章节标题、链接
+    regula = @"(?<=\\<li><a href=\").*?(?=\\</a></li>)";
     NSError *error;
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
     NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:htmlString options:0 range:NSMakeRange(0, [htmlString length])];
@@ -76,7 +76,8 @@
                 NSArray<NSString *> *array = [matchString componentsSeparatedByString:@"\">"];
                 NSString *sectionName = array.lastObject;
                 NSString *sectionLink = array.firstObject;
-                NSString *sectionContent = [LingDianParser getSectionContentByLink:[NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%@",bookID,sectionLink]];
+                //NSString *sectionContent = [LingDianParser getSectionContentByLink:[NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%@",bookID,sectionLink]];
+                NSString *sectionContent = [LingDianParser getSectionContentByLink:[NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@",sectionLink]];
                 [catalogueArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"sectionName":sectionName,@"sectionLink":sectionLink,@"sectionContent":sectionContent}]];
                 [catalogueArray writeToFile:path atomically:YES];
             }
@@ -94,8 +95,9 @@
     NSMutableString *sectionContent = [[NSMutableString alloc] init];
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";//根据正则表达式，取出指定文本
     regula = @"(?<=</div>\\s{0,20}\n\\s{0,20}</div>\\s{0,20}\n\\s{0,20}</div>)[\\s\\S]*?</div>";
-    //regula = @"(?<=</script>)[\\s\\S]*?</div>";
-    regula = @"(?<=\\</script>).*?(?=\\</div>)";
+    regula = @"(?<=</div>)[\\s\\S]*?</div>";
+//    regula = @"(?<=\\</div>).*?(?=\\</div>)";
+    regula = @"(?<=\\</div>)[^div]*?(?=\\</div>)";
 
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;
@@ -131,6 +133,7 @@
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     //
     content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    content = [content stringByReplacingOccurrencesOfString:@"; ; ; ;" withString:@""];    
     content = [content stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"\\s*\\n+\\s*" withString:@"\n"];
