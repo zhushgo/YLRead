@@ -135,12 +135,21 @@ NSInteger const kYLRead_FontSize_TitleSpace = 8;
     [YLReadUserDefaults setObjectWithKey:kYLRead_Save_Configure object:dict];
 }
 
+
 - (UIColor *)textColor{
-    return [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1];
+    if (_bgColorIndex == 3) {
+        return [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1];
+    }else{
+        return [UIColor colorWithRed:71/255.0 green:59/255.0 blue:32/255.0 alpha:1];
+    }
 }
 
 - (UIColor *)statusTextColor{
-    return [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1];
+    if (_bgColorIndex == 3) {
+        return [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1];
+    }else{
+        return [UIColor colorWithRed:71/255.0 green:59/255.0 blue:32/255.0 alpha:1];
+    }
 }
 
 - (UIColor *)bgColor{
