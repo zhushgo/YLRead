@@ -99,17 +99,19 @@
 //    regula = @"(?<=\\</div>).*?(?=\\</div>)";
     regula = @"(?<=\\</div>)[^div]*?(?=\\</div>)";
     regula = @"(?<=\\</script>)[^div]*?(?=\\<script)";
+    regula = @"(?<=\\</script>)((?!div).)*?(?=\\<script)";
 
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;
     int page = 1;
     do {
         ling = [NSString stringWithFormat:@"%@_%d.html",[sectionLink componentsSeparatedByString:@".html"].firstObject,page];
-//        NSLog(@"ling ===== %@",ling);
+        NSLog(@"ling ===== %@",ling);
         sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:ling] encoding:NSUTF8StringEncoding error:nil];
         NSError *error;
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
         NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:sectionHTMLString options:0 range:NSMakeRange(0, [sectionHTMLString length])];
+
         if (error) {
             NSLog(@"error === %@",error);
         }else if(matches.count) {
