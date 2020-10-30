@@ -1,0 +1,23 @@
+{
+  "data" : {
+    "myName" : "大爷",
+    "myToken" : "08a785720af74c10a8b733b8bc847ebaL5D1F8",
+    "myHeadPath" : "http:\/\/img.multshows.com\/test\/ios\/photo\/head\/7pgsf19t4xfi87p2MTU5NTIyNjMzMzM2MjUwNTMzOTcw.png",
+    "myUserId" : "50533970",
+    "hisName" : "劳模",
+    "rongToken" : "0oWafgESXSRRECwycPBHnxUH5vvaGzm5E6setDsOWJJPwfoiogeGvA==@q5wm.cn.rongnav.com;q5wm.cn.rongcfg.com",
+    "hisUserId" : "43959489",
+    "hisHeadPath" : "http:\/\/img.multshows.com\/CinTingTest\/android\/photo\/head\/20200715\/1594785861641NP25RBN62STHC16M0I69.jpg"
+  },
+  "head" : {
+    "appVersion" : "1.0.0",
+    "osVersion" : "12.4.8",
+    "deviceOS" : "iOS",
+    "deviceModel" : "iPhone 6",
+    "network" : "wifi",
+    "deviceId" : "CC528DAA-C025-4DDD-8061-FFB995A45795",
+    "deviceName" : "iPhone",
+    "isEmulator": false
+  }
+}
+
