@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
  * 大将：106074
  * 将血：1237
  * 锦衣当国：51560
+ *
+ * 重生三国之我乃曹昂 ： 17108
  */
 @interface LingDianParser : NSObject
 
