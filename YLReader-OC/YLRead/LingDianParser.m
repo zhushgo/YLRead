@@ -97,9 +97,8 @@
     regula = @"(?<=</div>\\s{0,20}\n\\s{0,20}</div>\\s{0,20}\n\\s{0,20}</div>)[\\s\\S]*?</div>";
     regula = @"(?<=</div>)[\\s\\S]*?</div>";
 //    regula = @"(?<=\\</div>).*?(?=\\</div>)";
-    regula = @"(?<=\\</div>)[^div]*?(?=\\</div>)";
-    regula = @"(?<=\\</script>)[^div]*?(?=\\<script)";
     regula = @"(?<=\\</script>)((?!div).)*?(?=\\<script)";
+    regula = @"(?<=\\。</div>)[\\s\\S]*?(?=\\<script)";
 
     NSString *sectionHTMLString;
     NSString *ling = [sectionLink copy];;
