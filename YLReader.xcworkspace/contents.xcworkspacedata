@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:YLReader-Swift/YLReader-Swift.xcodeproj">
+      location = "group:YLReaderSDK-OC/YLReader.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:YLReader-OC/YLRead.xcodeproj">
+      location = "group:ReadBook-OC/YLRead.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YLReader-Swift/YLReader-Swift.xcodeproj">
    </FileRef>
 </Workspace>
