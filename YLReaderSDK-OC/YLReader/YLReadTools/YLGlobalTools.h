@@ -1,0 +1,78 @@
+//
+//  YLGlobalTools.h
+//  YLRead
+//
+//  Created by 苏沫离 on 2017/6/29.
+//  Copyright © 2017 苏沫离. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - 屏幕适配
+
+FOUNDATION_EXPORT BOOL ylReadIsIPhoneNotchScreen(void);//是否是刘海屏
+FOUNDATION_EXPORT CGFloat ylReadGetStatusBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetNavigationBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetTabBarHeight(void);
+FOUNDATION_EXPORT CGFloat ylReadGetPageSafeAreaHeight(BOOL isShowNavBar);
+
+#pragma mark -
+
+
+/// 设置行间距
+FOUNDATION_EXPORT NSAttributedString *textLineSpacing_1(NSString *string ,CGFloat lineSpacing);
+FOUNDATION_EXPORT NSAttributedString *textLineSpacing_2(NSString *string ,CGFloat lineSpacing ,NSLineBreakMode lineBreakMode);
+
+
+FOUNDATION_EXPORT NSDate *getDateByStamp(NSTimeInterval timeStamp);
+FOUNDATION_EXPORT NSString *ylReadTransformTimeToMMSS(NSTimeInterval timeStamp);
+
+
+
+/// topView 高度
+FOUNDATION_EXPORT CGFloat const kYLReadStatusTopViewHeight;
+/// bottomView 高度
+FOUNDATION_EXPORT CGFloat const kYLReadStatusBottomViewHeight;
+/// 长按阅读视图通知 info 数据 key
+FOUNDATION_EXPORT NSString *const kYLReadLongPressViewKey;
+/// 长按阅读视图通知
+FOUNDATION_EXPORT NSString *const kYLReadLongPressViewNotification;
+
+
+/// Key - 阅读记录
+FOUNDATION_EXPORT NSString *const kYLReadRecordKey;
+
+/// Key - 阅读对象
+FOUNDATION_EXPORT NSString *const kYLReadObjectKey;
+
+
+/// 阅读范围(阅读顶部状态栏 + 阅读View + 阅读底部状态栏)
+FOUNDATION_EXPORT CGRect getReadRect(void);
+/// 阅读View范围
+FOUNDATION_EXPORT CGRect getReadViewRect(void);
+
+
+///书籍首页-书名页
+FOUNDATION_EXPORT NSInteger const kYLReadBookHomePage;
+///用于指代章节最后一页
+FOUNDATION_EXPORT NSInteger const kYLReadChapterLastPage;
+///用于指代第一章
+FOUNDATION_EXPORT NSInteger const kYLReadChapterIDMin;
+///用于指代最后一章的后一章（表示没有）
+FOUNDATION_EXPORT NSInteger const kYLReadChapterIDMax;
+
+
+/// 获得当前时间戳
+FOUNDATION_EXPORT NSTimeInterval getTimer1970(void);
+
+/// 获取指定时间字符串 (format: "YYYY-MM-dd-HH-mm-ss")
+FOUNDATION_EXPORT NSString *getTimeByFormat(NSString *format,NSDate *date);
+
+/// 对指定视图截屏:isSave = false
+FOUNDATION_EXPORT UIImage *screenCapture(UIView *view,BOOL isSave);
+
+
+NS_ASSUME_NONNULL_END
