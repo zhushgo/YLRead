@@ -10,46 +10,45 @@
 
 @implementation NSString (TypeseHelper)
 
-+ (void)startTypeseter{
++ (void)th_startTypeseter{
     NSString *path = [NSBundle.mainBundle pathForResource:@"DemoText" ofType:@"html"];
     NSString *string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [string typesettingString_1];
+    [string th_typesettingString_1];
 }
-
 
 /** 内容排版整理
  * 1、去除换行符：单换行、多换行
  * 2、去除每行开头的空格：使用 \t 递进
  */
-+ (NSString *)contentTypesettingWithContent:(NSString *)content{
++ (NSString *)th_contentTypesettingWithContent:(NSString *)content{
     // 替换单换行
     content = [content stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     // 替换换行 以及 多个换行 为 换行加空格
     // \s* 任意个空格   \n+ 任意个换行符
-    return [content replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n   "]];
+    return [content th_replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n   "]];
 }
 
 
 /// 正则替换字符
-- (NSString *)replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template{
+- (NSString *)th_replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template{
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
     return [regularExpression stringByReplacingMatchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length) withTemplate:template];
 }
 
 /// 去除首尾空格和换行
-- (NSString *)removeSEHeadAndTail{
+- (NSString *)th_removeSEHeadAndTail{
     return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
 }
 
 /// 去除所有换行
-- (NSString *)removeEnterAll{
+- (NSString *)th_removeEnterAll{
     return [[[self stringByReplacingOccurrencesOfString:@"\r" withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@"\t" withString:@""];;
 }
 
 // @"第[0-9一二两三四五六七八九十零百千]*[章回].*"
 
-- (NSString *)typesettingString{
-    NSString *string = [NSString contentTypesettingWithContent:self];
+- (NSString *)th_typesettingString{
+    NSString *string = [NSString th_contentTypesettingWithContent:self];
     NSLog(@"string === %@",string);
 //@"(ps)[\\s\\S]*?第"
 //    string = [string replacingCharactersWithPattern:@"ps.第[0-9一二两三四五六七八九十零百千]*[章更].*" template:@"\n第"];
@@ -76,12 +75,12 @@
 //    string = [string replacingCharactersWithPattern:@"http://www.shuquge.com/txt/1959/[0-9]{7,9}.html" template:@""];
 
     // 替换换行 以及 多个换行 为 换行加空格
-    string = [string replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n"];
+    string = [string th_replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:@"\n"];
     return string;
 }
 
-- (NSString *)typesettingString_1{
-    NSString *string = [NSString contentTypesettingWithContent:self];
+- (NSString *)th_typesettingString_1{
+    NSString *string = [NSString th_contentTypesettingWithContent:self];
 
     NSString *regula = @"(?<=\\</div>\n</div>\n</div>).*?(?=\\</div>)";//根据正则表达式，取出指定文本
     regula = @"(?<=</div>\\s{0,20}\n\\s{0,20}</div>\\s{0,20}\n\\s{0,20}</div>)[\\s\\S]*?</div>";
@@ -111,11 +110,11 @@
 }
 
 
-+ (NSString *)getSectionContent{
++ (NSString *)th_getSectionContent{
     NSMutableString *sectionContent = [[NSMutableString alloc] init];
     NSString *sectionHTMLString;
-    NSString *sectionLink = @"https://m.lingdiankanshu.co/60231/";
-    NSString *ling = @"https://m.lingdiankanshu.co/60231/";
+    NSString *sectionLink = @"https://m.lingdiankanshu.co/361130/";
+    NSString *ling = @"https://m.lingdiankanshu.co/361130/";
     int page = 1;
     do {
         ling = [NSString stringWithFormat:@"%@%d/",sectionLink,page];
@@ -123,10 +122,10 @@
         sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:ling] encoding:NSUTF8StringEncoding error:nil];
         NSLog(@"ling ===== %@",ling);
 
-        [sectionContent appendString:sectionHTMLString.typesettingString_1];
+        [sectionContent appendString:sectionHTMLString.th_typesettingString_1];
         page++;
         
-        if ([ling containsString:@"60231/3558179_2"]) {
+        if ([ling containsString:@"361130/3558179_2"]) {
             break;
         }
     } while ([sectionHTMLString containsString:@"下一页"]);

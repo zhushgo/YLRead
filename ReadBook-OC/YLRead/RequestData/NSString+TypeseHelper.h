@@ -13,16 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (TypeseHelper)
 
 ///开始测试排版
-+ (void)startTypeseter;
++ (void)th_startTypeseter;
 
 ///文字排版
-- (NSString *)typesettingString;
+- (NSString *)th_typesettingString;
 
 ///文字排版
-- (NSString *)typesettingString_1;
+- (NSString *)th_typesettingString_1;
 
 
-+ (NSString *)getSectionContent;
++ (NSString *)th_getSectionContent;
 
 @end
 
