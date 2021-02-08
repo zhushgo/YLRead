@@ -10,9 +10,28 @@
 
 
 #import "LingDianParser.h"
-#import <YLReader/NSString+YLReader.h>
+
+/// 段落头部双圆角空格
+@interface NSString (YLReader)
+- (NSString *)replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template;
+@end
+
+@implementation NSString (YLReader)
+
+/// 正则替换字符
+- (NSString *)replacingCharactersWithPattern:(NSString *)pattern template:(NSString *)template{
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
+    return [regularExpression stringByReplacingMatchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length) withTemplate:template];
+}
+
+@end
+
+
+
 
 @implementation LingDianParser
+
+
 
 + (NSString *)saveFileDictByBookID:(NSString *)bookID{
     return [NSString stringWithFormat:@"%@/Documents/%@_dict",NSHomeDirectory(),bookID];
@@ -33,7 +52,7 @@
     }];
     
     allString = [allString stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    allString = [allString replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n%@",kYLReadParagraphSpace]];
+    allString = [allString replacingCharactersWithPattern:@"\\s*\\n+\\s*" template:[NSString stringWithFormat:@"\n%@",@"　　"]];
     
     NSString *filepath = [LingDianParser saveFileStringByBookID:bookID];
     [allString writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:nil];
@@ -43,7 +62,7 @@
 
 
 /** 获取小说的章节与内容
- * 
+ *
  * <p><a style="" href="2152124.html">第0167章 平叛</a></p>
  * regula = @"(?<=\\<p> <a style=\"\" href=\").*?(?=\\</a></p>)";
  * @{@"sectionName":sectionName,@"sectionLink":sectionLink}
@@ -135,7 +154,7 @@
 + (NSString *)contentTypesettingWithContent:(NSString *)content{
     //
     content = [content stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
-    content = [content stringByReplacingOccurrencesOfString:@"; ; ; ;" withString:@""];    
+    content = [content stringByReplacingOccurrencesOfString:@"; ; ; ;" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
     content = [content stringByReplacingOccurrencesOfString:@"\\s*\\n+\\s*" withString:@"\n"];
@@ -177,6 +196,48 @@
     }else{
         NSLog(@"matches ====== 0");
     }
+}
+
+@end
+
+
+
+
+
+
+///目录列表
+@implementation LingDianParser (List)
+
+/// 获取书本目录
++ (void)getBookCatalogWithID:(NSString *)bookID{
+    
+    NSString *regula = @"(?<=\\<ul class=\"section-list fix\">)[\\s\\S]*?(?=\\</ul>)";//根据正则表达式，取出指定文本
+
+    NSError *error;
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regula options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSMutableString *resultString = [[NSMutableString alloc] init];
+    
+    for (int page = 23; page < 45; page ++) {
+        NSString *link = [NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%d/",bookID,page];
+        NSString *sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:link] encoding:NSUTF8StringEncoding error:nil];
+        
+        
+        NSArray<NSTextCheckingResult *> *matches = [regularExpression matchesInString:sectionHTMLString options:0 range:NSMakeRange(0, [sectionHTMLString length])];
+        if (error) {
+            NSLog(@"regularError === %@",error);
+        } else if (matches.count){
+            [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                   NSString *matchString = [sectionHTMLString substringWithRange:obj.range];
+                if (idx == 1) {
+                    [resultString appendString:matchString];
+                }
+            }];
+        }else{
+            NSLog(@"matches ====== 0");
+        }
+    }
+    SLog(@"resultString ==== %@",resultString);
 }
 
 @end

@@ -40,7 +40,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //[BiQuGeParser getBookAllStringByBookID:@"53605"];
-//        [LingDianParser getBookAllStringByBookID:@"445252"];
+        //[LingDianParser getBookAllStringByBookID:@"486719"];
 //        [NSString getSectionContent];
         NSLog(@"%@", [NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()]);
     });
