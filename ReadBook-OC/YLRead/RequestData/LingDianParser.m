@@ -218,7 +218,7 @@
     
     NSMutableString *resultString = [[NSMutableString alloc] init];
     
-    for (int page = 23; page < 45; page ++) {
+    for (int page = 1; page < 46; page ++) {
         NSString *link = [NSString stringWithFormat:@"https://m.lingdiankanshu.co/%@/%d/",bookID,page];
         NSString *sectionHTMLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:link] encoding:NSUTF8StringEncoding error:nil];
         
