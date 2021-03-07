@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //https://route.51mypc.cn/novels/search/牧神记
 //https://route.51mypc.cn/novels/download/185607
-//https://m.lingdiankanshu.co/445252/all.html
+//https://m.lingdiankanshu.co/486719/all.html
 
 /** 零点看书小说网：提取小说文本内容
  * 牧神记：187917
- * 小阁老：421518        第五十七章 林将军的艰难决定
- * 赘婿：4626            第一〇六八章 出走 下
- * 我真的是正派   486719  第八百五十九章 半步道果
+ * 小阁老：421518        第八十五章 最远的路,是赵公子的套路
+ * 赘婿：4626            第一〇七五章 蜉蝣哪堪比天地 万象去罢见众生 六
+ * 我真的是正派   486719  第八百八十七章 围杀
  * 铁骨 21950
  * 全球高武 ： 343014
  * 大泼猴：5910
