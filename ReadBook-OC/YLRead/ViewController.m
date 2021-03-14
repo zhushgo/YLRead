@@ -40,7 +40,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //[BiQuGeParser getBookAllStringByBookID:@"53605"];
-         ///[LingDianParser getBookAllStringByBookID:@"416057"];
+//        [LingDianParser getBookAllStringByBookID:@"416057"];
         
         ///[LingDianParser getBookCatalogWithID:@"416057"];
 //        [NSString getSectionContent];
